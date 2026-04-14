@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Framework CORF — Excelenc-IA | 360º Consulting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/styles.css">
+    <style>
+        .page-hero {
+            position: relative;
+            overflow: hidden;
+        }
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 80% 50% at 50% 0%, var(--accent-glow) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .page-hero > * { position: relative; z-index: 1; }
+        .cta-block {
+            background: var(--bg-section);
+            padding: 64px 24px;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            text-align: center;
+        }
+        .cta-block-inner {
+            max-width: 640px;
+            margin: 0 auto;
+        }
+        .cta-block h3 {
+            font-family: var(--font-display);
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 14px;
+            line-height: 1.25;
+        }
+        .cta-block p {
+            color: var(--text-cream);
+            margin-bottom: 28px;
+            line-height: 1.7;
+        }
+        .download-card {
+            background: var(--bg-card);
+            border: 1px solid var(--accent);
+            border-radius: 10px;
+            padding: 24px 28px;
+            margin: 32px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            box-shadow: 0 0 40px rgba(244, 231, 17, 0.05);
+        }
+        .download-card-text strong {
+            color: var(--text-white);
+            font-weight: 500;
+            display: block;
+            margin-bottom: 4px;
+        }
+        .download-card-text span {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        @media (max-width: 600px) {
+            .download-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="page-hero">
+        <a class="breadcrumb" href="../">← Biblioteca de recursos</a>
+        <h1 class="page-title reveal">Framework CORF</h1>
+        <p class="page-subtitle reveal reveal-delay-1">La meta-habilidad que multiplica la calidad de todo lo que le pedís a la IA. Contexto, Objetivo, Restricciones, Formato.</p>
+    </section>
+
+    <article class="prose">
+        
+        <hr />
+<h2 id="la-idea-central">La idea central</h2>
+<p>La IA no falla porque no pueda. Falla porque no se lo pediste bien.</p>
+<p>Un 80% de los malos resultados no son culpa de la herramienta. Son culpa de cómo le hablamos. CORF es el atajo para que dejes de sufrir esto.</p>
+<p><strong>Cuatro componentes. Un orden. Un resultado distinto.</strong></p>
+<hr />
+<h2 id="los-4-componentes">Los 4 componentes</h2>
+<h3 id="c-contexto">🔵 C — Contexto</h3>
+<p><strong>Qué es:</strong> todo lo que la IA necesita saber para entender tu situación antes de contestar.</p>
+<p><strong>Error típico:</strong> empezar directamente por la tarea. <em>"Prepárame la reunión."</em> La IA no sabe quién eres, qué tipo de reunión, con quién, para qué. Inventa.</p>
+<p><strong>Qué lo mejora:</strong> dile quién eres, qué haces, qué ha pasado antes.</p>
+<p><strong>Miniejemplo:</strong>
+- ❌ <em>"Hazme un resumen"</em>
+- ✅ <em>"Soy responsable de marketing en un hotel de lujo. Te voy a pegar una reunión con la agencia de publicidad. Quiero un resumen para enviar al director general mañana."</em></p>
+<hr />
+<h3 id="o-objetivo">🟢 O — Objetivo</h3>
+<p><strong>Qué es:</strong> qué quieres conseguir, pensado como resultado real, no como acción.</p>
+<p><strong>Error típico:</strong> confundir tarea con objetivo. <em>"Redacta un email"</em> es una tarea. El objetivo es <em>"que el cliente responda confirmando la reunión del jueves."</em></p>
+<p><strong>Qué lo mejora:</strong> si pudieras conseguir una sola cosa con esta respuesta, ¿qué sería?</p>
+<p><strong>Miniejemplo:</strong>
+- ❌ <em>"Escribe un email de follow-up"</em>
+- ✅ <em>"Escribe un email para reactivar un lead que lleva 3 semanas sin responder, con el objetivo de conseguir que acepte una llamada de 20 minutos esta semana."</em></p>
+<hr />
+<h3 id="r-restricciones">🟠 R — Restricciones</h3>
+<p><strong>Qué es:</strong> los límites. Tiempo, tono, longitud, idioma, temas a evitar, estilo.</p>
+<p><strong>Error típico:</strong> dejarlo abierto y luego quejarse de que el resultado es "genérico". El "genérico" suele ser la consecuencia directa de no poner restricciones.</p>
+<p><strong>Qué lo mejora:</strong> piensa en lo que NO quieres. Eso suele ser más útil que lo que sí quieres.</p>
+<p><strong>Miniejemplo:</strong>
+- ❌ <em>"Dame ideas para la campaña"</em>
+- ✅ <em>"Dame 5 ideas para la campaña. Nada de conceptos vacios ('inolvidable', 'único'). Presupuesto realista por debajo de 15k. Público: directivos de 45-60 años, no millennials."</em></p>
+<hr />
+<h3 id="f-formato">🟣 F — Formato</h3>
+<p><strong>Qué es:</strong> cómo quieres recibir la respuesta. Lista, tabla, email listo para enviar, guion con minutos por bloque, resumen en 3 líneas.</p>
+<p><strong>Error típico:</strong> aceptar lo que la IA decida darte. Por defecto escribe en bullets largos. Tú probablemente quieres otra cosa.</p>
+<p><strong>Qué lo mejora:</strong> visualiza el output ideal antes de escribir el prompt. Descríbelo.</p>
+<p><strong>Miniejemplo:</strong>
+- ❌ <em>"Analiza estos datos"</em>
+- ✅ <em>"Analiza estos datos. Devuélvelo así: 1) resumen ejecutivo de 3 líneas, 2) top 5 insights con el dato que los respalda, 3) dos alertas, 4) tres recomendaciones accionables."</em></p>
+<hr />
+<h2 id="antes-despues-ejemplo-completo">Antes / Después — Ejemplo completo</h2>
+<h3 id="prompt-flojo">❌ Prompt flojo</h3>
+<pre><code>Prepárame una reunión con un proveedor.
+</code></pre>
+<p><strong>Lo que te devuelve la IA:</strong> un guion genérico con "presentaciones, temas a tratar, próximos pasos". Inservible.</p>
+<hr />
+<h3 id="prompt-con-corf">✅ Prompt con CORF</h3>
+<pre><code>🔵 Contexto
+Soy responsable de operaciones en un hotel de lujo. 
+Mañana tengo una reunión con un proveedor de Channel Manager 
+que dice poder mejorar la ocupación en temporada baja.
+
+🟢 Objetivo
+Quiero salir de la reunión con una decisión: si merece la 
+pena avanzar a un piloto o descartarlos.
+
+🟠 Restricciones
+- Duración: 30 minutos
+- No quiero entrar en tecnicismos del producto
+- Ya hemos trabajado con 2 proveedores similares sin éxito
+- Tono profesional pero directo, sin rodeos
+
+🟣 Formato
+Guion con tiempos por bloque:
+1. Apertura (3 min)
+2. Preguntas críticas (12 min)
+3. Red flags a vigilar (5 min)
+4. Próximos pasos (5 min)
+5. Cierre (5 min)
+
+Incluye las preguntas exactas que debería hacer, no categorías.
+</code></pre>
+<p><strong>Lo que te devuelve la IA:</strong> un guion afinado, con preguntas específicas tipo <em>"¿qué % de mejora habéis conseguido en hoteles comparables en los últimos 12 meses?"</em>, señales a vigilar (<em>"si solo hablan de features y no de casos, mala señal"</em>) y un cierre claro. Utilizable tal cual.</p>
+<hr />
+<h2 id="tres-ejemplos-mas-en-distintos-contextos">Tres ejemplos más, en distintos contextos</h2>
+<h3 id="1-comunicacion">1. Comunicación</h3>
+<pre><code>🔵 Soy responsable de relaciones con patronos de un club 
+   privado. Necesito escribir a un patrono que no ha 
+   respondido a los últimos dos emails.
+
+🟢 Quiero que responda, sin que note que estoy forzando la 
+   conversación.
+
+🟠 Tono cálido pero no servil. Máximo 120 palabras. Sin 
+   &quot;espero que estés bien&quot;. 
+
+🟣 Email listo para enviar, con asunto. Dame dos opciones: 
+   una más directa, otra más sutil.
+</code></pre>
+<h3 id="2-analisis">2. Análisis</h3>
+<pre><code>🔵 Te voy a adjuntar los datos de reservas directas vs OTAs 
+   del último año. Los estoy revisando para una presentación 
+   al consejo el próximo mes.
+
+🟢 Quiero entender si tiene sentido invertir en paid media 
+   para reservas directas o si la diferencia no compensa.
+
+🟠 Nada de jerga financiera innecesaria. Si los datos son 
+   insuficientes para contestar, dímelo.
+
+🟣 1) Respuesta directa a la pregunta. 2) Los 3 datos que 
+   la sostienen. 3) Qué información me falta y dónde 
+   conseguirla.
+</code></pre>
+<h3 id="3-produccion">3. Producción</h3>
+<pre><code>🔵 Soy CEO de una agencia de viajes de lujo. Un cliente 
+   corporativo me ha pedido propuesta para un incentivo de 
+   40 personas a un destino europeo con presupuesto abierto.
+
+🟢 Quiero una propuesta que convenza por experiencia 
+   propuesta, no por precio.
+
+🟠 Máximo 2 páginas. Nada de &quot;experiencia inolvidable&quot;. 
+   Tono: autoridad tranquila, como asesor experto.
+
+🟣 Estructura: gancho inicial, experiencia con narrativa, 
+   detalles sorprendentes, inversión con valor justificado, 
+   próximo paso.
+</code></pre>
+<hr />
+<h2 id="checklist-de-bolsillo">Checklist de bolsillo</h2>
+<p>Antes de pulsar enviar en un prompt, comprueba:</p>
+<pre><code>🔵 CONTEXTO
+□ ¿Sabe la IA quién soy y qué hago?
+□ ¿Le he dado la información previa relevante?
+□ ¿He dicho para quién es esto o a quién va dirigido?
+
+🟢 OBJETIVO
+□ ¿Está claro el resultado que busco, no solo la tarea?
+□ ¿He dicho qué debería conseguir yo con esto?
+
+🟠 RESTRICCIONES
+□ ¿He puesto un límite de longitud, tono o duración?
+□ ¿He dicho qué NO quiero?
+□ ¿He avisado de cosas que debe evitar?
+
+🟣 FORMATO
+□ ¿Está claro cómo quiero la respuesta?
+□ ¿He descrito la estructura?
+□ ¿Sabe si quiero bullets, narrativa, tabla, email?
+</code></pre>
+<p>Si faltan 3 o más, tu prompt va a dar un resultado flojo.</p>
+<hr />
+<h2 id="errores-que-matan-un-prompt">Errores que matan un prompt</h2>
+<ul>
+<li><strong>"Sé breve".</strong> Demasiado abstracto. Di: <em>"Máximo 150 palabras"</em>.</li>
+<li><strong>"Sé profesional".</strong> Todos lo son. Di: <em>"Tono directo, sin rodeos. No uses jerga corporativa."</em></li>
+<li><strong>"Como experto en X".</strong> No añade casi nada. Cambia por instrucciones concretas.</li>
+<li><strong>Dejar el formato abierto.</strong> Vas a recibir bullets siempre. Si no los quieres, dilo.</li>
+<li><strong>No iterar.</strong> El primer output casi nunca es el final. Decir <em>"está bien pero con esto más conciso y sin el párrafo 3"</em> es parte del proceso.</li>
+</ul>
+<hr />
+<h2 id="de-corf-basico-a-corf-avanzado">De CORF básico a CORF avanzado</h2>
+<p>Cuando domines lo básico, añade:</p>
+<p><strong>Ejemplos (few-shot):</strong> pega 1-2 ejemplos del output que buscas. <em>"Quiero un email con este estilo: [pegar email real tuyo]"</em>. Multiplica la calidad.</p>
+<p><strong>Roles explícitos:</strong> <em>"Actúa como editor senior de un medio especializado en turismo de lujo."</em> Funciona mejor que <em>"sé crítico"</em>.</p>
+<p><strong>Auto-crítica:</strong> termina el prompt con <em>"Cuando termines, revisa tu respuesta y dime 2 cosas que podrías mejorar"</em>. A menudo la IA mejora su propia respuesta antes de que la veas.</p>
+<p><strong>Pensamiento paso a paso:</strong> para tareas complejas, añade <em>"Piensa paso a paso antes de contestar"</em>. El razonamiento mejora notablemente.</p>
+<hr />
+<h2 id="regla-de-oro">Regla de oro</h2>
+<pre><code>La IA es tan buena como tu forma de usarla.
+</code></pre>
+<hr />
+<h2 id="truco-para-prompts-complejos">Truco para prompts complejos</h2>
+<p>¿No tienes tiempo de estructurar el prompt manualmente? Usa el <strong>Better Prompter</strong> — nuestro GPT que te ayuda a construir prompts de alta calidad paso a paso. Le dices en lenguaje natural qué quieres conseguir y te devuelve el prompt CORF listo.</p>
+    </article>
+
+    <section class="cta-block section-full">
+        <div class="cta-block-inner">
+            <div class="section-label">¿Siguiente paso?</div>
+            <h3>¿Queréis que vuestro equipo domine CORF?</h3>
+            <p>Formamos equipos completos para que usar IA deje de ser cosa de 2-3 personas y sea un hábito compartido.</p>
+            <a href="https://cal.com/jorge-guamis-360/llamada-de-diagnostico-360%C2%BA-consulting" class="btn btn-primary" target="_blank" rel="noopener">Reservar diagnóstico gratuito</a>
+        </div>
+    </section>
+
+    <div class="contact-strip">
+        <a href="mailto:jorge@360consulting.io">✉ jorge@360consulting.io</a>
+        <a href="https://linkedin.com/in/jorge-guamis" target="_blank" rel="noopener">🔗 LinkedIn</a>
+        <a href="https://wa.me/34654663771" target="_blank" rel="noopener">💬 WhatsApp</a>
+    </div>
+
+    <footer>
+        <img src="../assets/mark-yellow-clean.png" alt="360º">
+        <div>360º Degrees Consulting &mdash; Biblioteca de Recursos Excelenc-IA &mdash; 2026</div>
+        <div class="footer-links">
+            <a href="../prompts/">Prompts</a>
+            <a href="../toolkit/">Toolkit</a>
+            <a href="../framework/">Framework</a>
+            <a href="../roadmap/">Roadmap</a>
+            <a href="../datos/">Datos</a>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

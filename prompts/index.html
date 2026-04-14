@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Kit de Prompts por Workflow — Excelenc-IA | 360º Consulting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/styles.css">
+    <style>
+        .page-hero {
+            position: relative;
+            overflow: hidden;
+        }
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 80% 50% at 50% 0%, var(--accent-glow) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .page-hero > * { position: relative; z-index: 1; }
+        .cta-block {
+            background: var(--bg-section);
+            padding: 64px 24px;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            text-align: center;
+        }
+        .cta-block-inner {
+            max-width: 640px;
+            margin: 0 auto;
+        }
+        .cta-block h3 {
+            font-family: var(--font-display);
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 14px;
+            line-height: 1.25;
+        }
+        .cta-block p {
+            color: var(--text-cream);
+            margin-bottom: 28px;
+            line-height: 1.7;
+        }
+        .download-card {
+            background: var(--bg-card);
+            border: 1px solid var(--accent);
+            border-radius: 10px;
+            padding: 24px 28px;
+            margin: 32px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            box-shadow: 0 0 40px rgba(244, 231, 17, 0.05);
+        }
+        .download-card-text strong {
+            color: var(--text-white);
+            font-weight: 500;
+            display: block;
+            margin-bottom: 4px;
+        }
+        .download-card-text span {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        @media (max-width: 600px) {
+            .download-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="page-hero">
+        <a class="breadcrumb" href="../">← Biblioteca de recursos</a>
+        <h1 class="page-title reveal">Kit de Prompts por Workflow</h1>
+        <p class="page-subtitle reveal reveal-delay-1">15 plantillas listas para pegar. Organizadas por lo que realmente vais a hacer con la IA, no por herramienta.</p>
+    </section>
+
+    <article class="prose">
+        
+        <hr />
+<h2 id="como-usar-este-kit">Cómo usar este kit</h2>
+<p>Cinco workflows que cubren el 80% del trabajo ejecutivo:</p>
+<ol>
+<li><strong>Comunicación</strong> — emails, revisión de textos, respuestas difíciles</li>
+<li><strong>Preparación</strong> — reuniones, research, briefings pre-encuentro</li>
+<li><strong>Producción</strong> — propuestas, presentaciones, descripciones, copies</li>
+<li><strong>Análisis y decisión</strong> — datos, competencia, priorización</li>
+<li><strong>Organización</strong> — resúmenes de reunión, action items, documentación</li>
+</ol>
+<p><strong>Reglas del kit:</strong>
+- Cada prompt es una plantilla limpia. <strong>Lo que esté entre <code>[[ ]]</code> lo rellenas tú</strong> con tu información real
+- No hay datos inventados. No hay números placeholder. No hay ejemplos casados a un sector
+- Si un bloque no aplica a tu caso, bórralo
+- Todos funcionan en ChatGPT, Gemini, Claude y Copilot
+- Si un prompt te parece largo, pásalo por el <strong>Better Prompter</strong> primero — lo adapta a tu caso en 30 segundos</p>
+<div class="callout callout-tip"><div class="callout-title"><span>💡</span><span>La regla de oro</span></div><p>Un prompt es una instrucción a alguien que no te conoce. Cuanto mejor le expliques qué quieres, mejor lo hará. CORF — <strong>C</strong>ontexto, <strong>O</strong>bjetivo, <strong>R</strong>estricciones, <strong>F</strong>ormato.</p></div>
+
+<hr />
+<h2 id="1-comunicacion">1. Comunicación</h2>
+<h3 id="11-redactar-email-profesional">1.1 Redactar email profesional</h3>
+<pre><code>Contexto:
+- Quién soy: [[tu rol, tu empresa/sector]]
+- A quién escribo: [[persona/empresa, relación con ella]]
+- Situación: [[qué ha pasado antes / por qué escribo ahora]]
+
+Objetivo del email:
+[[qué quiero conseguir con este email — una acción concreta del 
+destinatario, idealmente]]
+
+Restricciones:
+- Tono: [[profesional / cercano / formal / directo]]
+- Longitud máxima: [[X] palabras]
+- Cosas que NO quiero mencionar: [[lo que conviene dejar fuera]]
+- Idioma: [[español / inglés / otro]]
+
+Formato:
+Email listo para enviar, asunto incluido. Si tienes dudas sobre 
+el enfoque, dame dos opciones (A más directa, B más suave) y 
+explica brevemente por qué elegirías cada una.
+</code></pre>
+<hr />
+<h3 id="12-responder-a-un-mensaje-dificil">1.2 Responder a un mensaje difícil</h3>
+<p>Útil para reclamaciones, quejas, desacuerdos, situaciones con carga emocional.</p>
+<pre><code>Te voy a pegar un mensaje que he recibido. Necesito ayuda para 
+responder con cabeza, no en caliente.
+
+Contexto:
+- Quién lo envía: [[relación con esta persona, historial si aplica]]
+- Qué ha pasado: [[situación real]]
+- Qué quiero conseguir con mi respuesta: [[mantener relación / 
+  cerrar tema / escalar / ganar tiempo]]
+
+Mi posición:
+[[qué pienso yo honestamente del tema, aunque no vaya a decirlo 
+todo en la respuesta final]]
+
+Restricciones:
+- NO quiero asumir culpa legal
+- NO quiero sonar a plantilla corporativa
+- NO quiero ser condescendiente
+
+Mensaje original:
+[[PEGAR AQUÍ]]
+
+Dame:
+1. Respuesta lista para enviar
+2. Qué he elegido NO decir y por qué
+3. Bandera roja si ves algo que no he contado y que debería 
+   tener en cuenta
+</code></pre>
+<hr />
+<h3 id="13-revisar-un-texto-mio-antes-de-publicarlo">1.3 Revisar un texto mío antes de publicarlo</h3>
+<p>Para textos que van a web, catálogo, nota de prensa, post, cualquier cosa con público.</p>
+<pre><code>Actúa como editor senior. Te voy a pegar un texto que yo he 
+escrito y que va a [[dónde: web, catálogo, email masivo, nota 
+prensa]].
+
+Contexto:
+- Público lector: [[quién lo va a leer]]
+- Tono de marca que quiero: [[3 palabras que describan el tono]]
+- Qué quiero que piense el lector al terminar: [[la percepción 
+  que busco]]
+
+Revísalo y márcame:
+1. Frases flojas, clichés o lugares comunes (con reemplazo 
+   sugerido)
+2. Incoherencias internas o saltos de tono
+3. Afirmaciones que no se sostienen sin dato
+4. Lugares donde falto al detalle y podría ganar concreción
+5. Qué funciona y no hay que tocar
+
+Importante: no reescribas todo el texto. Marca solo lo que 
+hay que cambiar, con explicación breve de por qué.
+
+Texto:
+[[PEGAR AQUÍ]]
+</code></pre>
+<hr />
+<h3 id="14-traducir-conservando-el-tono">1.4 Traducir conservando el tono</h3>
+<p>La IA traduce literal por defecto. Este prompt traduce manteniendo estilo.</p>
+<pre><code>Quiero traducir este texto del [[idioma origen]] al [[idioma 
+destino]].
+
+No busco una traducción literal. Busco que el lector en 
+[[idioma destino]] sienta lo mismo que sentiría un lector 
+nativo del texto original.
+
+Contexto:
+- Dónde se va a publicar: [[medio, contexto]]
+- Tono del original: [[describe en 2-3 palabras]]
+- Registro: [[formal / neutro / cercano]]
+
+Si hay expresiones intraducibles o giros culturales que no 
+funcionan, avísame y propón alternativas en lugar de forzar 
+una traducción literal.
+
+Texto original:
+[[PEGAR AQUÍ]]
+</code></pre>
+<hr />
+<h2 id="2-preparacion">2. Preparación</h2>
+<h3 id="21-preparar-una-reunion">2.1 Preparar una reunión</h3>
+<pre><code>Mañana tengo una reunión. Ayúdame a llegar preparado.
+
+Contexto de la reunión:
+- Con quién: [[nombre, empresa, rol]]
+- Relación: [[primera vez / clientes / proveedor / partner]]
+- Tema principal: [[de qué va]]
+- Qué quiero conseguir yo: [[resultado concreto]]
+- Qué parece querer conseguir la otra parte: [[mi lectura]]
+
+Restricciones:
+- Duración: [[X] minutos]
+- Cosas que NO quiero tratar hoy: [[temas aparcados]]
+
+Dame:
+1. Apertura: cómo abrir la conversación (una línea, no plantilla)
+2. 5 preguntas críticas que debería hacer
+3. 3 puntos donde probablemente me planteen objeciones, con 
+   respuesta breve para cada una
+4. 2 señales a vigilar durante la reunión (qué me diría que 
+   estamos alineados o que no)
+5. Cierre: cómo concretar próximos pasos sin compromisos que 
+   no quiero
+
+Tono del guión: ejecutivo, directo. No me pongas &quot;mostrar 
+interés genuino&quot; — dime qué preguntar exactamente.
+</code></pre>
+<hr />
+<h3 id="22-research-rapido-antes-de-reunion">2.2 Research rápido antes de reunión</h3>
+<pre><code>Prepárame un briefing para leer en 5 minutos antes de una 
+reunión.
+
+Sobre la persona:
+- Nombre: [[nombre]]
+- Empresa: [[empresa]]
+- Rol: [[rol]]
+
+Motivo de la reunión: [[tema]]
+
+Dame en 1 página:
+
+1. Ficha persona: trayectoria reciente (últimos 3 años), 
+   puntos fuertes conocidos, pistas sobre su estilo profesional
+2. Ficha empresa: qué hacen realmente (más allá de su web), 
+   momento actual, noticias recientes relevantes, puntos de 
+   dolor probables del negocio
+3. Temas de conexión: cosas de las que puedo hablar con 
+   naturalidad que no sean la reunión en sí
+4. Ángulos que puedo abrir: qué puedo ofrecer que encaje con 
+   lo que parecen necesitar
+5. Avisos: si hay algo delicado (despidos recientes, cambio 
+   de estrategia, competencia directa), márcalo
+
+Importante: si no encuentras información contrastable, dímelo. 
+No inventes. Prefiero 3 datos sólidos que 10 dudosos.
+</code></pre>
+<hr />
+<h3 id="23-preparar-una-presentacion-ante-direccion">2.3 Preparar una presentación ante dirección</h3>
+<pre><code>Tengo que presentar [[tema / decisión / propuesta]] ante 
+[[consejo / junta / patronato / dirección]] en [[X] días].
+
+Contexto:
+- Qué voy a presentar: [[explicación en 3 líneas]]
+- Qué decisión espero de ellos: [[acción concreta]]
+- Quiénes me escuchan: [[perfiles, intereses, posibles 
+  resistencias conocidas]]
+- Cuánto tiempo tengo: [[X] minutos + Q&amp;A]
+
+Ayúdame a estructurar la presentación. Dame:
+
+1. Hoja de ruta: cuántos bloques, qué va en cada uno, minutos
+2. Primera frase exacta para abrir (que agarre atención sin 
+   sonar a taller de ventas)
+3. Los 3 mensajes que quiero que recuerden si solo recuerdan 
+   3 cosas
+4. El dato / imagen / evidencia más poderosa que debería 
+   mostrar — y dónde colocarla en el arco
+5. Las 5 preguntas difíciles que me van a hacer y cómo 
+   prepararlas (respuesta corta, no discurso)
+6. Cierre que conduzca a la decisión que busco
+
+Sé concreto. &quot;Contar historia&quot; no me sirve, dime qué historia.
+</code></pre>
+<hr />
+<h2 id="3-produccion">3. Producción</h2>
+<h3 id="31-escribir-una-propuesta-comercial">3.1 Escribir una propuesta comercial</h3>
+<pre><code>Necesito preparar una propuesta para un cliente.
+
+Sobre el cliente:
+- Empresa / perfil: [[qué son]]
+- Contacto principal: [[nombre, rol]]
+- De dónde sale el lead: [[referido, llamada entrante, tal]]
+- Qué han pedido exactamente: [[necesidad que han expresado]]
+- Qué sospecho que necesitan de verdad (más allá de lo pedido):
+  [[mi lectura]]
+
+Sobre mi oferta:
+- Qué les voy a proponer: [[servicio / producto]]
+- Inversión orientativa: [[rango €]]
+- Por qué yo / por qué ahora: [[diferencial real]]
+
+Restricciones:
+- Longitud: [[X] páginas máx]
+- Debe incluir: [[obligatorios]]
+- NO debe incluir: [[evitar]]
+
+Escribe la propuesta. Estructura:
+1. Gancho inicial que demuestre que entendemos su negocio, 
+   no una intro genérica
+2. El problema, planteado de forma que se vean reflejados
+3. La solución, con narrativa (no lista)
+4. Qué incluye, detallado
+5. Inversión, con el valor justificado antes del número
+6. Próximo paso, concreto
+
+Tono: autoridad tranquila. No vendedora, no académica.
+</code></pre>
+<hr />
+<h3 id="32-transformar-bullets-en-narrativa">3.2 Transformar bullets en narrativa</h3>
+<p>Útil para convertir notas técnicas / operativas en texto para cliente.</p>
+<pre><code>Te voy a dar un contenido en bullets técnicos. Conviértelo en 
+un texto narrativo que [[dónde se va a usar: propuesta, 
+descripción producto, itinerario, informe cliente]].
+
+Requisitos:
+- Mantén toda la información práctica, no pierdas datos
+- Transmite la experiencia o la lógica, no solo la lista
+- Evita marketing exagerado (&quot;inolvidable&quot;, &quot;único&quot;, &quot;mágico&quot;)
+- Tono: [[tu tono en 2-3 palabras]]
+- Longitud objetivo: [[X] palabras]
+- Si detectas incoherencias, huecos o cosas poco realistas 
+  en los bullets, márcalas
+
+Bullets:
+[[PEGAR AQUÍ]]
+</code></pre>
+<hr />
+<h3 id="33-brief-para-agencia-externa">3.3 Brief para agencia externa</h3>
+<pre><code>Voy a contratar una agencia externa para [[qué trabajo: 
+campaña, diseño, contenidos, estudio]]. Necesito redactar 
+el brief.
+
+Contexto del encargo:
+- Mi empresa / situación: [[breve]]
+- Qué quiero conseguir: [[objetivo medible si es posible]]
+- Público objetivo real: [[no &quot;alto poder adquisitivo&quot; — 
+  algo más concreto]]
+- Mensajes clave a transmitir: [[si los tengo claros]]
+- Qué tonos / enfoques NO quiero (esto suele ser más 
+  importante): [[restricciones]]
+
+Restricciones del proyecto:
+- Presupuesto orientativo: [[rango]]
+- Plazo: [[cuándo necesito los entregables]]
+- Formatos esperados: [[qué tiene que entregarme la agencia]]
+
+Prepárame un brief que:
+1. Sea inspirador pero concreto (ni tan abierto que lo lleven 
+   a cualquier sitio, ni tan cerrado que no aporten)
+2. Incluya un criterio claro de éxito (cómo sabremos que ha 
+   funcionado)
+3. Pregunte a la agencia lo mínimo necesario para proponer 
+   con criterio (qué quiero recibir en su propuesta)
+4. Deje claras las reglas del juego (proceso, aprobaciones, 
+   derechos)
+</code></pre>
+<hr />
+<h3 id="34-prompt-para-generar-imagenes-mockups">3.4 Prompt para generar imágenes (mockups)</h3>
+<pre><code>Necesito generar una imagen con IA para [[uso: propuesta, 
+mockup, presentación, exploración visual]].
+
+Qué quiero visualizar:
+[[descripción en lenguaje natural, todo lo que me viene 
+a la cabeza, sin preocuparme por el formato]]
+
+Contexto de uso:
+- Dónde se va a mostrar: [[público]]
+- Nivel de acabado: [[boceto exploratorio / imagen final]]
+- Estilo de referencia: [[editorial / minimalista / clásico / 
+  contemporáneo]]
+
+Dame:
+1. Un prompt listo para Midjourney
+2. Un prompt listo para DALL-E / ChatGPT
+3. Un prompt listo para Gemini Imagen
+4. Si uno de los prompts necesita modificadores especiales 
+   de esa herramienta (parámetros, pesos), añádelos
+5. 2 variantes por si la primera no da el resultado esperado
+</code></pre>
+<hr />
+<h2 id="4-analisis-y-decision">4. Análisis y decisión</h2>
+<h3 id="41-analisis-de-un-excel-csv">4.1 Análisis de un Excel / CSV</h3>
+<pre><code>Te voy a subir un archivo de datos. Necesito entenderlo antes 
+de tomar decisiones.
+
+Sobre los datos:
+- Qué son estos datos: [[explicación breve de qué recoge el archivo]]
+- Periodo cubierto: [[fechas]]
+- Por qué los estoy mirando ahora: [[decisión que tengo que 
+  tomar / pregunta que quiero contestar]]
+
+Quiero un análisis que me sirva, no un informe técnico:
+
+1. Resumen en 3 líneas (lo que leería un CEO en 30 segundos)
+2. Los 5 hallazgos más relevantes con el número que los respalda
+3. Alertas: patrones que deberían preocuparme
+4. Oportunidades: patrones que podría aprovechar
+5. Recomendaciones accionables, en orden de prioridad
+
+Reglas:
+- Nada de jerga técnica innecesaria
+- Todos los insights con el dato que los respalda
+- Si algo no queda claro en los datos, dímelo — no inventes
+- Si los datos son insuficientes para contestar mi pregunta 
+  inicial, señala qué falta
+
+Archivo adjunto.
+</code></pre>
+<hr />
+<h3 id="42-benchmarking-competitivo">4.2 Benchmarking competitivo</h3>
+<pre><code>Quiero analizar cómo se posiciona [[competidor o referencia]] 
+en comparación con [[mi empresa / mi segmento]].
+
+Contexto:
+- Mi negocio: [[breve]]
+- Por qué analizo a este competidor: [[referencia de 
+  aspiración / competencia directa / ambos]]
+- Qué decisión espero tomar con este análisis: [[objetivo]]
+
+Sigue el framework Monitorizar → Analizar → Decidir:
+
+MONITORIZAR
+- Cómo se presenta (comunicación oficial, canales, mensaje)
+- A qué cliente se dirige (segmento real, no declarado)
+- Qué experiencia / producto vende (más allá de features)
+- Qué precios maneja, si son públicos
+
+ANALIZAR
+- Qué hace bien — y por qué puede permitírselo
+- Dónde está atacando diferenciadores que deberían ser míos
+- Qué está ignorando (hueco de oportunidad)
+
+DECIDIR
+- 3 áreas donde yo puedo diferenciarme realmente
+- 2 áreas donde competir es absurdo (renunciar)
+- 1 jugada estratégica concreta para los próximos 12 meses
+
+Sé crítico. No quiero un informe para que quede bien. Quiero 
+uno para tomar decisiones difíciles.
+</code></pre>
+<hr />
+<h3 id="43-priorizar-una-lista-de-opciones-leads-tareas">4.3 Priorizar una lista de opciones / leads / tareas</h3>
+<pre><code>Te voy a pasar una lista de [[opciones / leads / tareas / 
+proyectos]]. Necesito priorizar.
+
+Contexto:
+- Qué son los elementos de la lista: [[describe]]
+- Criterio de priorización que quiero aplicar: [[impacto vs 
+  esfuerzo / valor económico / urgencia / etc.]]
+- Restricciones reales: [[tiempo disponible, recursos, límites]]
+
+Por cada elemento clasifícalo en:
+- A — atender ya / activar
+- B — atender con cadencia suave
+- C — descartar o automatizar
+
+Para los A: dame el ángulo concreto de acción (qué hacer, 
+cuándo, cómo)
+Para los B: propuesta de cadencia / secuencia ligera
+Para los C: justifica por qué no merecen el tiempo
+
+Sé honesto. El coste de oportunidad de trabajar en lo que no 
+va a funcionar es real. Prefiero un &quot;descarta&quot; claro que 
+un &quot;a ver si&quot;.
+
+Lista:
+[[PEGAR AQUÍ]]
+</code></pre>
+<hr />
+<h3 id="44-estresar-una-idea-antes-de-lanzarla">4.4 Estresar una idea antes de lanzarla</h3>
+<pre><code>Voy a [[lanzar / proponer / anunciar]] [[idea o proyecto]]. 
+Antes de seguir, quiero estresarla.
+
+Contexto completo:
+[[explica la idea, quién es el público, por qué crees que va 
+a funcionar, inversión que requiere]]
+
+Actúa como si fueras mi competidor más directo o mi cliente 
+más escéptico. Tu trabajo es buscar grietas.
+
+Dame:
+1. Los 5 argumentos más duros contra esta idea
+2. Las 3 objeciones que voy a recibir en cuanto la lance
+3. 2 riesgos que probablemente no he contemplado
+4. 1 forma de mejorar la propuesta para resistir todo lo 
+   anterior
+
+No me digas qué está bien. Sé brutal. Prefiero oírlo ahora 
+de ti que en público después.
+</code></pre>
+<hr />
+<h2 id="5-organizacion">5. Organización</h2>
+<h3 id="51-resumen-de-reunion-con-action-items">5.1 Resumen de reunión con action items</h3>
+<pre><code>Te voy a pegar la transcripción de una reunión. Necesito 
+convertirla en algo útil.
+
+Contexto:
+- Tipo de reunión: [[interna / cliente / proveedor / comité]]
+- Asistentes y su rol: [[si es relevante para el resumen]]
+- Para qué necesito el resumen: [[enviar al equipo / 
+  documentar / compartir con cliente]]
+
+Dame:
+
+1. Resumen ejecutivo (3-4 líneas)
+2. Decisiones tomadas (si queda claro quién las impulsó, 
+   indícalo)
+3. Tabla de action items:
+   - Qué
+   - Quién
+   - Para cuándo
+   - Si falta información, qué falta
+4. Temas aparcados (qué quedó sin decidir)
+5. Ideas sueltas que merece la pena guardar aunque no las 
+   trabajemos ahora
+
+Importante:
+- Ignora la conversación informal y las cortesías
+- Si hubo desacuerdo real entre participantes, dilo 
+  explícitamente, no lo maquilles
+- Si algo quedó confuso, márcalo &quot;pendiente de clarificar&quot;
+
+Transcripción:
+[[PEGAR AQUÍ]]
+</code></pre>
+<hr />
+<h3 id="52-convertir-conocimiento-tacito-en-sop">5.2 Convertir conocimiento tácito en SOP</h3>
+<p>Para documentar procesos que solo sabe hacer una persona del equipo.</p>
+<pre><code>Te voy a describir un proceso que hacemos en mi empresa. 
+Ayúdame a convertirlo en un SOP (Standard Operating 
+Procedure) claro para que cualquiera pueda seguirlo.
+
+Sobre el proceso:
+- Qué hace el proceso: [[descripción general]]
+- Cada cuánto se ejecuta: [[frecuencia]]
+- Quién lo hace actualmente: [[rol / persona]]
+- Quién debería poder hacerlo: [[futuro usuario del SOP]]
+- Qué pasa si sale mal: [[consecuencias — esto determina 
+  el nivel de detalle necesario]]
+
+Pasos tal como los hago yo hoy:
+[[escribe los pasos como los harías, aunque sea desordenado]]
+
+Conviértelo en un SOP que contenga:
+
+1. Objetivo del proceso (1 línea)
+2. Cuándo ejecutarlo (trigger)
+3. Inputs necesarios (qué información / accesos hacen falta 
+   antes de empezar)
+4. Paso a paso numerado, con:
+   - Qué hacer
+   - Cómo confirmar que se hizo bien
+   - Qué hacer si algo sale mal
+5. Output esperado
+6. Criterio de &quot;terminado&quot;
+7. FAQs: las 3 dudas que probablemente tenga quien ejecute 
+   por primera vez
+
+Si al leer mis pasos detectas ambigüedades o saltos lógicos, 
+márcalos con pregunta: &quot;Pregunta antes de documentar: ¿X?&quot;
+</code></pre>
+<hr />
+<h3 id="53-sintetizar-muchos-inputs-en-un-documento-interno">5.3 Sintetizar muchos inputs en un documento interno</h3>
+<p>Cuando tienes varios emails, notas sueltas, reuniones, y quieres un documento único.</p>
+<pre><code>Te voy a pasar varios inputs de distintos sitios sobre el 
+mismo tema. Necesito un documento interno único.
+
+Inputs (pégalos a continuación, separados por &quot;---&quot;):
+[[INPUT 1]]
+---
+[[INPUT 2]]
+---
+[[INPUT 3]]
+
+Contexto:
+- De qué trata todo esto: [[tema]]
+- Para qué voy a usar el documento: [[decisión, memoria 
+  interna, compartir con alguien concreto]]
+- Quién va a leerlo: [[audiencia]]
+
+Construye el documento así:
+
+1. Resumen ejecutivo (lo que haría falta leer si solo tienes 
+   1 minuto)
+2. Lo que tenemos claro (afirmaciones respaldadas por los 
+   inputs, con referencia a cuál)
+3. Lo que no sabemos todavía (preguntas abiertas, con dónde 
+   podríamos obtener la respuesta)
+4. Tensiones / contradicciones entre inputs (si distintas 
+   fuentes dicen cosas incompatibles, señálalo)
+5. Próximos pasos recomendados (en orden de prioridad)
+
+Si un input contradice a otro, NO lo escondas. Señálalo 
+y explica por qué puede estar pasando.
+</code></pre>
+<hr />
+<h2 id="meta-prompt-como-crear-tus-propios-prompts">Meta-prompt: cómo crear tus propios prompts</h2>
+<p>Cuando ninguno de los anteriores encaje exacto con lo que necesitas, usa este para que la IA te cree el prompt a medida:</p>
+<pre><code>Quiero que me ayudes a construir un prompt para otra IA.
+
+Objetivo de ese prompt:
+[[qué quiero conseguir — sé concreto, no abstracto]]
+
+Contexto del caso:
+[[información sobre mi situación, mi sector, lo que sé del 
+tema]]
+
+Restricciones conocidas:
+[[qué NO quiero que haga, longitud esperada, tono, etc.]]
+
+Constrúyeme el prompt siguiendo el framework CORF:
+- Contexto (claro, suficiente, sin sobrarme)
+- Objetivo (inequívoco)
+- Restricciones (lo que evita respuestas genéricas)
+- Formato (cómo quiero recibir la respuesta)
+
+Entrégame:
+1. El prompt final, listo para copiar
+2. Qué ajustaría si quiero un resultado más corto
+3. Qué ajustaría si quiero más profundidad
+4. Una versión &quot;lite&quot; del prompt para casos similares pero 
+   con menos contexto
+</code></pre>
+<hr />
+<h2 id="diferencias-entre-chatgpt-gemini-claude-copilot">Diferencias entre ChatGPT / Gemini / Claude / Copilot</h2>
+<table>
+<thead>
+<tr>
+<th>Caso de uso</th>
+<th>Mejor opción</th>
+<th>Por qué</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tareas variadas, uso diario</td>
+<td>ChatGPT</td>
+<td>Más versátil, ecosistema GPTs</td>
+</tr>
+<tr>
+<td>Gratis y potente</td>
+<td>Gemini</td>
+<td>Plan gratuito completo, Canvas incluido</td>
+</tr>
+<tr>
+<td>Textos largos, análisis documentos extensos</td>
+<td>Claude</td>
+<td>Ventana de contexto mayor, mejor razonamiento largo</td>
+</tr>
+<tr>
+<td>Integrado en Outlook / Excel / Word</td>
+<td>Copilot</td>
+<td>Nativo en Microsoft 365 si tienes licencia</td>
+</tr>
+<tr>
+<td>Research web profundo</td>
+<td>ChatGPT (modo agente o Deep Research)</td>
+<td>Autónomo, busca y sintetiza</td>
+</tr>
+<tr>
+<td>Generar imágenes</td>
+<td>ChatGPT o Gemini</td>
+<td>Ambos integran generación nativa</td>
+</tr>
+<tr>
+<td>Presentaciones automáticas</td>
+<td>Gemini Canvas o Gamma</td>
+<td>Visuales rápidos desde texto</td>
+</tr>
+</tbody>
+</table>
+    </article>
+
+    <section class="cta-block section-full">
+        <div class="cta-block-inner">
+            <div class="section-label">¿Siguiente paso?</div>
+            <h3>¿Queréis prompts específicos para vuestro caso?</h3>
+            <p>Hacemos workshops a medida para equipos que quieren operar con prompts diseñados para su sector y flujo de trabajo concreto.</p>
+            <a href="https://cal.com/jorge-guamis-360/llamada-de-diagnostico-360%C2%BA-consulting" class="btn btn-primary" target="_blank" rel="noopener">Reservar diagnóstico gratuito</a>
+        </div>
+    </section>
+
+    <div class="contact-strip">
+        <a href="mailto:jorge@360consulting.io">✉ jorge@360consulting.io</a>
+        <a href="https://linkedin.com/in/jorge-guamis" target="_blank" rel="noopener">🔗 LinkedIn</a>
+        <a href="https://wa.me/34654663771" target="_blank" rel="noopener">💬 WhatsApp</a>
+    </div>
+
+    <footer>
+        <img src="../assets/mark-yellow-clean.png" alt="360º">
+        <div>360º Degrees Consulting &mdash; Biblioteca de Recursos Excelenc-IA &mdash; 2026</div>
+        <div class="footer-links">
+            <a href="../prompts/">Prompts</a>
+            <a href="../toolkit/">Toolkit</a>
+            <a href="../framework/">Framework</a>
+            <a href="../roadmap/">Roadmap</a>
+            <a href="../datos/">Datos</a>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

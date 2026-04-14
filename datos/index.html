@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Guía de Análisis con IA — Excelenc-IA | 360º Consulting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/styles.css">
+    <style>
+        .page-hero {
+            position: relative;
+            overflow: hidden;
+        }
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 80% 50% at 50% 0%, var(--accent-glow) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .page-hero > * { position: relative; z-index: 1; }
+        .cta-block {
+            background: var(--bg-section);
+            padding: 64px 24px;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            text-align: center;
+        }
+        .cta-block-inner {
+            max-width: 640px;
+            margin: 0 auto;
+        }
+        .cta-block h3 {
+            font-family: var(--font-display);
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 14px;
+            line-height: 1.25;
+        }
+        .cta-block p {
+            color: var(--text-cream);
+            margin-bottom: 28px;
+            line-height: 1.7;
+        }
+        .download-card {
+            background: var(--bg-card);
+            border: 1px solid var(--accent);
+            border-radius: 10px;
+            padding: 24px 28px;
+            margin: 32px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            box-shadow: 0 0 40px rgba(244, 231, 17, 0.05);
+        }
+        .download-card-text strong {
+            color: var(--text-white);
+            font-weight: 500;
+            display: block;
+            margin-bottom: 4px;
+        }
+        .download-card-text span {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        @media (max-width: 600px) {
+            .download-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="page-hero">
+        <a class="breadcrumb" href="../">← Biblioteca de recursos</a>
+        <h1 class="page-title reveal">Guía de Análisis con IA</h1>
+        <p class="page-subtitle reveal reveal-delay-1">Cómo preguntarle a vuestros datos. 3 niveles de preguntas: descubrir el dataset, buscar patrones, decidir estratégicamente.</p>
+    </section>
+
+    <article class="prose">
+        <div class="download-card"><div class="download-card-text"><strong>Dataset de práctica</strong><span>CSV · Hotel Boutique Mallorca · 12 meses de datos operativos</span></div><a href="../assets/hotel-boutique-mallorca-datos.csv" class="btn btn-primary" download>Descargar CSV</a></div>
+        <p>Hay un Excel de ejemplo dentro de los materiales de la formación (<code>hotel-boutique-mallorca-datos.csv</code>). Esta guía no va de cómo hacer fórmulas. Va de qué preguntarle a la IA cuando le subes un dataset.</p>
+<hr />
+<h2 id="la-idea-central">La idea central</h2>
+<p>Los Excels no os dan trabajo. Os dan tiempo robado.</p>
+<p>Cada vez que abrís uno, lo primero que hacéis es la misma pelea: recordar fórmulas, ajustar rangos, maquetar una gráfica que no queda bien. Horas gastadas en algo que no aporta decisión ninguna.</p>
+<p>La IA invierte la relación. Subes el archivo, le haces preguntas en voz humana, obtienes la respuesta. Tu tiempo vuelve a lo que sí decide: qué hacer con la respuesta.</p>
+<p>Pero hay un truco. <strong>La calidad del análisis depende de la calidad de tus preguntas.</strong> Si preguntas flojo, obtienes "insights" genéricos. Si preguntas bien, obtienes material de consejo de dirección.</p>
+<p>Esta guía es el atajo para preguntar bien.</p>
+<hr />
+<h2 id="como-usar-la-guia">Cómo usar la guía</h2>
+<ol>
+<li><strong>Coge un Excel real tuyo</strong> (o usa el de ejemplo que te hemos pasado)</li>
+<li><strong>Súbelo a ChatGPT, Claude o Gemini</strong> — todos saben leer CSVs/Excel nativos</li>
+<li><strong>Empieza por las preguntas de nivel 1</strong> para que la IA "coja" el dataset</li>
+<li><strong>Ve subiendo de nivel</strong> según veas que las respuestas son útiles</li>
+<li><strong>Itera:</strong> si un análisis se queda corto, pide más. <em>"Profundiza en eso"</em>, <em>"dame los 3 datos que lo respaldan"</em>, <em>"hazlo por trimestres"</em></li>
+</ol>
+<p>Los prompts están pensados para pegar directamente. Solo adapta lo que esté entre <code>[[ ]]</code> si el dataset que subes es distinto al de ejemplo.</p>
+<hr />
+<h2 id="que-hay-en-el-excel-de-ejemplo">Qué hay en el Excel de ejemplo</h2>
+<p>Un año completo de datos operativos de un hotel boutique ficticio en Mallorca (12 meses, datos mensuales):</p>
+<table>
+<thead>
+<tr>
+<th>Columna</th>
+<th>Qué es</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Mes</code></td>
+<td>Enero a Diciembre</td>
+</tr>
+<tr>
+<td><code>Ocupacion_Pct</code></td>
+<td>Porcentaje de ocupación del hotel</td>
+</tr>
+<tr>
+<td><code>ADR_EUR</code></td>
+<td>Tarifa media diaria (Average Daily Rate)</td>
+</tr>
+<tr>
+<td><code>RevPAR_EUR</code></td>
+<td>Revenue por habitación disponible</td>
+</tr>
+<tr>
+<td><code>Ingresos_Total_EUR</code></td>
+<td>Ingresos totales del mes</td>
+</tr>
+<tr>
+<td><code>Noches_Vendidas</code></td>
+<td>Noches vendidas en el mes</td>
+</tr>
+<tr>
+<td><code>Habitaciones_Disponibles</code></td>
+<td>Inventario de noches disponibles</td>
+</tr>
+<tr>
+<td><code>Reservas_Directas_Pct</code></td>
+<td>% de reservas vía canal directo</td>
+</tr>
+<tr>
+<td><code>OTA_Pct</code></td>
+<td>% de reservas vía OTAs (Booking, Expedia, etc.)</td>
+</tr>
+<tr>
+<td><code>Valoracion_Google</code></td>
+<td>Nota media Google ese mes</td>
+</tr>
+<tr>
+<td><code>Coste_Personal_EUR</code></td>
+<td>Coste laboral del mes</td>
+</tr>
+<tr>
+<td><code>Coste_F&amp;B_EUR</code></td>
+<td>Coste de Food &amp; Beverage</td>
+</tr>
+</tbody>
+</table>
+<p>Todo ficticio. Diseñado para que se vean patrones claros (estacionalidad, relación precio-ocupación, evolución de directas vs OTAs).</p>
+<hr />
+<h2 id="nivel-1-entender-que-tengo-delante">Nivel 1 — Entender qué tengo delante</h2>
+<p>Empiezas por aquí cuando subes un dataset nuevo. El objetivo es que la IA (y tú) entendáis de qué va el archivo.</p>
+<h3 id="prompt-primera-lectura">🎯 Prompt: primera lectura</h3>
+<pre><code>Te acabo de subir un Excel con datos mensuales de un hotel. 
+Antes de entrar en análisis, quiero asegurarme de que has 
+entendido bien los datos.
+
+Dime:
+1. Qué variables hay en el dataset y qué significa cada una
+2. Rango temporal cubierto
+3. Cualquier anomalía o valor que te parezca raro 
+   (datos que no cuadren, ausencias, posibles errores)
+4. Qué tipo de análisis tiene sentido hacer con este archivo
+5. Qué falta aquí que sería útil tener
+
+No me des todavía insights. Solo asegúrate de que entendemos 
+lo mismo antes de empezar.
+</code></pre>
+<p>Este prompt es oro. Te evita que la IA se invente cosas después. Cuando te confirma que ha entendido bien, ya puedes empezar a preguntar.</p>
+<hr />
+<h3 id="prompt-resumen-en-30-segundos">🎯 Prompt: resumen en 30 segundos</h3>
+<pre><code>Dame el resumen de estos datos que leería un director general 
+en 30 segundos antes de una reunión.
+
+Formato:
+- 3 líneas de narrativa (el titular)
+- 3 cifras clave (la foto)
+- 1 pregunta que deberíamos estar haciéndonos
+</code></pre>
+<p>Lo uso antes de cualquier comité. Te quita la tensión de "¿habré mirado lo importante?".</p>
+<hr />
+<h2 id="nivel-2-buscar-patrones">Nivel 2 — Buscar patrones</h2>
+<p>Aquí es donde empieza a salir valor real. La IA no solo describe: detecta.</p>
+<h3 id="prompt-patrones-estacionales">🎯 Prompt: patrones estacionales</h3>
+<pre><code>Analiza la estacionalidad del hotel mes a mes. 
+
+Dime:
+1. Los 3 meses más rentables (en beneficio, no solo en ingresos)
+2. Los 3 meses más tensos (ocupación baja + coste alto)
+3. Dónde está la mayor oportunidad de mejora sin tocar la 
+   temporada alta
+4. Si hay algún patrón contraintuitivo que merece segunda 
+   lectura
+
+Sé conciso. Cada afirmación respaldada por un dato concreto 
+del archivo.
+</code></pre>
+<hr />
+<h3 id="prompt-analisis-de-directas-vs-otas">🎯 Prompt: análisis de directas vs OTAs</h3>
+<pre><code>Mira la evolución de reservas directas (Reservas_Directas_Pct) 
+vs OTAs (OTA_Pct) a lo largo del año.
+
+1. ¿Qué tendencia ves?
+2. ¿En qué meses dependemos más de OTAs y cuánto nos cuesta 
+   eso (asume 15-20% de comisión media)?
+3. Si tuviéramos que priorizar un solo mes para aumentar 
+   reservas directas, ¿cuál y por qué?
+4. ¿Qué dato adicional necesitaría para dar una recomendación 
+   más fina?
+</code></pre>
+<hr />
+<h3 id="prompt-relacion-precio-demanda">🎯 Prompt: relación precio-demanda</h3>
+<pre><code>Correlaciona ADR (tarifa media) con Ocupacion_Pct. 
+
+Dime:
+1. ¿El hotel está subiendo precios de forma coherente con la 
+   demanda?
+2. ¿Hay algún mes donde el precio sube pero la ocupación cae 
+   desproporcionadamente (señal de sobreprecio)?
+3. ¿Algún mes donde el precio no refleja el nivel de demanda 
+   (señal de estar dejando dinero encima de la mesa)?
+
+Preséntalo como análisis para revenue manager, no como clase 
+de estadística.
+</code></pre>
+<hr />
+<h2 id="nivel-3-decisiones-estrategicas">Nivel 3 — Decisiones estratégicas</h2>
+<p>La parte que más valor aporta. Dejas de "analizar datos" y empiezas a "tomar decisiones con datos".</p>
+<h3 id="prompt-informe-para-consejo">🎯 Prompt: informe para consejo</h3>
+<pre><code>Prepara un informe ejecutivo del año para presentar al consejo 
+del hotel la próxima semana.
+
+Estructura:
+1. Resumen ejecutivo (máx. 4 líneas)
+2. Los 5 hallazgos más relevantes con la cifra que los 
+   respalda
+3. Top 2 alertas (patrones que preocupan a futuro)
+4. Top 3 oportunidades (dónde hay margen real)
+5. Recomendaciones accionables en orden de prioridad, con 
+   impacto estimado
+
+Reglas:
+- Nada de jerga técnica gratuita
+- Cada insight con el dato que lo sostiene
+- Si algo no se puede contestar con los datos que tienes, 
+  dilo explícitamente
+- No inventes comparativas con &quot;la media del sector&quot; si no 
+  tienes la fuente
+
+Tono: ejecutivo, directo, listo para ser leído en voz alta 
+en la reunión.
+</code></pre>
+<p>Este prompt sustituye 2-3 horas de trabajo de un analista junior. Úsalo siempre que tengas que preparar una presentación con datos.</p>
+<hr />
+<h3 id="prompt-escenarios-que-pasaria-si">🎯 Prompt: escenarios "qué pasaría si"</h3>
+<pre><code>Voy a plantearte escenarios hipotéticos. Para cada uno, dame:
+- Impacto estimado en ingresos anuales
+- Impacto estimado en margen
+- Qué riesgos tiene esa decisión
+- Qué haría falta para validarlo antes de lanzarlo
+
+Escenarios:
+1. Subimos un 10% el ADR solo en los meses de menor ocupación 
+   (Ene-Feb-Nov)
+2. Conseguimos pasar del 54% al 60% de reservas directas 
+   anuales (asume ahorro de 17% de comisión)
+3. Reducimos el coste de F&amp;B un 8% manteniendo la valoración 
+   Google
+
+Sé honesto con lo que es razonable estimar y lo que sería 
+especular.
+</code></pre>
+<p>La IA aquí te hace de consultor estratégico. Si le pides que especule responsablemente, lo hace.</p>
+<hr />
+<h3 id="prompt-comparativa-que-deberiamos-hacer">🎯 Prompt: comparativa que deberíamos hacer</h3>
+<pre><code>Mirando estos datos, ¿qué comparación externa deberíamos estar 
+haciendo y no tenemos?
+
+Ejemplo: si nuestra ocupación media es X%, ¿contra qué 
+benchmark debería compararse? Mallorca premium? Boutique 
+España? Europa Mediterránea?
+
+Dame:
+1. Las 3 comparativas externas más valiosas
+2. Fuentes dónde conseguir cada una (STR, informes públicos, 
+   asociaciones)
+3. Qué decisión cambiaríamos si supiéramos que estamos por 
+   encima/por debajo en cada una
+</code></pre>
+<hr />
+<h2 id="tips-para-iterar-bien">Tips para iterar bien</h2>
+<p>La primera respuesta casi nunca es la final. Algunos patrones que funcionan:</p>
+<ul>
+<li><strong>"Profundiza en el punto 3."</strong> Para cuando algo te interesa pero se quedó en titular.</li>
+<li><strong>"Dame los 3 datos que lo respaldan."</strong> Cuando sospechas que la IA está generalizando.</li>
+<li><strong>"Hazlo por trimestres en vez de meses."</strong> Cambia la granularidad cuando el mes a mes despista.</li>
+<li><strong>"¿Cómo cambia el análisis si miramos solo temporada alta?"</strong> Filtra y ves patrones distintos.</li>
+<li><strong>"Enséñamelo en una tabla."</strong> Si la respuesta en texto es difícil de escanear.</li>
+<li><strong>"Dame el gráfico en Python/matplotlib."</strong> Si quieres un visual listo para copiar.</li>
+</ul>
+<hr />
+<h2 id="errores-que-matan-un-analisis">Errores que matan un análisis</h2>
+<ul>
+<li><strong>No revisar que la IA entendió los datos.</strong> Siempre Nivel 1 primero. Siempre.</li>
+<li><strong>Aceptar afirmaciones sin dato.</strong> Si dice "los márgenes han mejorado" sin decir de qué a qué, pide el número.</li>
+<li><strong>Preguntar sin contexto de decisión.</strong> <em>"¿Qué ves aquí?"</em> da respuesta flojas. <em>"¿Qué me contarías de esto a un inversor que quiere saber si somos rentables?"</em> da respuesta útil.</li>
+<li><strong>Ignorar las incoherencias.</strong> Si la IA dice <em>"los datos parecen contradictorios aquí"</em>, escucha. Suele tener razón.</li>
+<li><strong>Pedir un solo output.</strong> <em>"Dame resumen, tabla y gráfico"</em> es mejor que tres prompts.</li>
+</ul>
+<hr />
+<h2 id="de-excel-a-decision-en-10-minutos">De Excel a decisión en 10 minutos</h2>
+<p>Un workflow estándar que funciona siempre:</p>
+<pre><code>1. Subir Excel → Prompt Nivel 1 (3 min)
+   &quot;Asegúrate de que has entendido esto.&quot;
+
+2. Pregunta Nivel 2 relevante (2 min)
+   &quot;Qué patrón inesperado ves.&quot;
+
+3. Pregunta Nivel 3 de decisión (3 min)
+   &quot;Qué decisión recomendarías y por qué.&quot;
+
+4. Iteración final (2 min)
+   &quot;Dame esto en formato para presentar al consejo.&quot;
+</code></pre>
+<p>10 minutos. Un informe que antes te llevaba una mañana.</p>
+<hr />
+<h2 id="quereis-ir-mas-lejos-con-vuestros-datos">¿Queréis ir más lejos con vuestros datos?</h2>
+<p>Esto es lo que ya podéis hacer hoy, vosotros solos, con una herramienta de 20€/mes.</p>
+<p>El siguiente salto es <strong>Fase 2</strong>: una base de conocimiento conectada a vuestros datos reales. No subes el Excel cada vez. La IA ya conoce vuestra empresa. Le preguntas <em>"¿por qué hemos bajado ocupación en mayo comparado con el año pasado?"</em> y te responde cruzando vuestro histórico, vuestras campañas, vuestros reviews de Google.</p>
+<p>En 360º Consulting construimos este tipo de bases para empresas como la tuya</p>
+<p><strong>Si queréis explorar si tiene sentido en vuestro caso:</strong>
+📅 <a href="https://cal.com/jorge-guamis-360/llamada-de-diagnostico-360%C2%BA-consulting">Reservar diagnóstico gratuito (30 min)</a></p>
+    </article>
+
+    <section class="cta-block section-full">
+        <div class="cta-block-inner">
+            <div class="section-label">¿Siguiente paso?</div>
+            <h3>¿Queréis llevarlo al siguiente nivel?</h3>
+            <p>Conectar la IA a vuestros datos reales (no subir Excel cada vez) es Fase 2. Construimos esas bases para empresas del sector turismo premium.</p>
+            <a href="https://cal.com/jorge-guamis-360/llamada-de-diagnostico-360%C2%BA-consulting" class="btn btn-primary" target="_blank" rel="noopener">Reservar diagnóstico gratuito</a>
+        </div>
+    </section>
+
+    <div class="contact-strip">
+        <a href="mailto:jorge@360consulting.io">✉ jorge@360consulting.io</a>
+        <a href="https://linkedin.com/in/jorge-guamis" target="_blank" rel="noopener">🔗 LinkedIn</a>
+        <a href="https://wa.me/34654663771" target="_blank" rel="noopener">💬 WhatsApp</a>
+    </div>
+
+    <footer>
+        <img src="../assets/mark-yellow-clean.png" alt="360º">
+        <div>360º Degrees Consulting &mdash; Biblioteca de Recursos Excelenc-IA &mdash; 2026</div>
+        <div class="footer-links">
+            <a href="../prompts/">Prompts</a>
+            <a href="../toolkit/">Toolkit</a>
+            <a href="../framework/">Framework</a>
+            <a href="../roadmap/">Roadmap</a>
+            <a href="../datos/">Datos</a>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

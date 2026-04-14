@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Excelenc-IA — Biblioteca de Recursos | 360º Consulting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles.css">
+    <style>
+        /* ── Hero landing ── */
+        .hero {
+            min-height: 92vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            padding: 60px 24px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 60% at 50% 0%, var(--accent-glow) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 50% at 80% 100%, rgba(244, 231, 17, 0.03) 0%, transparent 50%);
+        }
+
+        .hero-grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(244, 231, 17, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(244, 231, 17, 0.02) 1px, transparent 1px);
+            background-size: 80px 80px;
+            mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 20%, transparent 70%);
+            -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 20%, transparent 70%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 860px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--accent);
+            border: 1px solid var(--border);
+            padding: 10px 24px;
+            margin-bottom: 40px;
+        }
+
+        .hero-logo {
+            margin-bottom: 28px;
+        }
+
+        .hero-logo img {
+            max-width: 320px;
+            width: 70vw;
+            height: auto;
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.4rem, 6vw, 4rem);
+            font-weight: 700;
+            color: var(--text-white);
+            line-height: 1.1;
+            margin-bottom: 20px;
+            margin-top: 12px;
+        }
+
+        .hero-title em {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .hero-sub {
+            font-size: 1.1rem;
+            color: var(--text-cream);
+            max-width: 620px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+
+        .hero-meta {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* ── Adopción ── */
+        .adoption {
+            background: var(--bg-section);
+            padding: 100px 24px;
+        }
+
+        .adoption-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .adoption-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .adoption-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 32px;
+            transition: border-color 0.3s ease;
+        }
+
+        .adoption-card:hover {
+            border-color: var(--border-hover);
+        }
+
+        .adoption-step {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .adoption-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 14px;
+        }
+
+        .adoption-card p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--text-cream);
+        }
+
+        @media (max-width: 900px) {
+            .adoption-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ── Resources grid ── */
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .resource-card {
+            display: block;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 36px 32px;
+            transition: all 0.3s ease;
+            color: inherit;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .resource-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent), transparent 60%);
+            opacity: 0.5;
+            transition: opacity 0.3s ease;
+        }
+
+        .resource-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-4px);
+            background: var(--bg-card-hover);
+        }
+
+        .resource-card:hover::before {
+            opacity: 1;
+        }
+
+        .resource-number {
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .resource-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.55rem;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 14px;
+        }
+
+        .resource-card p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--text-cream);
+            margin-bottom: 20px;
+        }
+
+        .resource-arrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+
+        .resource-arrow span {
+            transition: transform 0.3s ease;
+        }
+
+        .resource-card:hover .resource-arrow span {
+            transform: translateX(6px);
+        }
+
+        @media (max-width: 768px) {
+            .resources-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ── Gifts / GPTs ── */
+        .gifts {
+            background: var(--bg-section);
+            padding: 100px 24px;
+        }
+
+        .gifts-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .gift-card {
+            background: var(--bg-card);
+            border: 1px solid var(--accent);
+            border-radius: 12px;
+            padding: 32px;
+            box-shadow: 0 0 40px rgba(244, 231, 17, 0.05);
+        }
+
+        .gift-label {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--accent-text);
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .gift-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 12px;
+        }
+
+        .gift-card p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--text-cream);
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .gifts-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ── CTA final ── */
+        .final-cta {
+            padding: 120px 24px;
+            text-align: center;
+            position: relative;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 60% 50% at 50% 50%, var(--accent-glow) 0%, transparent 60%);
+        }
+
+        .final-cta-inner {
+            position: relative;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .final-cta h2 {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 700;
+            color: var(--text-white);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .final-cta p {
+            font-size: 1.05rem;
+            color: var(--text-cream);
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ── HERO ── -->
+    <section class="hero">
+        <div class="hero-grid"></div>
+        <div class="hero-content">
+            <div class="hero-badge">Spain Is Excellence · 21-22 Abril 2026</div>
+            <div class="hero-logo">
+                <img src="assets/logo-white.png" alt="360º Degrees Consulting">
+            </div>
+            <h1 class="hero-title">Excelenc-IA<br><em>Biblioteca de Recursos</em></h1>
+            <p class="hero-sub">Todo lo que habéis aprendido en la formación, al alcance de un clic. Prompts listos para copiar, herramientas recomendadas, y la hoja de ruta para lo que viene después.</p>
+            <div class="hero-meta">Jorge Guamis &amp; Adriana Mateos · 360º Consulting</div>
+        </div>
+    </section>
+
+    <!-- ── RUTA DE ADOPCIÓN ── -->
+    <section class="adoption section-full">
+        <div class="adoption-inner">
+            <div class="section-label reveal">Empieza aquí</div>
+            <h2 class="section-title reveal">Ruta de adopción</h2>
+            <p class="section-subtitle reveal reveal-delay-1">El error más común: instalar 10 herramientas y usar dos. Estos son los pasos que funcionan.</p>
+
+            <div class="adoption-grid">
+                <div class="adoption-card reveal reveal-delay-1">
+                    <div class="adoption-step">Semana 1</div>
+                    <h3>Imprescindibles</h3>
+                    <p>Un copiloto generalista (ChatGPT o Gemini) + una herramienta de transcripción (Fireflies o tl;dv). Con estas dos ya tenéis el 70% del valor.</p>
+                </div>
+                <div class="adoption-card reveal reveal-delay-2">
+                    <div class="adoption-step">Semana 2-3</div>
+                    <h3>Afinar</h3>
+                    <p>Configurar vuestro Co-Piloto personal (GPT o Gem) con el asistente que os hemos regalado. Añadir Gamma si preparáis presentaciones.</p>
+                </div>
+                <div class="adoption-card reveal reveal-delay-3">
+                    <div class="adoption-step">Semana 4+</div>
+                    <h3>Explorar</h3>
+                    <p>Probar el modo agente para investigación profunda. Tantear NotebookLM para bases de conocimiento personales. Ya estaréis listos para Fase 2.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── RECURSOS ── -->
+    <section>
+        <div class="section-label reveal">Materiales</div>
+        <h2 class="section-title reveal">Los 5 recursos</h2>
+        <p class="section-subtitle reveal reveal-delay-1">Cada uno pensado como material de consulta permanente. Volved tantas veces como haga falta.</p>
+
+        <div class="resources-grid">
+            <a href="prompts/" class="resource-card reveal reveal-delay-1">
+                <div class="resource-number">01 — Prompts</div>
+                <h3>Kit de Prompts por Workflow</h3>
+                <p>15 plantillas listas para pegar en ChatGPT, Gemini o Claude. Organizadas por workflow: comunicación, preparación, producción, análisis, organización.</p>
+                <div class="resource-arrow">Abrir <span>→</span></div>
+            </a>
+
+            <a href="toolkit/" class="resource-card reveal reveal-delay-2">
+                <div class="resource-number">02 — Herramientas</div>
+                <h3>Toolkit Mobile-First</h3>
+                <p>Qué instalar y para qué. Comparativa decisional ChatGPT vs Gemini vs Claude vs Copilot. Recomendaciones gratis + premium por cada workflow.</p>
+                <div class="resource-arrow">Abrir <span>→</span></div>
+            </a>
+
+            <a href="framework/" class="resource-card reveal reveal-delay-3">
+                <div class="resource-number">03 — Framework</div>
+                <h3>CORF — Pedirle bien a la IA</h3>
+                <p>Contexto, Objetivo, Restricciones, Formato. La meta-habilidad que multiplica la calidad de todo lo que pides. Con ejemplos, checklist y errores comunes.</p>
+                <div class="resource-arrow">Abrir <span>→</span></div>
+            </a>
+
+            <a href="roadmap/" class="resource-card reveal reveal-delay-4">
+                <div class="resource-number">04 — Roadmap</div>
+                <h3>De Co-Pilotos a Empresa Autónoma</h3>
+                <p>Fase 1 (donde estáis) → Fase 2 (bases de conocimiento) → Fase 3 (agentes autónomos). Casos concretos para hospitality, travel y eventos.</p>
+                <div class="resource-arrow">Abrir <span>→</span></div>
+            </a>
+
+            <a href="datos/" class="resource-card reveal reveal-delay-1" style="grid-column: 1 / -1;">
+                <div class="resource-number">05 — Datos</div>
+                <h3>Guía de Análisis con IA</h3>
+                <p>Cómo preguntarle a un Excel para sacarle valor real. 3 niveles de preguntas: descubrir, buscar patrones, decidir estratégicamente. Con dataset de práctica descargable.</p>
+                <div class="resource-arrow">Abrir <span>→</span></div>
+            </a>
+        </div>
+    </section>
+
+    <!-- ── REGALOS / GPTs ── -->
+    <section class="gifts section-full">
+        <div class="section-inner">
+            <div class="section-label reveal">Vuestros regalos</div>
+            <h2 class="section-title reveal">Dos GPTs preparados para vosotros</h2>
+            <p class="section-subtitle reveal reveal-delay-1">Acceso directo. Funcionan en ChatGPT (plan gratuito os deja usarlos hasta cierto volumen diario).</p>
+
+            <div class="gifts-grid">
+                <div class="gift-card reveal reveal-delay-1">
+                    <div class="gift-label">Gift 01</div>
+                    <h3>Better Prompter</h3>
+                    <p>Os construye el prompt CORF perfecto a partir de una idea en lenguaje natural. Ideal para cuando no queréis estructurar a mano o cuando la respuesta que recibís no termina de estar bien.</p>
+                    <a href="https://chatgpt.com/gpts" class="btn btn-primary" target="_blank" rel="noopener">Abrir Better Prompter</a>
+                </div>
+
+                <div class="gift-card reveal reveal-delay-2">
+                    <div class="gift-label">Gift 02</div>
+                    <h3>Creador de Asistentes</h3>
+                    <p>Os guía paso a paso para construir vuestro propio Co-Piloto personalizado. Os hace las 9 preguntas clave y os devuelve el texto listo para pegar en ChatGPT o Gemini.</p>
+                    <a href="https://chatgpt.com/gpts" class="btn btn-primary" target="_blank" rel="noopener">Abrir Creador de Asistentes</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── CTA FINAL ── -->
+    <section class="final-cta section-full">
+        <div class="final-cta-inner">
+            <div class="section-label reveal">¿Queréis ir más allá?</div>
+            <h2 class="reveal">Reservad un diagnóstico gratuito</h2>
+            <p class="reveal reveal-delay-1">30 minutos. Sin discurso de ventas. Entendemos vuestro negocio, detectamos los 3 quick wins más evidentes y os decimos honestamente si merece la pena avanzar.</p>
+            <a href="https://cal.com/jorge-guamis-360/llamada-de-diagnostico-360%C2%BA-consulting" class="btn btn-primary reveal reveal-delay-2" target="_blank" rel="noopener">Reservar diagnóstico</a>
+        </div>
+    </section>
+
+    <!-- ── CONTACT STRIP ── -->
+    <div class="contact-strip">
+        <a href="mailto:jorge@360consulting.io">✉ jorge@360consulting.io</a>
+        <a href="https://linkedin.com/in/jorge-guamis" target="_blank" rel="noopener">🔗 LinkedIn</a>
+        <a href="https://wa.me/34654663771" target="_blank" rel="noopener">💬 WhatsApp</a>
+    </div>
+
+    <!-- ── FOOTER ── -->
+    <footer>
+        <img src="assets/mark-yellow-clean.png" alt="360º">
+        <div>360º Degrees Consulting &mdash; Biblioteca de Recursos Excelenc-IA &mdash; 2026</div>
+        <div class="footer-links">
+            <a href="prompts/">Prompts</a>
+            <a href="toolkit/">Toolkit</a>
+            <a href="framework/">Framework</a>
+            <a href="roadmap/">Roadmap</a>
+            <a href="datos/">Datos</a>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

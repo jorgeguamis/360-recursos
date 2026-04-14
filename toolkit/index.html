@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Toolkit Mobile-First — Excelenc-IA | 360º Consulting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/styles.css">
+    <style>
+        .page-hero {
+            position: relative;
+            overflow: hidden;
+        }
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 80% 50% at 50% 0%, var(--accent-glow) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .page-hero > * { position: relative; z-index: 1; }
+        .cta-block {
+            background: var(--bg-section);
+            padding: 64px 24px;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            text-align: center;
+        }
+        .cta-block-inner {
+            max-width: 640px;
+            margin: 0 auto;
+        }
+        .cta-block h3 {
+            font-family: var(--font-display);
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 14px;
+            line-height: 1.25;
+        }
+        .cta-block p {
+            color: var(--text-cream);
+            margin-bottom: 28px;
+            line-height: 1.7;
+        }
+        .download-card {
+            background: var(--bg-card);
+            border: 1px solid var(--accent);
+            border-radius: 10px;
+            padding: 24px 28px;
+            margin: 32px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            box-shadow: 0 0 40px rgba(244, 231, 17, 0.05);
+        }
+        .download-card-text strong {
+            color: var(--text-white);
+            font-weight: 500;
+            display: block;
+            margin-bottom: 4px;
+        }
+        .download-card-text span {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        @media (max-width: 600px) {
+            .download-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="page-hero">
+        <a class="breadcrumb" href="../">← Biblioteca de recursos</a>
+        <h1 class="page-title reveal">Toolkit Mobile-First</h1>
+        <p class="page-subtitle reveal reveal-delay-1">Las herramientas que merecen vuestro tiempo. Organizadas por workflow. Con recomendación clara: qué instalar hoy y qué dejar para más tarde.</p>
+    </section>
+
+    <article class="prose">
+        
+        <p>Un mapa de las herramientas que merecen tu tiempo, organizado por lo que realmente vais a hacer con ellas. No un catálogo. Un itinerario.</p>
+<hr />
+<h2 id="como-usar-este-toolkit">Cómo usar este toolkit</h2>
+<ul>
+<li><strong>Leerlo te llevará 5 minutos.</strong> Está organizado por workflow, no por herramienta. Entras por lo que necesites hacer, no por el nombre del producto.</li>
+<li><strong>Cada workflow tiene una recomendación clara.</strong> Gratis para empezar + premium cuando compense pagar.</li>
+<li><strong>No instales todo.</strong> El error más común: descargar 10 apps y usar dos. Empieza por la ruta de adopción que marco abajo.</li>
+<li><strong>Los precios van en rango (€ / €€ / €€€)</strong> porque los concretos cambian cada pocos meses. Revisa la web de cada herramienta para la cifra exacta.</li>
+</ul>
+<div class="callout callout-tip"><div class="callout-title"><span>💡</span><span>Regla de oro</span></div><p>Una herramienta que no abres dos veces a la semana no está en tu stack. Está instalada.</p></div>
+
+<hr />
+<h2 id="ruta-de-adopcion-por-donde-empezar">Ruta de adopción — Por dónde empezar</h2>
+<h3 id="esta-semana-imprescindibles">Esta semana (imprescindibles)</h3>
+<ol>
+<li><strong>ChatGPT o Gemini</strong> — el copiloto generalista. Una sola. La que más uses a diario</li>
+<li><strong>Fireflies o tl;dv</strong> — dejar de perder lo que pasa en reuniones</li>
+</ol>
+<p>Con estas dos tenéis el 70% del valor de todo este programa. Todo lo demás se añade cuando las dominéis.</p>
+<h3 id="semana-2-3-afinar">Semana 2-3 (afinar)</h3>
+<ol start="3">
+<li>Configurar vuestro <strong>Co-Piloto personal</strong> (GPT o Gem). El asistente que sabe quién sois</li>
+<li>Añadir <strong>Gamma</strong> si preparáis presentaciones a menudo</li>
+</ol>
+<h3 id="semana-4-explorar">Semana 4+ (explorar)</h3>
+<ol start="5">
+<li>Probar <strong>modo agente / Deep Research</strong> para tareas de investigación que antes os llevaban horas</li>
+<li>Tantear <strong>NotebookLM</strong> para bases de conocimiento personales</li>
+</ol>
+<hr />
+<h2 id="herramientas-generalistas-cual-es-tu-copiloto">Herramientas generalistas — ¿Cuál es tu copiloto?</h2>
+<p>Las cuatro grandes. Todas hacen casi lo mismo. Pero no para todo son iguales.</p>
+<h3 id="chatgpt-openai">ChatGPT (OpenAI) — €€</h3>
+<p><strong>Elígela si:</strong> quieres la más versátil y uno solo te cuesta menos cabeza. Ecosistema de GPTs (asistentes personalizados), modo agente, Deep Research, generación de imágenes, análisis de datos. Todo bajo un mismo login.</p>
+<p><strong>La uso para:</strong> Mis tareas generales del día. Cuando no sé cuál usar, abro esta.</p>
+<p><strong>Ir a:</strong> <a href="https://chatgpt.com">chatgpt.com</a> · App iOS / Android</p>
+<hr />
+<h3 id="google-gemini-gratuito-muy-potente">Google Gemini — € (gratuito muy potente)</h3>
+<p><strong>Elígela si:</strong> no quieres pagar y ya vives en Google Workspace. El plan gratuito es mejor que el de ChatGPT. Gems (co-pilotos gratuitos) + Canvas (maquetación rápida de documentos) + integración nativa con Gmail / Docs / Drive.</p>
+<p><strong>La uso para:</strong> trabajos donde la IA tiene que leer mi Drive o editar un Doc. Para eso nadie la mejora.</p>
+<p><strong>Ir a:</strong> <a href="https://gemini.google.com">gemini.google.com</a> · App iOS / Android</p>
+<hr />
+<h3 id="claude-anthropic">Claude (Anthropic) — €€</h3>
+<p><strong>Elígela si:</strong> manejas textos largos, contratos, propuestas densas, documentos de 30+ páginas. La mejor ventana de contexto y el mejor razonamiento en tareas complejas. Más conservadora que las otras — comete menos alucinaciones.</p>
+<p><strong>La uso para:</strong> analizar documentos, revisar propuestas, redactar contenido de texto largo. Es mi favorita para negocios.</p>
+<p><strong>Ir a:</strong> <a href="https://claude.ai">claude.ai</a> · App iOS / Android</p>
+<hr />
+<h3 id="microsoft-copilot-licencia-microsoft-365">Microsoft Copilot — €€ (licencia Microsoft 365)</h3>
+<p><strong>Elígela si:</strong> tu empresa ya tiene Microsoft 365 Business y vivís en Outlook, Excel, Word. Es IA integrada dentro de tu correo, tu Excel, tus documentos. No hay que cambiar de ventana. Menos potente que el resto, pero más sencillo si ya estás en ese entorno.</p>
+<p><strong>Nota para equipos con Microsoft:</strong> Copilot en Outlook resume hilos largos y redacta respuestas. En Excel convierte datos en análisis con una frase. En Teams resume reuniones.</p>
+<p><strong>Ir a:</strong> <a href="https://copilot.microsoft.com">copilot.microsoft.com</a> · Integrado en apps M365</p>
+<hr />
+<h3 id="comparativa-decisional">Comparativa decisional</h3>
+<table>
+<thead>
+<tr>
+<th>Lo que quieres hacer</th>
+<th>Elige</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Una sola herramienta para todo</td>
+<td><strong>ChatGPT</strong></td>
+</tr>
+<tr>
+<td>No pagar nada y que sea buena</td>
+<td><strong>Gemini</strong></td>
+</tr>
+<tr>
+<td>Leer / escribir documentos largos</td>
+<td><strong>Claude</strong></td>
+</tr>
+<tr>
+<td>Que la IA viva dentro de Outlook y Excel</td>
+<td><strong>Copilot</strong></td>
+</tr>
+<tr>
+<td>GPTs personalizados</td>
+<td><strong>ChatGPT</strong></td>
+</tr>
+<tr>
+<td>Research autónomo con informe largo</td>
+<td><strong>ChatGPT (Deep Research)</strong> o <strong>Gemini</strong></td>
+</tr>
+<tr>
+<td>Privacidad corporativa máxima</td>
+<td><strong>Copilot</strong> (si empresa tiene licencia)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Mi recomendación si solo vas a pagar una:</strong> Claude. Si ya tenéis Microsoft 365 en la empresa: Copilot + Gemini gratuito para los Co-Pilotos personales.</p>
+<hr />
+<h2 id="workflow-1-reuniones-y-llamadas">Workflow 1 — Reuniones y llamadas</h2>
+<h3 id="recomendacion-gratuita-tldv">Recomendación gratuita: tl;dv</h3>
+<p><strong>Por qué:</strong> transcripciones ilimitadas en plan gratuito. Se conecta a Meet / Zoom / Teams y graba sin que tengas que hacer nada. Resume, saca action items, te manda el email.
+<strong>Primera tarea (5 min):</strong> Darse de alta, conectarlo a tu calendario, esperar a tu próxima reunión. Fin.
+<strong>Ir a:</strong> <a href="https://tldv.io">tldv.io</a></p>
+<h3 id="recomendacion-premium-fireflies">Recomendación premium: Fireflies — €€</h3>
+<p><strong>Por qué:</strong> más completo, mejor búsqueda dentro de meetings pasadas, integraciones con CRM, app móvil para grabar llamadas telefónicas con un botón. Lo que uso yo. El plan de pago es el que compensa — el gratis se queda corto rápido.
+<strong>Primera tarea (5 min):</strong> Darse de alta, conectar a calendario, instalar la app móvil. La próxima llamada telefónica importante: grábala.
+<strong>Ir a:</strong> <a href="https://app.fireflies.ai/login?referralCode=7XserLhZoP">https://app.fireflies.ai/login?referralCode=7XserLhZoP</a></p>
+<h3 id="alternativa-fisica-plaud-note-pago-unico-150">Alternativa física: Plaud Note — €€€ (pago único ~150€)</h3>
+<p><strong>Por qué:</strong> dispositivo que se pega al teléfono. Graba llamadas sin apps, sin conexión, sin líos. Pensado para quien tiene conversaciones constantes que no quiere perder.
+<strong>Para quién:</strong> directivos muy móviles, gente que negocia en persona, equipos comerciales.
+<strong>Ir a:</strong> <a href="https://plaud.ai">plaud.ai</a></p>
+<h3 id="truco-avanzado">Truco avanzado</h3>
+<p>Después de una reunión larga, pasa la transcripción por tu Co-Piloto personal con este prompt: <em>"De esta reunión, prepárame el email de seguimiento en mi tono, los action items del equipo y un post para LinkedIn si hay algo destacable."</em> </p>
+<hr />
+<h2 id="workflow-2-comunicacion-emails-textos-respuestas">Workflow 2 — Comunicación (emails, textos, respuestas)</h2>
+<h3 id="recomendacion-principal-tu-co-piloto-personal">Recomendación principal: tu Co-Piloto personal</h3>
+<p>Más que la herramienta, aquí importa el asistente. Un GPT o Gem configurado con tu empresa, tu sector, tu tono. Que sepa que trabajas en un hotel 5★ ahorra escribirlo en cada prompt.</p>
+<p><strong>Si todavía no tenéis uno:</strong> abrid el <strong>Creador de Asistentes</strong> (el GPT que os hemos regalado) y montaos el vuestro. Son 10 minutos.</p>
+<h3 id="integrado-en-outlook-microsoft-copilot">Integrado en Outlook: Microsoft Copilot</h3>
+<p>Si usas Outlook a diario, esto es lo que más tiempo te va a ahorrar. Resumir un hilo de 20 emails, redactar una respuesta, extraer action items de una conversación. Todo dentro del correo.</p>
+<h3 id="para-revisar-antes-de-enviar-claude">Para revisar antes de enviar: Claude</h3>
+<p>Pega el email que acabas de escribir. <em>"Revísalo como editor senior. Tono, coherencia, cosas que sobran. No reescribas — marca solo lo que hay que tocar."</em></p>
+<h3 id="truco-avanzado_1">Truco avanzado</h3>
+<p>Crea un GPT específico para respuestas comerciales, otro para comunicación interna, otro para redes. Cada uno con su tono. Cambias de "modo comunicación" con solo abrir el asistente correcto.</p>
+<hr />
+<h2 id="workflow-3-analisis-de-datos-excel-csv-numeros">Workflow 3 — Análisis de datos (Excel, CSV, números)</h2>
+<h3 id="recomendacion-principal-claude">Recomendación principal: Claude</h3>
+<p>Conéctalo a tu Excel. Hazle preguntas en lenguaje natural. <em>"¿Qué mes tuvimos mejor ocupación el año pasado? ¿Cuánto varió el ADR entre alta y baja temporada? Dame un 
+gráfico con la evolución mensual."</em> Te lo hace todo, sin fórmulas, sin jerga.</p>
+<h3 id="integrado-copilot-en-excel">Integrado: Copilot en Excel</h3>
+<p>Si Excel es donde pasáis la vida, Copilot dentro de Excel hace estas mismas preguntas sin tener que subirlo a ningún sitio. Requiere licencia Microsoft 365 Business.</p>
+<h3 id="primera-tarea-5-min">Primera tarea (5 min)</h3>
+<p>Coge un Excel que tengas hoy mismo abierto. Súbelo a ChatGPT. Hazle esta pregunta: <em>"Dame las 3 cosas que deberías saber de estos datos que no he visto yo todavía."</em></p>
+<hr />
+<h2 id="workflow-4-investigacion-y-research">Workflow 4 — Investigación y research</h2>
+<h3 id="para-research-rapido-chatgpt-deep-research">Para research rápido: ChatGPT Deep Research</h3>
+<p>Haz una pregunta compleja. <em>"Investiga cómo se posicionan los tres principales hoteles de lujo de la Costa del Sol frente a los de Mallorca y dime en qué se diferencian."</em> Te devuelve un informe con fuentes en 5-10 minutos. Lo que antes era un día entero.</p>
+<h3 id="alternativa-especializada-perplexity">Alternativa especializada: Perplexity — €</h3>
+<p><strong>Por qué:</strong> research en tiempo real con citas visibles. Más rápido que Deep Research para preguntas concretas que necesitan dato actualizado. Muy bueno para cuando necesitamos verificar fuentes.
+<strong>Ir a:</strong> <a href="https://perplexity.ai">perplexity.ai</a></p>
+<h3 id="para-preparar-reuniones-tu-co-piloto-prompt-preparame-en-5-minutos">Para preparar reuniones: tu Co-Piloto + prompt "Prepárame en 5 minutos"</h3>
+<p>En el Kit de Prompts tenéis el prompt exacto. Investiga a la persona, su empresa, noticias recientes, posibles conexiones. Antes de cada reunión importante.</p>
+<h3 id="truco-avanzado_2">Truco avanzado</h3>
+<p>Deep Research + Claude. Usa Deep Research para recopilar la información, Claude para sintetizarla y darte recomendaciones estratégicas encima.</p>
+<hr />
+<h2 id="workflow-5-presentaciones-y-visuales">Workflow 5 — Presentaciones y visuales</h2>
+<h3 id="recomendacion-gratuita-gemini-canvas">Recomendación gratuita: Gemini Canvas</h3>
+<p><strong>Por qué:</strong> dentro de Gemini, vas a herramientas → Canvas, le pasas tu texto + un prompt con el estilo que quieres, y te maqueta el documento. Bueno para documentos compartibles vía link. No tan fino para PDF.
+<strong>Primera tarea (5 min):</strong> coge una propuesta que tengas en Word. Pégala en Gemini. <em>"Maquetame esto en Canvas con este estilo: fondo claro, tipografía limpia, títulos en [tu color]."</em></p>
+<h3 id="recomendacion-premium-gamma">Recomendación premium: Gamma — €</h3>
+<p><strong>Por qué:</strong> la mejor para presentaciones profesionales con IA. Importa tu documento o parte de un prompt y te genera una presentación con diseño coherente, imágenes, iconos. El resultado es significativamente mejor que Canvas.
+<strong>Cuándo compensa pagar:</strong> si preparas presentaciones más de una vez al mes. Para uso puntual, la versión gratuita aguanta.
+<strong>Ir a:</strong> <a href="https://gamma.app">gamma.app</a></p>
+<h3 id="truco-avanzado_3">Truco avanzado</h3>
+<p>Flujo completo: Co-Piloto estructura el mensaje narrativo → Gamma lo convierte en presentación → tu Co-Piloto redacta el email de envío adaptado al destinatario. Una propuesta en 30 minutos.</p>
+<hr />
+<h2 id="workflow-6-imagenes-y-mockups">Workflow 6 — Imágenes y mockups</h2>
+<h3 id="recomendacion-generalista-chatgpt-o-gemini">Recomendación generalista: ChatGPT o Gemini</h3>
+<p>Ambos generan imágenes integradas. Suficiente para mockups rápidos, ilustraciones conceptuales, visuales para propuestas internas. Un prompt bien construido te da resultados decentes sin cambiar de herramienta.</p>
+<h3 id="recomendacion-premium-higgsfield">Recomendación premium: Higgsfield — €€</h3>
+<p><strong>Por qué:</strong> la generación de imágenes con calidad editorial. Para quien hace mockups serios, visuales de campañas, imágenes que van a publicarse. Curva de aprendizaje más alta que las otras pero la calidad no tiene comparación.
+<strong>Cuándo compensa:</strong> marketing de hoteles premium, propuestas a junta, catálogos, material de comunicación externa.
+<strong>Ir a:</strong> <a href="https://higgsfield.ai">higgsfield.ai</a></p>
+<h3 id="primera-tarea-5-min_1">Primera tarea (5 min)</h3>
+<p>En tu Co-Piloto: <em>"Prepárame el prompt para generar una imagen de [lo que quieras visualizar] en estilo editorial, iluminación natural, composición limpia. Dame 3 variantes."</em> Copia el prompt al generador de imágenes. Observa la diferencia entre prompt currado y prompt improvisado.</p>
+<hr />
+<h2 id="bonus-notebooklm">Bonus — NotebookLM</h2>
+<p><strong>Qué es:</strong> una base de conocimiento personal. Le subes hasta 50 fuentes (PDFs, webs, notas, vídeos) y te conviertes en el "experto" en ese tema. Le haces preguntas y te contesta solo con lo que hay en esas fuentes. Sin alucinaciones. Con citas.</p>
+<p><strong>Ejemplo real:</strong> subís vuestros manuales operativos, actas, informes sectoriales. Luego preguntáis: <em>"¿Qué acordamos con el proveedor X en junio? ¿Dónde aparece esa cláusula del contrato?"</em></p>
+<p>Esto es <strong>Fase 2</strong> del roadmap (bases de conocimiento inteligentes por departamento). Empezad aquí si queréis un avance.</p>
+<p><strong>Precio:</strong> gratis (de momento).
+<strong>Ir a:</strong> <a href="https://notebooklm.google.com">notebooklm.google.com</a></p>
+<hr />
+<h2 id="setup-primeros-15-minutos">Setup "primeros 15 minutos"</h2>
+<p>Cuando salgáis de la formación, haced esto antes de que el impulso se enfríe:</p>
+<ol>
+<li><strong>Instalar</strong> la app móvil de ChatGPT, Claude o Gemini (la que prefiráis)</li>
+<li><strong>Darse de alta</strong> en Fireflies o tl;dv con el calendario conectado</li>
+<li><strong>Abrir el Creador de Asistentes</strong> (el GPT que os hemos regalado) y empezar a montar vuestro Co-Piloto. Tardáis 10 minutos</li>
+<li><strong>Primer test:</strong> mañana por la mañana, pedirle al Co-Piloto que os resuma la agenda del día y os diga dónde le vais a dar prioridad</li>
+</ol>
+<p>Si hacéis esto en las próximas 24h, la adopción real se triplica.</p>
+<hr />
+<h2 id="que-no-hacer">Qué NO hacer</h2>
+<ul>
+<li>Instalar las 10 apps a la vez. Empezad con 2.</li>
+<li>Esperar a "entender bien la IA" antes de usarla. Se aprende usándola.</li>
+<li>Copiar lo que hace otro sin probarlo en tu contexto. Cada workflow cambia según cómo trabajas tú.</li>
+<li>Creer todo lo que la IA dice. Verificad datos críticos. Siempre.</li>
+<li>Pagar herramientas que usáis una vez al mes. Cancelad y volved a la gratuita.</li>
+</ul>
+<hr />
+<h2 id="quereis-ir-mas-alla">¿Queréis ir más allá?</h2>
+<p>Este toolkit es Fase 1. Co-Pilotos personales. Herramientas que os liberan 1-2 horas al día.</p>
+<p>Las siguientes fases son:
+- <strong>Fase 2:</strong> Bases de conocimiento por departamento que contestan preguntas estratégicas sobre vuestro negocio
+- <strong>Fase 3:</strong> Agentes autónomos y automatizaciones que se ejecutan sin vosotros delante</p>
+<p>Si queréis explorar cómo aplicarlo a vuestra empresa, en 360º Consulting hacemos un diagnóstico de 30 minutos gratuito. Analizamos dónde están los quick wins más evidentes en vuestro caso para poder escalar sin tener que contratar a más equipo.</p>
+<p><strong>Reservar diagnóstico gratuito:</strong>
+📅 <a href="https://cal.com/jorge-guamis-360/llamada-de-diagnostico-360%C2%BA-consulting">cal.com/jorge-guamis-360/llamada-de-diagnostico-360º-consulting</a></p>
+<hr />
+<h2 id="contacto">Contacto</h2>
+<p>📧 jorge@360consulting.io
+🔗 <a href="https://linkedin.com/in/jorge-guamis">linkedin.com/in/jorge-guamis</a>
+💬 +34 654 663 771</p>
+    </article>
+
+    <section class="cta-block section-full">
+        <div class="cta-block-inner">
+            <div class="section-label">¿Siguiente paso?</div>
+            <h3>¿Queréis implementar estas herramientas en vuestra empresa?</h3>
+            <p>Ayudamos a equipos a adoptar IA de forma estructurada, sin que 'todos prueben cosas distintas' y sin fricción técnica.</p>
+            <a href="https://cal.com/jorge-guamis-360/llamada-de-diagnostico-360%C2%BA-consulting" class="btn btn-primary" target="_blank" rel="noopener">Reservar diagnóstico gratuito</a>
+        </div>
+    </section>
+
+    <div class="contact-strip">
+        <a href="mailto:jorge@360consulting.io">✉ jorge@360consulting.io</a>
+        <a href="https://linkedin.com/in/jorge-guamis" target="_blank" rel="noopener">🔗 LinkedIn</a>
+        <a href="https://wa.me/34654663771" target="_blank" rel="noopener">💬 WhatsApp</a>
+    </div>
+
+    <footer>
+        <img src="../assets/mark-yellow-clean.png" alt="360º">
+        <div>360º Degrees Consulting &mdash; Biblioteca de Recursos Excelenc-IA &mdash; 2026</div>
+        <div class="footer-links">
+            <a href="../prompts/">Prompts</a>
+            <a href="../toolkit/">Toolkit</a>
+            <a href="../framework/">Framework</a>
+            <a href="../roadmap/">Roadmap</a>
+            <a href="../datos/">Datos</a>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
