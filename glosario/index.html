@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Glosario IA — Excelenc-IA | 360º Consulting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/styles.css">
+    <style>
+        .page-hero {
+            position: relative;
+            overflow: hidden;
+        }
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 80% 50% at 50% 0%, var(--accent-glow) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .page-hero > * { position: relative; z-index: 1; }
+        .cta-block {
+            background: var(--bg-section);
+            padding: 64px 24px;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            text-align: center;
+        }
+        .cta-block-inner {
+            max-width: 640px;
+            margin: 0 auto;
+        }
+        .cta-block h3 {
+            font-family: var(--font-display);
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 14px;
+            line-height: 1.25;
+        }
+        .cta-block p {
+            color: var(--text-cream);
+            margin-bottom: 28px;
+            line-height: 1.7;
+        }
+        .download-card {
+            background: var(--bg-card);
+            border: 1px solid var(--accent);
+            border-radius: 10px;
+            padding: 24px 28px;
+            margin: 32px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            box-shadow: 0 0 40px rgba(244, 231, 17, 0.05);
+        }
+        .download-card-text strong {
+            color: var(--text-white);
+            font-weight: 500;
+            display: block;
+            margin-bottom: 4px;
+        }
+        .download-card-text span {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        @media (max-width: 600px) {
+            .download-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="page-hero">
+        <a class="breadcrumb" href="../">← Biblioteca de recursos</a>
+        <h1 class="page-title reveal">Glosario IA</h1>
+        <p class="page-subtitle reveal reveal-delay-1">Los términos que hemos usado durante la formación, explicados sin rodeos. ChatGPT, GPT, Gem, agente, LLM, iterar, automatización.</p>
+    </section>
+
+    <article class="prose">
+        
+        <p>Los términos que hemos usado durante la formación, explicados sin rodeos.</p>
+<hr />
+<h2 id="las-herramientas-por-nombre">Las herramientas (por nombre)</h2>
+<p><strong>ChatGPT</strong> — herramienta de IA de OpenAI. La más extendida. Permite crear GPTs personalizados. Tiene plan gratuito, Go (8€/mes) y Plus (20€/mes).</p>
+<p><strong>Claude</strong> — herramienta de IA de Anthropic. Destaca en textos largos, análisis de documentos y razonamiento profundo. Plan gratuito y Pro (20€/mes).</p>
+<p><strong>Gemini</strong> — herramienta de IA de Google. Se integra con Google Workspace (Gmail, Drive, Docs). Plan gratuito muy completo. Advanced por 22€/mes.</p>
+<p><strong>Microsoft Copilot</strong> — IA integrada dentro de Outlook, Excel, Word, PowerPoint y Teams. No es una app nueva, sino una funcionalidad dentro de las herramientas de Microsoft que ya usáis. Requiere licencia Microsoft 365 Business.</p>
+<p><strong>Perplexity</strong> — herramienta de IA especializada en búsquedas y research. Cada respuesta viene con citas y fuentes verificables. Plan gratuito y Pro.</p>
+<hr />
+<h2 id="los-conceptos">Los conceptos</h2>
+<p><strong>LLM (Large Language Model)</strong> — la tecnología detrás de ChatGPT, Claude, Gemini, etc. Es el "cerebro" que entiende y genera texto. No necesitáis saber cómo funciona por dentro, solo cómo pedirle las cosas (para eso sirve CORF).</p>
+<p><strong>Prompt</strong> — la instrucción que le dais a la IA. Un prompt puede ser una frase simple o un bloque estructurado con CORF. La calidad del prompt determina la calidad de la respuesta.</p>
+<p><strong>Iterar</strong> — pedirle a la IA que mejore o ajuste su respuesta. <em>"Hazlo más corto"</em>, <em>"cambia el tono"</em>, <em>"céntrate en el punto 3"</em>. No hace falta empezar de cero: se le dice qué cambiar y lo corrige. Es parte normal del flujo de trabajo.</p>
+<p><strong>CORF</strong> — el framework que os hemos enseñado para estructurar cualquier prompt: <strong>C</strong>ontexto, <strong>O</strong>bjetivo, <strong>R</strong>estricciones, <strong>F</strong>ormato.</p>
+<hr />
+<h2 id="los-tipos-de-asistentes">Los tipos de asistentes</h2>
+<p>Todos son lo mismo en esencia: una IA con instrucciones personalizadas. Se llaman distinto según la plataforma.</p>
+<p><strong>GPT</strong> — en ChatGPT, un asistente personalizado con instrucciones, tono, conocimientos y comandos propios. Se crea desde el menú de ChatGPT o con el Creador de Asistentes que os hemos regalado.</p>
+<p><strong>Gem</strong> — en Gemini, lo equivalente a un GPT. Misma idea, distinta plataforma. Gratuito.</p>
+<p><strong>Co-Piloto</strong> — el término que usamos en la formación para referirnos a cualquier asistente personalizado (GPT o Gem) que ya conoce vuestro contexto y trabaja como un apoyo constante.</p>
+<p><strong>Chatbot</strong> — versión más limitada y antigua. Un programa que responde preguntas predefinidas (como los de soporte al cliente que te sacan de quicio). No es lo mismo que un GPT/Gem actual, que entiende contexto y genera respuestas originales.</p>
+<p><strong>Agente</strong> — un asistente que no solo responde, sino que <em>actúa</em>. Busca en internet, ejecuta tareas, navega webs, conecta herramientas. Es el siguiente nivel después de los Co-Pilotos (Fase 3 del roadmap).</p>
+<hr />
+<h2 id="las-automatizaciones">Las automatizaciones</h2>
+<p><strong>Automatización</strong> — cualquier tarea que se ejecuta sin que una persona tenga que hacerla manualmente cada vez. Desde un email que se envía automáticamente hasta un agente que monitoriza tu competencia a diario.</p>
+<p><strong>Workflow</strong> — una secuencia de pasos que se repite. Ejemplo: "recibir email de cliente → clasificar urgencia → preparar respuesta → enviar borrador para aprobación". Cuando ese workflow lo ejecuta la IA, es una automatización.</p>
+<p><strong>Base de conocimiento</strong> — un repositorio de documentos (SOPs, manuales, histórico, contratos) conectado a la IA para que pueda consultarlo y responder preguntas sobre vuestra empresa con datos reales, no inventados. Es la Fase 2 del roadmap.</p>
+<hr />
+<h2 id="resumen-rapido">Resumen rápido</h2>
+<table>
+<thead>
+<tr>
+<th>Término</th>
+<th>En una frase</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ChatGPT / Claude / Gemini / Copilot</td>
+<td>Herramientas de IA distintas. Todas hacen cosas parecidas.</td>
+</tr>
+<tr>
+<td>LLM</td>
+<td>La tecnología de fondo. No necesitáis entenderla.</td>
+</tr>
+<tr>
+<td>Prompt</td>
+<td>Lo que le decís a la IA.</td>
+</tr>
+<tr>
+<td>CORF</td>
+<td>Cómo estructurar un buen prompt.</td>
+</tr>
+<tr>
+<td>GPT / Gem</td>
+<td>Un asistente personalizado en ChatGPT / Gemini.</td>
+</tr>
+<tr>
+<td>Co-Piloto</td>
+<td>Nuestro nombre para un GPT/Gem que ya os conoce.</td>
+</tr>
+<tr>
+<td>Agente</td>
+<td>Un Co-Piloto que además actúa (Fase 3).</td>
+</tr>
+<tr>
+<td>Iterar</td>
+<td>Pedirle que ajuste su respuesta. Parte normal del proceso.</td>
+</tr>
+<tr>
+<td>Automatización</td>
+<td>Que algo se haga solo, sin vosotros.</td>
+</tr>
+<tr>
+<td>Base de conocimiento</td>
+<td>Vuestra info conectada a la IA (Fase 2).</td>
+</tr>
+</tbody>
+</table>
+    </article>
+
+    <section class="cta-block section-full">
+        <div class="cta-block-inner">
+            <div class="section-label">¿Siguiente paso?</div>
+            <h3>¿Queréis formación a medida para vuestro equipo?</h3>
+            <p>Adaptamos el programa Excelenc-IA al contexto específico de vuestra empresa. Mismo framework, vuestros casos reales.</p>
+            <a href="https://cal.com/jorge-guamis-360/llamada-de-diagnostico-360%C2%BA-consulting" class="btn btn-primary" target="_blank" rel="noopener">Reservar diagnóstico gratuito</a>
+        </div>
+    </section>
+
+    <div class="contact-strip">
+        <a href="mailto:jorge@360consulting.io">✉ jorge@360consulting.io</a>
+        <a href="https://www.linkedin.com/in/jorge-guamis" target="_blank" rel="noopener">🔗 LinkedIn</a>
+        <a href="https://wa.me/34654663771" target="_blank" rel="noopener">💬 WhatsApp</a>
+    </div>
+
+    <footer>
+        <img src="../assets/mark-yellow-clean.png" alt="360º">
+        <div>360º Degrees Consulting &mdash; Biblioteca de Recursos Excelenc-IA &mdash; 2026</div>
+        <div class="footer-links">
+            <a href="../prompts/">Prompts</a>
+            <a href="../toolkit/">Toolkit</a>
+            <a href="../framework/">Framework</a>
+            <a href="../roadmap/">Roadmap</a>
+            <a href="../datos/">Datos</a>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
