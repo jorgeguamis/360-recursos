@@ -1458,200 +1458,35 @@ Un placer."
 </script>
 
 <!-- ══════════════════════════════════════════════════
-     SPEAKER VIEW (press S to open in new window)
-     ══════════════════════════════════════════════════ -->
-<script>
-(() => {
-  const notesEl = document.getElementById('speaker-notes');
-  let ALL_NOTES = [];
-  try { ALL_NOTES = JSON.parse(notesEl.textContent || '[]'); } catch(e) {}
-
-  const stage = document.querySelector('deck-stage');
-
-  function getSlideLabel(i) {
-    const slides = stage._slides || [];
-    if (!slides[i]) return '';
-    return slides[i].getAttribute('data-label') || '';
-  }
-
-  let speakerWin = null;
-
-  function openSpeakerView() {
-    const i = stage.index || 0;
-    const total = (stage._slides || []).length;
-
-    speakerWin = window.open('', 'speaker-view', 'width=800,height=700,menubar=no,toolbar=no');
-    if (!speakerWin) { alert('Permite ventanas emergentes para la vista de presentador.'); return; }
-
-    speakerWin.document.write(`<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="utf-8">
-<title>Speaker Notes — Excelenc-IA</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Unbounded:wght@500;600&display=swap');
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { background: #0A0A0A; color: #e8e8e8; font-family: 'Jost', system-ui, sans-serif; font-weight: 300; padding: 32px; }
-  .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.12); }
-  .slide-num { font-family: 'Unbounded', system-ui; font-weight: 600; font-size: 28px; color: #F4E711; }
-  .slide-label { font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
-  .clock { font-size: 16px; color: rgba(255,255,255,0.4); font-variant-numeric: tabular-nums; }
-  .notes { font-size: 18px; line-height: 1.75; white-space: pre-wrap; word-wrap: break-word; color: #e8e8e8; max-width: 100%; }
-  .notes-container { flex: 1; overflow-y: auto; padding-right: 8px; }
-  .speaker-tag { display: inline-block; background: rgba(244,231,17,0.12); color: #F4E711; font-weight: 500; font-size: 13px; letter-spacing: 0.1em; padding: 4px 10px; border-radius: 4px; margin-bottom: 12px; }
-  .transition { display: block; margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(244,231,17,0.2); color: #F4E711; font-weight: 500; font-size: 14px; letter-spacing: 0.1em; }
-  .instruction { color: rgba(255,255,255,0.45); font-style: italic; }
-  .next-preview { margin-top: 24px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.08); color: rgba(255,255,255,0.35); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; }
-  .next-title { color: rgba(255,255,255,0.55); font-size: 16px; margin-top: 6px; text-transform: none; letter-spacing: 0; }
-</style>
-</head>
-<body>
-<div class="header">
-  <div>
-    <span class="slide-num" id="sv-num">${i+1} / ${total}</span>
-    <div class="slide-label" id="sv-label"></div>
-  </div>
-  <span class="clock" id="sv-clock"></span>
-</div>
-<div class="notes-container">
-  <div class="notes" id="sv-notes"></div>
-  <div class="next-preview" id="sv-next"></div>
-</div>
-<script>
-  function updateClock() {
-    const now = new Date();
-    document.getElementById('sv-clock').textContent = now.toLocaleTimeString('es-ES', {hour:'2-digit', minute:'2-digit', second:'2-digit'});
-  }
-  setInterval(updateClock, 1000);
-  updateClock();
-<\/script>
-</body></html>`);
-    speakerWin.document.close();
-
-    updateSpeakerView(i);
-  }
-
-  function formatNote(text) {
-    if (!text) return '<span style="color:rgba(255,255,255,0.3)">(sin notas)</span>';
-    // Highlight [JORGE], [ADRIANA], [JORGE + ADRIANA]
-    let html = text
-      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
-      .replace(/\[(JORGE|ADRIANA|JORGE \+ ADRIANA)[^\]]*\]/g, '<span class="speaker-tag">$&</span>')
-      .replace(/\[Instrucción:[^\]]+\]/g, '<span class="instruction">$&</span>')
-      .replace(/\[NOTA INTERNA:[^\]]+\]/g, '<span class="instruction">$&</span>')
-      .replace(/(→→→[^\n]*)/g, '<span class="transition">$1</span>');
-    return html;
-  }
-
-  function updateSpeakerView(i) {
-    if (!speakerWin || speakerWin.closed) return;
-    const total = (stage._slides || []).length;
-    const doc = speakerWin.document;
-    const numEl = doc.getElementById('sv-num');
-    const labelEl = doc.getElementById('sv-label');
-    const notesEl = doc.getElementById('sv-notes');
-    const nextEl = doc.getElementById('sv-next');
-    if (!numEl) return;
-
-    numEl.textContent = (i + 1) + ' / ' + total;
-    labelEl.textContent = getSlideLabel(i);
-    notesEl.innerHTML = formatNote(ALL_NOTES[i] || '');
-
-    // Next slide preview
-    if (i + 1 < total) {
-      nextEl.innerHTML = 'Siguiente →<div class="next-title">' + getSlideLabel(i + 1) + '</div>';
-    } else {
-      nextEl.innerHTML = 'Última slide';
-    }
-  }
-
-  // Listen for slide changes
-  stage.addEventListener('slidechange', (e) => {
-    updateSpeakerView(e.detail.index);
-  });
-
-  // Keyboard: S opens speaker view
-  document.addEventListener('keydown', (ev) => {
-    const t = ev.target;
-    if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
-    if (ev.metaKey || ev.ctrlKey || ev.altKey) return;
-    if (ev.key.toLowerCase() === 's') {
-      ev.preventDefault();
-      if (!speakerWin || speakerWin.closed) openSpeakerView();
-      else { speakerWin.focus(); updateSpeakerView(stage.index || 0); }
-    }
-  });
-})();
-</script>
-
-<!-- ══════════════════════════════════════════════════
-     NOTES EDITOR PANEL (press N to toggle)
+     SPEAKER VIEW (S) + NOTES EDITOR (N)
+     Nada visible para los asistentes.
      ══════════════════════════════════════════════════ -->
 <style>
   #notes-panel {
-    position: fixed;
-    top: 0; right: 0; bottom: 0;
+    position: fixed; top: 0; right: 0; bottom: 0;
     width: 520px; max-width: 100vw;
-    background: #0B0B0B;
-    border-left: 2px solid #F4E711;
+    background: #0B0B0B; border-left: 2px solid #F4E711;
     box-shadow: -8px 0 40px rgba(0,0,0,0.6);
-    z-index: 2147483600;
-    padding: 24px;
+    z-index: 2147483600; padding: 24px;
     display: flex; flex-direction: column;
-    font-family: 'Jost', system-ui, sans-serif;
-    color: #fff;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
+    font-family: 'Jost', system-ui, sans-serif; color: #fff;
+    transform: translateX(100%); transition: transform 0.3s ease;
   }
   #notes-panel.open { transform: translateX(0); }
-  #notes-panel h3 {
-    margin: 0 0 6px;
-    font-family: 'Unbounded', system-ui, sans-serif;
-    font-weight: 500; font-size: 14px;
-    letter-spacing: 0.12em; text-transform: uppercase;
-    color: #F4E711;
-  }
-  #notes-panel .sub {
-    font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
-    color: rgba(255,255,255,0.5); margin-bottom: 14px;
-  }
-  #notes-panel textarea {
-    flex: 1;
-    background: #141414;
-    border: 1px solid rgba(255,255,255,0.14);
-    border-radius: 6px;
-    color: #e8e8e8;
-    font-family: 'SF Mono', Monaco, 'Cascadia Mono', monospace;
-    font-size: 14px; line-height: 1.6;
-    padding: 16px; resize: none; outline: none;
-  }
+  #notes-panel h3 { margin: 0 0 6px; font-family: 'Unbounded', system-ui; font-weight: 500; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: #F4E711; }
+  #notes-panel .sub { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 14px; }
+  #notes-panel textarea { flex: 1; background: #141414; border: 1px solid rgba(255,255,255,0.14); border-radius: 6px; color: #e8e8e8; font-family: 'SF Mono', Monaco, monospace; font-size: 14px; line-height: 1.6; padding: 16px; resize: none; outline: none; }
   #notes-panel textarea:focus { border-color: #F4E711; }
-  #notes-panel .actions {
-    display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px;
-  }
-  #notes-panel button {
-    background: #141414;
-    border: 1px solid rgba(255,255,255,0.18);
-    color: #ccc; padding: 8px 14px; border-radius: 5px;
-    font-family: inherit; font-size: 13px;
-    cursor: pointer; transition: all 0.2s;
-  }
+  #notes-panel .actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  #notes-panel button { background: #141414; border: 1px solid rgba(255,255,255,0.18); color: #ccc; padding: 8px 14px; border-radius: 5px; font-family: inherit; font-size: 13px; cursor: pointer; transition: all 0.2s; }
   #notes-panel button:hover { border-color: #F4E711; color: #F4E711; }
-  #notes-panel button.primary {
-    background: #F4E711; color: #000; border-color: #F4E711; font-weight: 600;
-  }
+  #notes-panel button.primary { background: #F4E711; color: #000; border-color: #F4E711; font-weight: 600; }
   #notes-panel button.primary:hover { background: #F7EE5A; }
   #notes-panel button.danger:hover { border-color: #EF4444; color: #EF4444; }
-  #notes-panel .status {
-    margin-top: 8px; font-size: 12px; color: rgba(255,255,255,0.4); min-height: 16px;
-  }
+  #notes-panel .status { margin-top: 8px; font-size: 12px; color: rgba(255,255,255,0.4); min-height: 16px; }
   #notes-panel .status.ok { color: #F4E711; }
-
-  /* toggle y hint eliminados — no visibles para asistentes */
-
   input[type="file"]#import-file { display: none; }
-
-  @media print { #notes-panel, #notes-toggle, #notes-hint { display: none !important; } }
+  @media print { #notes-panel { display: none !important; } }
 </style>
 
 <div id="notes-panel">
@@ -1669,131 +1504,238 @@ Un placer."
   </div>
 </div>
 
-<!-- toggle y hint eliminados — no visibles para asistentes.
-     El panel sigue accesible con N para el formador. -->
-
 <script>
 (() => {
-  // ─── Load original notes from the embedded JSON ───
-  const notesEl = document.getElementById('speaker-notes');
-  let ORIGINAL = [];
-  try { ORIGINAL = JSON.parse(notesEl.textContent || '[]'); } catch(e) {}
+  // ─── Shared state ───
+  const notesJSON = document.getElementById('speaker-notes');
+  let ALL_NOTES = [];
+  try { ALL_NOTES = JSON.parse(notesJSON.textContent || '[]'); } catch(e) {}
 
-  const LS_KEY = 'excelencia-notes-v2';
   const stage = document.querySelector('deck-stage');
-  const panel = document.getElementById('notes-panel');
-  const toggle = document.getElementById('notes-toggle');
-  const textarea = document.getElementById('np-text');
-  const label = document.getElementById('np-label');
-  const status = document.getElementById('np-status');
+  const LS_KEY = 'excelencia-notes-v2';
+  let speakerWin = null;
+
+  // ─── Helpers (use public API + light DOM, not _slides) ───
+  function getSlides() {
+    return Array.from(document.querySelectorAll('deck-stage > section'));
+  }
+  function getSlideLabel(i) {
+    const slides = getSlides();
+    return slides[i] ? (slides[i].getAttribute('data-label') || 'Slide ' + (i+1)) : '';
+  }
+  function getTotal() { return stage.length; }
+  function getCurrent() { return stage.index; }
 
   function loadCustom() {
     try { return JSON.parse(localStorage.getItem(LS_KEY) || '{}'); } catch { return {}; }
   }
-  function saveCustom(map) {
-    localStorage.setItem(LS_KEY, JSON.stringify(map));
-  }
-
-  function currentIndex() {
-    return stage ? stage.index : 0;
-  }
-
-  function noteForSlide(i) {
+  function saveCustom(map) { localStorage.setItem(LS_KEY, JSON.stringify(map)); }
+  function getNoteText(i) {
     const custom = loadCustom();
-    if (custom[i] !== undefined) return { text: custom[i], isCustom: true };
-    return { text: ORIGINAL[i] || '', isCustom: false };
+    return custom[i] !== undefined ? custom[i] : (ALL_NOTES[i] || '');
   }
+  function isCustom(i) { return loadCustom()[i] !== undefined; }
+
+  function formatNoteHTML(text) {
+    if (!text) return '<span style="color:rgba(255,255,255,0.3)">(sin notas)</span>';
+    return text
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/\[(JORGE|ADRIANA|JORGE \+ ADRIANA)[^\]]*\]/g, '<span class="sv-speaker">$&</span>')
+      .replace(/\[Instrucción:[^\]]+\]/g, '<span class="sv-instruction">$&</span>')
+      .replace(/\[NOTA INTERNA:[^\]]+\]/g, '<span class="sv-instruction">$&</span>')
+      .replace(/(→→→[^\n]*)/g, '<span class="sv-transition">$1</span>');
+  }
+
+  // ═══════════════════════════════════════════════════
+  // SPEAKER VIEW (S) — opens in new window
+  // ═══════════════════════════════════════════════════
+  function openSpeakerView() {
+    const i = getCurrent();
+    const total = getTotal();
+
+    speakerWin = window.open('', 'speaker-view', 'width=900,height=750,menubar=no,toolbar=no');
+    if (!speakerWin) { alert('Permite ventanas emergentes para la vista de presentador.'); return; }
+
+    speakerWin.document.write(`<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<title>Speaker Notes — Excelenc-IA</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Unbounded:wght@500;600&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0A0A0A;color:#e8e8e8;font-family:'Jost',system-ui,sans-serif;font-weight:300;display:flex;flex-direction:column;height:100vh;overflow:hidden}
+.sv-header{display:flex;justify-content:space-between;align-items:center;padding:20px 28px;border-bottom:1px solid rgba(255,255,255,0.1);flex-shrink:0}
+.sv-num{font-family:'Unbounded',system-ui;font-weight:600;font-size:24px;color:#F4E711}
+.sv-label{font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-top:4px}
+.sv-clock{font-size:15px;color:rgba(255,255,255,0.35);font-variant-numeric:tabular-nums}
+.sv-nav{display:flex;gap:10px;padding:12px 28px;border-bottom:1px solid rgba(255,255,255,0.06);flex-shrink:0}
+.sv-nav button{background:#141414;border:1px solid rgba(255,255,255,0.15);color:#ccc;padding:8px 18px;border-radius:5px;font-family:inherit;font-size:13px;cursor:pointer;transition:all 0.15s}
+.sv-nav button:hover{border-color:#F4E711;color:#F4E711}
+.sv-body{flex:1;overflow-y:auto;padding:24px 28px}
+.sv-notes{font-size:17px;line-height:1.8;white-space:pre-wrap;word-wrap:break-word}
+.sv-speaker{display:inline-block;background:rgba(244,231,17,0.12);color:#F4E711;font-weight:500;font-size:13px;letter-spacing:0.08em;padding:3px 9px;border-radius:4px;margin-bottom:8px}
+.sv-instruction{color:rgba(255,255,255,0.4);font-style:italic}
+.sv-transition{display:block;margin-top:16px;padding-top:12px;border-top:1px solid rgba(244,231,17,0.2);color:#F4E711;font-weight:500;font-size:13px;letter-spacing:0.08em}
+.sv-next{margin-top:20px;padding:16px 20px;background:#111;border:1px solid rgba(255,255,255,0.06);border-radius:6px;flex-shrink:0;margin:0 28px 20px}
+.sv-next-label{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:6px}
+.sv-next-title{font-size:16px;color:rgba(255,255,255,0.6)}
+</style></head><body>
+<div class="sv-header">
+  <div><div class="sv-num" id="sv-num">${i+1} / ${total}</div><div class="sv-label" id="sv-label"></div></div>
+  <span class="sv-clock" id="sv-clock"></span>
+</div>
+<div class="sv-nav">
+  <button id="sv-prev">← Anterior</button>
+  <button id="sv-next-btn">Siguiente →</button>
+</div>
+<div class="sv-body"><div class="sv-notes" id="sv-notes"></div></div>
+<div class="sv-next"><div class="sv-next-label">Siguiente slide</div><div class="sv-next-title" id="sv-next-title"></div></div>
+<script>
+  // Clock
+  setInterval(()=>{document.getElementById('sv-clock').textContent=new Date().toLocaleTimeString('es-ES',{hour:'2-digit',minute:'2-digit',second:'2-digit'})},1000);
+  document.getElementById('sv-clock').textContent=new Date().toLocaleTimeString('es-ES',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
+
+  // Navigation buttons → tell main window to navigate
+  document.getElementById('sv-prev').addEventListener('click',()=>{window.opener&&window.opener.postMessage({type:'sv-nav',dir:'prev'},'*')});
+  document.getElementById('sv-next-btn').addEventListener('click',()=>{window.opener&&window.opener.postMessage({type:'sv-nav',dir:'next'},'*')});
+
+  // Keyboard in speaker view also navigates
+  document.addEventListener('keydown',(e)=>{
+    if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();window.opener&&window.opener.postMessage({type:'sv-nav',dir:'next'},'*')}
+    if(e.key==='ArrowLeft'){e.preventDefault();window.opener&&window.opener.postMessage({type:'sv-nav',dir:'prev'},'*')}
+  });
+
+  // Receive updates from main window
+  window.addEventListener('message',(e)=>{
+    const d=e.data;
+    if(d&&d.type==='sv-update'){
+      document.getElementById('sv-num').textContent=d.num;
+      document.getElementById('sv-label').textContent=d.label;
+      document.getElementById('sv-notes').innerHTML=d.notesHTML;
+      document.getElementById('sv-next-title').textContent=d.nextLabel;
+      document.querySelector('.sv-body').scrollTop=0;
+    }
+  });
+<\/script></body></html>`);
+    speakerWin.document.close();
+    updateSpeakerView(i);
+  }
+
+  function updateSpeakerView(i) {
+    if (!speakerWin || speakerWin.closed) return;
+    const total = getTotal();
+    const nextLabel = (i + 1 < total) ? getSlideLabel(i + 1) : '— Última slide —';
+    speakerWin.postMessage({
+      type: 'sv-update',
+      num: (i + 1) + ' / ' + total,
+      label: getSlideLabel(i),
+      notesHTML: formatNoteHTML(getNoteText(i)),
+      nextLabel: nextLabel,
+    }, '*');
+  }
+
+  // Listen for navigation commands FROM speaker view
+  window.addEventListener('message', (e) => {
+    const d = e.data;
+    if (d && d.type === 'sv-nav') {
+      if (d.dir === 'next') stage.next();
+      else if (d.dir === 'prev') stage.prev();
+    }
+  });
+
+  // Sync on every slide change
+  stage.addEventListener('slidechange', (e) => {
+    updateSpeakerView(e.detail.index);
+  });
+
+  // ═══════════════════════════════════════════════════
+  // NOTES EDITOR (N) — inline panel
+  // ═══════════════════════════════════════════════════
+  const panel = document.getElementById('notes-panel');
+  const textarea = document.getElementById('np-text');
+  const npLabel = document.getElementById('np-label');
+  const npStatus = document.getElementById('np-status');
 
   function loadIntoEditor() {
-    const i = currentIndex();
-    const { text, isCustom } = noteForSlide(i);
-    textarea.value = text;
-    const slides = stage._slides || [];
-    const slideLabel = slides[i] ? (slides[i].getAttribute('data-label') || '') : '';
-    label.textContent = `Slide ${i + 1} — ${slideLabel}${isCustom ? ' · editada' : ''}`;
-    status.textContent = '';
-    status.className = 'status';
+    const i = getCurrent();
+    textarea.value = getNoteText(i);
+    const custom = isCustom(i);
+    npLabel.textContent = 'Slide ' + (i+1) + ' — ' + getSlideLabel(i) + (custom ? ' · editada' : '');
+    npStatus.textContent = '';
+    npStatus.className = 'status';
   }
 
-  function openPanel() {
-    loadIntoEditor();
-    panel.classList.add('open');
-    setTimeout(() => textarea.focus(), 280);
-  }
+  function openPanel() { loadIntoEditor(); panel.classList.add('open'); setTimeout(() => textarea.focus(), 280); }
   function closePanel() { panel.classList.remove('open'); }
   function togglePanel() { panel.classList.contains('open') ? closePanel() : openPanel(); }
 
-  toggle.addEventListener('click', togglePanel);
   document.getElementById('np-close').addEventListener('click', closePanel);
 
   document.getElementById('np-save').addEventListener('click', () => {
-    const i = currentIndex();
+    const i = getCurrent();
     const custom = loadCustom();
     custom[i] = textarea.value;
     saveCustom(custom);
-    label.textContent = label.textContent.replace(/ · editada$/, '') + ' · editada';
-    status.textContent = '✓ Guardado en este navegador.';
-    status.className = 'status ok';
+    npLabel.textContent = 'Slide ' + (i+1) + ' — ' + getSlideLabel(i) + ' · editada';
+    npStatus.textContent = '✓ Guardado.'; npStatus.className = 'status ok';
   });
 
   document.getElementById('np-restore').addEventListener('click', () => {
-    const i = currentIndex();
-    if (!confirm('¿Restaurar la nota original de esta slide?')) return;
-    const custom = loadCustom();
-    delete custom[i];
-    saveCustom(custom);
-    textarea.value = ORIGINAL[i] || '';
-    label.textContent = label.textContent.replace(/ · editada$/, '');
-    status.textContent = '↻ Original restaurado.';
-    status.className = 'status ok';
+    const i = getCurrent();
+    if (!confirm('¿Restaurar la nota original?')) return;
+    const custom = loadCustom(); delete custom[i]; saveCustom(custom);
+    textarea.value = ALL_NOTES[i] || '';
+    npLabel.textContent = 'Slide ' + (i+1) + ' — ' + getSlideLabel(i);
+    npStatus.textContent = '↻ Restaurado.'; npStatus.className = 'status ok';
   });
 
   document.getElementById('np-export').addEventListener('click', () => {
     const custom = loadCustom();
-    // Merge: all notes (original + overrides)
     const merged = {};
-    ORIGINAL.forEach((n, i) => { merged[i] = custom[i] !== undefined ? custom[i] : n; });
-    Object.keys(custom).forEach(k => { merged[k] = custom[k]; });
+    ALL_NOTES.forEach((n, i) => { merged[i] = custom[i] !== undefined ? custom[i] : n; });
     const blob = new Blob([JSON.stringify(merged, null, 2)], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'excelencia-notas-' + new Date().toISOString().slice(0, 10) + '.json';
-    a.click();
-    URL.revokeObjectURL(url);
-    status.textContent = '↓ Exportado. Envíalo a Adriana para sincronizar.';
-    status.className = 'status ok';
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+    a.download = 'excelencia-notas-' + new Date().toISOString().slice(0,10) + '.json';
+    a.click(); URL.revokeObjectURL(a.href);
+    npStatus.textContent = '↓ Exportado.'; npStatus.className = 'status ok';
   });
 
   const fileInput = document.getElementById('import-file');
   document.getElementById('np-import-btn').addEventListener('click', () => fileInput.click());
   fileInput.addEventListener('change', async (ev) => {
-    const file = ev.target.files[0];
-    if (!file) return;
+    const file = ev.target.files[0]; if (!file) return;
     try {
-      const text = await file.text();
-      const data = JSON.parse(text);
-      const count = Object.keys(data).length;
-      if (!confirm(`Importar ${count} notas? Reemplaza las tuyas actuales.`)) return;
-      saveCustom(data);
-      loadIntoEditor();
-      status.textContent = `✓ ${count} notas importadas.`;
-      status.className = 'status ok';
-    } catch(e) { alert('Error al importar: ' + e.message); }
+      const data = JSON.parse(await file.text());
+      if (!confirm('Importar ' + Object.keys(data).length + ' notas?')) return;
+      saveCustom(data); loadIntoEditor();
+      npStatus.textContent = '✓ Importado.'; npStatus.className = 'status ok';
+    } catch(e) { alert('Error: ' + e.message); }
     finally { fileInput.value = ''; }
   });
 
-  // Reload when slide changes
   stage.addEventListener('slidechange', () => {
     if (panel.classList.contains('open')) loadIntoEditor();
   });
 
-  // Keyboard: N toggles panel
+  // ═══════════════════════════════════════════════════
+  // KEYBOARD (no visible UI)
+  // ═══════════════════════════════════════════════════
   document.addEventListener('keydown', (ev) => {
-    if (panel.classList.contains('open') && document.activeElement === textarea) return;
+    const t = ev.target;
+    if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
     if (ev.metaKey || ev.ctrlKey || ev.altKey) return;
-    if (ev.key.toLowerCase() === 'n') { ev.preventDefault(); togglePanel(); }
-    if (ev.key === 'Escape' && panel.classList.contains('open')) closePanel();
+
+    if (ev.key.toLowerCase() === 's') {
+      ev.preventDefault();
+      if (!speakerWin || speakerWin.closed) openSpeakerView();
+      else { speakerWin.focus(); updateSpeakerView(getCurrent()); }
+    }
+    if (ev.key.toLowerCase() === 'n') {
+      ev.preventDefault();
+      togglePanel();
+    }
+    if (ev.key === 'Escape' && panel.classList.contains('open')) {
+      closePanel();
+    }
   });
 })();
 </script>
