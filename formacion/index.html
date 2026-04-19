@@ -10,53 +10,561 @@
 <script src="deck-stage.js"></script>
 <script type="application/json" id="speaker-notes">
 [
-  "[JORGE + ADRIANA] Bienvenida. Presentaciones de Jorge y Adriana. \"Bienvenidos a la formación Excelenc-IA. En las próximas dos sesiones vamos a ver cómo la IA puede cambiar cómo trabajáis, no en teoría, sino en vuestro día a día concreto.\" Tiempo: 1-2 min.",
-  "[JORGE] \"Antes de empezar con herramientas, quiero que os llevéis una idea: en 2026 no gana quien sabe más de IA, gana quien la usa mejor. Por eso esta formación es radicalmente práctica. Cero teoría innecesaria. Todo lo que veamos tiene que caber en vuestro lunes por la mañana.\" ",
-  "[JORGE] Presentar las tres áreas de la Sesión 1: Bloque 1 prompting ejecutivo (aprender a pedir bien), Bloque 2 construir tu co-piloto, Bloque 3 cuatro problemas reales que puedes atacar desde mañana. Mañana en Sesión 2 pasamos de recuperar horas a convertirlas en ventaja competitiva.",
-  "[JORGE] Vista previa de la Sesión 2: presentaciones que convencen, datos sin dolor, inteligencia competitiva, kit IA y plan de acción. \"Ayer recuperamos horas. Mañana las convertimos en ventaja.\" No entrar en detalle — es solo un preview.",
-  "[JORGE] \"Vuestro tiempo como directivos vale X€ la hora. La IA cuesta céntimos. Ahora mismo estáis gastando inteligencia cara — vuestro criterio, vuestra experiencia, vuestras relaciones — en tareas que la inteligencia barata resuelve mejor y más rápido.\" Ejemplos: preparar propuesta (3-4h), resumir reunión (30 min de memoria), email de follow-up que se pospone... \"Cada una de estas tareas es necesaria. Pero ninguna requiere inteligencia humana de alto nivel.\" ",
-  "[JORGE] \"Cada tarea mecánica que hacéis tiene un coste oculto: el de no estar pensando en lo que de verdad mueve la aguja.\" Hoy vamos a poner nombre a esas tareas y a devolvérselas a la IA.",
-  "[JORGE] \"Un principio transversal en todo: la IA propone, el humano decide. Siempre. Ningún email sale sin revisión vuestra, ninguna propuesta se envía sin vuestro OK.\" Si algo os hace sentir que perdéis el control, estáis usando mal la herramienta.",
-  "Separador de Sesión 1. \"De la información al insight.\" Tres bloques: prompting, co-piloto, casos reales. Sin guion hablado — slide de transición.",
-  "[ADRIANA] \"Antes de tocar ninguna herramienta, hay una habilidad que lo cambia todo: saber pedir bien. Muchas veces la IA no falla porque no pueda hacer algo... falla porque no se lo estamos pidiendo bien. La responsabilidad de la calidad del resultado no es de la herramienta, es nuestra.\" ",
-  "[ADRIANA] \"Si os quedáis con una sola idea de estos dos días, que sea esta: saber pedir bien es una de las habilidades más importantes de esta década. Un prompt mediocre produce resultados mediocres. Un prompt bien construido produce trabajo a nivel de socio senior.\" ",
-  "[ADRIANA] \"Hace un par de años la estructura del prompt era mucho más compleja. Hoy con tener claro 4 conceptos es suficiente. CORF: Contexto, Objetivo, Restricciones, Formato. Siempre en este orden.\" Ir a explicar cada uno en la siguiente slide.",
-  "[ADRIANA] \"El contexto es todo lo que la IA necesita saber para entender la situación. Si no le das contexto, va a asumir... y normalmente va a asumir mal.\" Ejemplo sin contexto: \"Prepárame una reunión con un proveedor.\" Con contexto: \"Mañana tengo una reunión con un proveedor de Channel Manager para un hotel de 120 habitaciones en Mallorca con alta estacionalidad.\" ",
-  "[ADRIANA] \"El objetivo no es 'hacer la reunión'. Es qué quieres conseguir. Aquí es donde la mayoría de la gente se queda corta.\" Ejemplo débil: \"Ayúdame con el email.\" Ejecutivo: \"Escríbeme un email para reactivar a un cliente corporativo dormido, con una propuesta concreta de valor para Q4.\" ",
-  "[ADRIANA] \"Las restricciones son los límites: lo que no quieres que haga, o el tiempo que tienes, el tono que necesitas, el tipo de cliente. Esto evita respuestas genéricas.\" Importante: pensar en lo que NO queremos. Eso suele ser más útil que lo que sí queremos.",
-  "[ADRIANA] \"El formato es cómo quieres que te entregue la respuesta. Si no lo defines, te devuelve lo que quiera.\" Opciones: tabla, bullets, email listo para copiar, tres versiones etiquetadas A/B/C. Cierre: \"Esto es lo único que tenéis que llevaros de esta parte: si mejoráis cómo pedís, mejora automáticamente lo que obtenéis.\" ",
-  "[ADRIANA] Enseñar el ejemplo completo del prompt con CORF aplicado (director comercial hotel boutique Mallorca, cliente corporativo dormido 6 meses). \"Fijaos cómo se lee: parece casi un briefing. Esto es un prompt ejecutivo.\" Transición a Jorge: \"Y ahora vamos un paso más allá. Jorge os tiene preparada una sorpresa.\" ",
-  "[JORGE] Demo en vivo. Abrir Better Prompter (GPT). Explicar botones: crear prompt, mejorar prompt, sugerir prompts. \"Hoy nos centramos en crear un prompt, pero el resto también podéis utilizarlos.\" Demo: coger el mismo ejemplo del proveedor de Channel Manager, meterlo en Better Prompter, mostrar cómo el resultado es significativamente mejor. Ejercicio: cada asistente piensa en una tarea real de su semana y la transforma en prompt. Entregable: compartir enlace al Better Prompter GPT.",
-  "[ADRIANA] \"Ahora vamos a dar un paso más. Hasta ahora hemos hablado de cómo pedir mejor... pero lo potente es no tener que empezar desde cero cada vez. Para eso creamos un copiloto: un asistente que ya sabe quién eres, qué haces y cómo trabajas.\" NOTA INTERNA: ampliar la parte teórica de qué es un GPT (marcado en rojo por Adriana en doc original).",
-  "[ADRIANA] \"Crear un GPT es como contratar a una persona: le dices qué tiene que hacer, cómo lo tiene que hacer, y con qué información cuenta.\" Jorge puede contextualizar: \"Cuando contratáis a un trabajador humano, ¿quién os va a hacer mejor trabajo? Una agencia externa o la persona de RRHH interna que conoce la misión, la visión, el problema concreto? Con la IA es exactamente igual.\" ",
-  "[ADRIANA] \"Un buen asistente tiene tres capas: 1) Instrucciones (quién es, cómo habla, qué nunca hace), 2) Conocimiento (tus documentos: marca, procedimientos, casos), 3) Capacidades (web, código, imagen, archivos). Vamos a ver cómo montar las tres sin escribir una línea de código.\" ",
-  "[ADRIANA] Demo con conversación preparada: \"Luxury Hospitality Advisor\" — asesor estratégico para director de hotel 5★. Abrir Creador de Asistentes → botón Crear → seguir la conversación paso a paso explicando: objetivo principal, secundarios, estilo de escritura, reglas de oro, comandos, conocimientos (organigrama, SOPs, calendario eventos, tono de marca, propuesta de valor, competidores). Al acabar: copiar texto → pegar en ChatGPT → crear GPT en 3 clics. Entregable: enlace al Creador de Asistentes.",
-  "[ADRIANA] \"¿Y si no quiero pagar? Podemos crear GPTs con el plan Go de ChatGPT (8€/mes) o crear un Gem gratis en Gemini.\" Demo rápida Gemini Gem. \"Nuestra regla: elegid uno. Dominadlo antes de saltar al siguiente.\" ",
-  "[JORGE] \"Ahora que sabéis pedir bien y tenéis vuestro copiloto configurado, lo vamos a poner a trabajar en situaciones que reconocéis de vuestro día a día.\" Cuatro casos: reuniones, bandeja de entrada, research, conocimiento.",
-  "[JORGE] \"¿A cuántos os ha pasado tener una reunión y luego no acordaros de qué había que hacer exactamente? Levantar la mano. Con esta herramienta eso no os va a volver a pasar.\" Presentar Fireflies: se conecta a Meet/Zoom/Teams, graba, transcribe, resume automáticamente. Demo web: transcripción anonimizada con resumen, action items, keywords. Demo app móvil: \"Con darle a este botón podéis grabar cualquier llamada de teléfono.\" De 1 reunión → 5+ outputs.",
-  "[JORGE] Enseñar Fireflies por dentro en directo. Mostrar la transcripción real, el resumen automático, los action items. Mencionar alternativas de pasada (Plaud Note para reuniones presenciales, tl;dv como opción gratuita) sin entrar en detalle. \"Una herramienta, bien dominada, antes que tres a medias.\" ",
-  "[JORGE] Gemini, ChatGPT y Claude se integran de forma nativa con Gmail. Enseñar ejemplos rápidos de pasada, no pararnos aquí: \"Revisa mi bandeja de entrada de los últimos 7 días\", \"Sácame info de los correos sobre SIE\", redactar un correo rápido. El objetivo es que vean que la IA ya habla con su correo. Para Outlook: funciona igual copiando/pegando o con Copilot si tienen licencia M365.",
-  "[JORGE] Puente narrativo: \"Si es una reunión de seguimiento, la recuperamos de Fireflies. ¿Y si es un lead nuevo o alguien con quien no hemos hablado nunca?\" Enseñar la misma pregunta sobre SIE en tres herramientas: Perplexity (generalista, fuentes verificadas), ChatGPT (bien, algo de contexto), Claude (la más detallada, enlazada con tu empresa). Cierre del bloque: \"La clave es el contexto que le das.\" ",
-  "[JORGE] Dos partes. A) Scribe en directo: ejemplo creando un SOP en vivo (\"crear un GPT\"). Arrancar la extensión de Chrome y dejar que Scribe documente cada paso con screenshots anotadas. Enseñar el resultado. B) Qué hacer con la documentación: subirla a ChatGPT/Claude/Gemini (con sync a Drive si procede). Opción favorita: construir una base de conocimiento en NotebookLM — enseñar las posibilidades brevemente como preview de Fase 2.",
-  "[JORGE + ADRIANA] \"Antes de cerrar: una micro-tarea para la próxima sesión. Elegid la tarea que más tiempo os consume en vuestra semana. Resolvedla con vuestro Co-Piloto usando CORF. Traed el resultado el martes.\" Compartir instrucciones por chat/email. \"Esto genera accountability: cuando veáis que vuestro compañero ahorró 2 horas, la adopción se acelera.\" ",
-  "Separador de Sesión 2. \"De la ejecución a la ventaja competitiva.\" Cuatro bloques: presentaciones, datos, inteligencia, kit. Slide de transición.",
-  "[ADRIANA] Recap rápido: ayer — prompting ejecutivo (CORF), co-piloto personal, cuatro casos reales. Hoy: presentaciones, datos, inteligencia competitiva, kit IA.",
-  "[ADRIANA] \"Antes de seguir, quiero que veamos qué ha pasado entre sesiones. ¿Quién ha probado algo? ¿Qué habéis hecho? ¿Habéis intentado crear vuestro GPT personalizado? ¿Habéis probado el Better Prompter? ¿Qué ha funcionado? ¿Qué no?\" Esto no va de hacerlo perfecto... va de empezar. Ajustes rápidos a los Co-Pilotos si alguien tiene dudas.",
-  "[JORGE] Vista de lo que viene hoy: presentaciones, datos, inteligencia competitiva, kit IA. \"Todo construido sobre lo que ya dominasteis ayer.\" ",
-  "[ADRIANA] \"Aquí vamos a ver cómo usar IA para preparar presentaciones de forma más rápida y con más impacto.\" De un documento a un deck pulido sin perder la tarde.",
-  "[ADRIANA] \"El proceso tiene cuatro pasos: briefing, estructura, contenido, diseño. La IA hace los tres primeros; vosotros decidís el cuarto. Las dos primeras las hacemos con el copiloto de ayer.\" ",
-  "[ADRIANA] Tres herramientas recomendadas. Google Canvas para la fase de estructura y guion (iterar el esqueleto en lenguaje natural). Gamma para el diseño final rápido (pegar guion, elegir plantilla, exportar a PPT o PDF — 8€/mes). Claude Design para cuando la plantilla no basta: layouts hechos a mano, tono editorial propio, composiciones que no parecen de IA. \"Esta presentación que estáis viendo ahora mismo está hecha con Claude Design.\" \"¿Cuánto le tendríais que pagar a un diseñador solo para que os haga presentaciones? Esto os cuesta 8€ al mes.\" ",
-  "[JORGE] \"La mayoría de ejecutivos no necesitáis un curso avanzado de Excel. Necesitáis resolver 3 cosas: fórmulas que no recordáis, tablas que necesitáis reorganizar y gráficos que presentar a dirección.\" El Excel deja de ser un muro.",
-  "[JORGE] Mantener el concepto: \"Tratad Excel como una conversación.\" Enseñar brevemente la guía de análisis de 3 niveles que hemos preparado (descubrir, patrones, decidir). Dos caminos: A) Subir el Excel a ChatGPT, Gemini o Claude — preguntar en lenguaje natural, sin fórmulas. B) Claude integrado dentro del propio Excel — demo en directo con el CSV ficticio del hotel: pedirle que \"lo ponga bonito\", gráficos, análisis, etc. \"Tanto ChatGPT como Claude como Gemini tienen integración nativa con archivos.\" Para Microsoft: \"Si usáis Excel en entorno Microsoft, Copilot ya hace algo parecido dentro de Excel directamente.\" ",
-  "[ADRIANA] \"La mayoría de decisiones en hotelería... se toman sin saber exactamente qué está haciendo tu competencia directa. Y eso tiene impacto directo en ingresos.\" Esto no va de copiar, va de entender: por qué lo hace, para quién lo hace, qué puedes aprender.",
-  "[ADRIANA] Framework Monitorizar → Analizar → Decidir. Ejemplo Anantara Villa Padierna. Monitorizar: precios por temporada, tipo de cliente, experiencias, comunicación del lujo. \"No necesitamos mil datos. Necesitamos los correctos.\" Analizar: \"Ver que Anantara tiene precios altos no sirve de nada. Lo importante es entender por qué puede permitírselo.\" Frase clave: \"El precio es una consecuencia, no una estrategia.\" Decidir: \"¿Compito en precio o en propuesta? ¿Estoy comunicando bien el valor? ¿Qué parte de la experiencia puedo reforzar?\" \"No es copiar. Es decidir mejor.\" ",
-  "[ADRIANA] \"Montamos un radar semanal que mira competencia, tendencias y prensa, y entrega un briefing de tres páginas cada lunes. Antes era un analista dedicado (1 FTE). Ahora son quince minutos de revisión.\" Transición: \"Ahora, todo esto lo hacíamos a mano. Abrías 10 webs, comparabas, sacabas conclusiones... Ahora podéis hacerlo mucho más rápido.\" ",
-  "[JORGE] \"Voy a usar el modo agente de ChatGPT para hacer este análisis.\" Mostrar resultado pre-ejecutado del prompt de benchmarking de Anantara (el agente tarda demasiado para hacerlo en vivo). Enseñar el razonamiento por dentro: cómo el agente busca, compara, selecciona competidores, analiza y da recomendaciones. \"Fijaos: en 5 minutos ha hecho lo que a un analista le llevaría un día entero.\" \"Y esto lo hemos hecho con el prompt que preparamos usando el Better Prompter. ¿Veis cómo todo se conecta?\" ",
-  "[JORGE] \"Cerramos con el toolkit práctico que os lleváis a la oficina.\" Bloque final: apps móvil, roadmap, plan de acción.",
-  "[JORGE] \"A partir del lunes: la IA también vive en el móvil.\" Enseñar la guía/documento que hemos preparado con las apps recomendadas. ChatGPT, Gemini, Claude y Fireflies tienen app móvil completa. \"El 90% funciona desde el teléfono. Aeropuerto, tren, café.\" \"No os volváis locos: empezad con 1-2, no con las 10.\" Os dejamos una guía completa con todas las apps recomendadas en los materiales de la formación.",
-  "[JORGE] \"Lo que habéis aprendido es la Fase 1: Co-Pilotos.\" Roadmap: Fase 01 (30 días) Adopción — un prompt al día, un asistente personal. Fase 02 (90 días) Integración — flujos compartidos, plantillas de equipo, radar semanal. Fase 03 (180 días) Ventaja — procesos rediseñados, producto tocado por IA, decisiones con datos frescos. \"No saltéis fases.\" Para los que queráis ir más allá → 360º Consulting acompaña.",
-  "[JORGE] \"Antes de irnos: 3 hábitos IA que implementáis esta semana.\" 1) Un prompt ejecutivo al día (CORF siempre antes de escribir nada). 2) Un asistente propio esta semana (un rol, tres documentos, una instrucción). 3) Revisión los viernes (qué funcionó, qué automatizar la semana siguiente). \"Escribidlos ahora.\" Dejar 2-3 min para que escriban.",
-  "[JORGE + ADRIANA] \"Muchas gracias por vuestro tiempo y vuestra participación. Los materiales os los mandamos por email: Kit de Prompts, Toolkit, Framework CORF, Roadmap y Guía de Datos. Nosotros seguimos a un mensaje de distancia. jorge@360consulting.io.\" Despedida. Dejar slide en pantalla mientras hay preguntas sueltas."
+  "[JORGE + ADRIANA]
+
+Presentaciones de Jorge y Adriana. Bienvenida breve.
+
+\"Bienvenidos a la formación Excelenc-IA. En las próximas dos sesiones vamos a ver cómo la IA puede cambiar cómo trabajáis, no en teoría, sino en vuestro día a día concreto.\"
+
+\"El objetivo es que salgáis con algo útil, que podáis usar el lunes mismo.\"
+
+Tiempo: 1-2 minutos.
+
+→→→",
+  "[JORGE]
+
+\"Antes de empezar con herramientas, quiero que os llevéis una idea que va a cambiar cómo veis vuestro día a día.\"
+
+\"En 2026 no gana quien sabe más de IA, gana quien la usa mejor. Por eso esta formación es radicalmente práctica. Cero teoría innecesaria. Todo lo que veamos tiene que caber en vuestro lunes por la mañana.\"
+
+→→→",
+  "[JORGE]
+
+Presentar las tres áreas de la Sesión 1.
+
+\"Bloque uno: prompting ejecutivo — aprender a pedir bien. Bloque dos: construir vuestro propio copiloto. Bloque tres: cuatro problemas reales que podéis atacar desde mañana.\"
+
+\"Mañana, en la Sesión 2, pasamos de recuperar horas a convertir esas horas en ventaja competitiva.\"
+
+→→→",
+  "[JORGE]
+
+Vista previa de la Sesión 2. No entrar en detalle — es solo un preview.
+
+\"Ayer recuperamos horas. Mañana las convertimos en ventaja.\"
+
+→→→",
+  "[JORGE — 15 min]
+
+\"Vuestro tiempo como directivos vale X€ la hora. La IA cuesta céntimos. Ahora mismo estáis gastando inteligencia cara — vuestro criterio, vuestra experiencia, vuestras relaciones — en tareas que la inteligencia barata resuelve mejor y más rápido.\"
+
+\"Preparar una propuesta comercial: 3-4 horas. Resumir una reunión: 30 minutos reconstruyendo de memoria. Buscar datos para una decisión: pelear con Excel. Escribir un email de follow-up que se pospone porque hay 20 urgencias delante.\"
+
+\"Cada una de estas tareas es necesaria. Pero ninguna requiere inteligencia humana de alto nivel.\"
+
+\"Lo que vamos a hacer en estas dos sesiones es enseñaros a reasignar: que lo mecánico lo haga la máquina, para que vosotros os dediquéis a lo que realmente marca la diferencia — vender, cuidar clientes, pensar estrategia.\"
+
+→→→",
+  "[JORGE]
+
+\"Cada tarea mecánica que hacéis tiene un coste oculto: el de no estar pensando en lo que de verdad mueve la aguja.\"
+
+\"Hoy vamos a poner nombre a esas tareas y a devolverlas a la IA, que es donde pertenecen.\"
+
+→→→",
+  "[JORGE]
+
+\"Un principio que va a ser transversal en todo: la IA propone, el humano decide. Siempre.\"
+
+\"Ningún email sale sin revisión vuestra, ninguna propuesta se envía sin vuestro OK.\"
+
+\"Si alguna vez algo os hace sentir que perdéis el control, estáis usando mal la herramienta.\"
+
+Mini panorama herramientas (2 min):
+\"Rápidamente: ChatGPT (OpenAI), Gemini (Google), Claude (Anthropic), Microsoft Copilot (integrado en Office). Todos hacen cosas parecidas. Hoy trabajamos principalmente con ChatGPT, pero todo es transferible a las otras.\"
+
+→→→ Va Adriana",
+  "Separador visual.
+
+\"De la información al insight.\" Tres bloques: prompting, co-piloto, casos reales.
+
+Sin guion hablado — slide de transición.
+
+→→→",
+  "[ADRIANA]
+
+\"Antes de tocar ninguna herramienta, hay una habilidad que lo cambia todo: saber pedir bien.\"
+
+\"Muchas veces la IA no falla porque no pueda hacer algo... falla porque no se lo estamos pidiendo bien.\"
+
+\"Y aquí hay un cambio importante de mentalidad: la responsabilidad de la calidad del resultado no es de la herramienta, es nuestra.\"
+
+→→→",
+  "[ADRIANA]
+
+\"No se trata de hablarle bonito a la IA. Se trata de darle instrucciones claras.\"
+
+\"Si os quedáis con una sola idea de estos dos días, que sea esta: saber pedir es una de las habilidades más importantes de esta década.\"
+
+→→→",
+  "[ADRIANA]
+
+\"Hace un par de años la estructura del prompt era mucho más compleja y requería de una técnica muy concreta. Hoy con tener claro 4 conceptos es suficiente.\"
+
+\"CORF son cuatro cosas que tiene que tener cualquier petición bien hecha: Contexto, Objetivo, Restricciones, Formato.\"
+
+Ahora voy a explicar cada uno en detalle con un ejemplo concreto.
+
+→→→",
+  "[ADRIANA]
+
+\"El contexto es todo lo que la IA necesita saber para entender la situación.\"
+
+\"Si no le das contexto, va a asumir... y normalmente va a asumir mal.\"
+
+Ejemplo sin contexto: \"Prepárame una reunión con un proveedor.\"
+Con contexto: \"Mañana tengo una reunión con un proveedor de Channel Manager para un hotel de 120 habitaciones en Mallorca con alta estacionalidad.\"
+
+→→→",
+  "[ADRIANA]
+
+\"El objetivo no es 'hacer la reunión'. Es qué quieres conseguir.\"
+
+\"Aquí es donde la mayoría de la gente se queda corta.\"
+
+Ejemplo débil: \"Ayúdame con el email.\"
+Ejecutivo: \"Escríbeme un email para reactivar a un cliente corporativo dormido, con una propuesta concreta de valor para Q4.\"
+
+→→→",
+  "[ADRIANA]
+
+\"Las restricciones son los límites: lo que no quieres que haga, o el tiempo que tienes, el tono que necesitas.\"
+
+\"Esto evita respuestas genéricas.\"
+
+Importante: pensar en lo que NO queremos. Eso suele ser más útil que lo que sí queremos.
+
+Ejemplo: \"La reunión dura 30 minutos, no quiero entrar en temas técnicos, y necesito salir con una decisión clara.\"
+
+→→→",
+  "[ADRIANA]
+
+\"El formato es cómo quieres que te entregue la respuesta. Si no lo defines, te devuelve lo que quiera.\"
+
+Ejemplo: \"Dámelo en forma de guión con tiempos por bloque: apertura, preguntas clave, puntos de decisión.\"
+
+Cierre de la parte teórica:
+\"Esto es lo único que tenéis que llevaros de esta parte: si mejoráis cómo pedís, mejora automáticamente lo que obtenéis. CORF: Contexto, Objetivos, Restricciones y Formato.\"
+
+→→→",
+  "[ADRIANA]
+
+Enseñar el bloque completo del prompt con CORF aplicado. Cada componente en colores si la slide lo permite.
+
+\"Si juntamos todo, el mismo prompt cambia completamente.\"
+
+\"Vamos a copiar y pegar cada prompt en un chat nuevo y vemos qué nos devuelve.\"
+
+\"Está clara la diferencia, ¿no?\"
+
+Transición a Jorge:
+\"Y ahora, vamos un paso más allá. Jorge os tiene preparada una sorpresa con la que vais a cambiar radicalmente los resultados que obtenéis al preguntarle a la IA.\"
+
+→→→ Va Jorge",
+  "[JORGE — 15-20 min]
+
+\"Lo que acabáis de ver es que con CORF se consiguen resultados mucho mejores. Pero claro, tener que acordarse siempre de los cuatro componentes, escribir mucho... Para eso os hemos preparado algo.\"
+
+[Instrucción: Abrir Better Prompter (GPT). Explicar los botones: crear prompt, mejorar prompt, sugerir prompts, etc.]
+
+\"Hoy nos vamos a centrar en crear un prompt, pero el resto también podéis utilizarlos: este os mejora un prompt que ya tenéis, este os sugiere prompts para vuestro caso de uso...\"
+
+[Instrucción: Demo en vivo — coger el mismo ejemplo del proveedor de Channel Manager. Meterlo en Better Prompter. Mostrar cómo el resultado es significativamente mejor que hacerlo a mano.]
+
+\"¿Veis? Es como tener un experto en prompting al lado que os ayuda a formular cada petición.\"
+
+[Instrucción: Ejercicio rápido — cada asistente piensa en una tarea real de su semana y la transforma en prompt usando CORF o Better Prompter.]
+
+Entregable: Compartir enlace al Better Prompter GPT.
+
+→→→ Va Adriana",
+  "[ADRIANA — 25 min]
+
+\"Ahora vamos a dar un paso más.\"
+
+\"Hasta ahora hemos hablado de cómo pedir mejor... pero lo potente es no tener que empezar desde cero cada vez.\"
+
+\"Para eso creamos un copiloto: un asistente que ya sabe quién eres, qué haces y cómo trabajas.\"
+
+[NOTA INTERNA: Falta ampliar la parte teórica de qué es y para qué sirve un GPT — marcado en rojo por Adriana en el doc original]
+
+Jorge puede contextualizar:
+\"Cuando vosotros contratáis a un trabajador humano, ¿quién os va a hacer mejor trabajo? Una agencia externa que le decís 'búscame un recepcionista', o la persona de RRHH interna que conoce la misión, la visión, el problema concreto que queréis resolver? Con la IA es exactamente igual.\"
+
+→→→",
+  "[ADRIANA]
+
+\"Crear un GPT es como contratar a una persona:
+— le dices qué tiene que hacer
+— cómo lo tiene que hacer
+— y con qué información cuenta\"
+
+\"Voy a enseñaros cómo se construye esto por dentro.\"
+
+\"Ya habéis usado el GPT de Better Prompter. Ahora vamos a ver cómo se crea uno para lo que vosotros queráis.\"
+
+\"Vamos a imaginar un caso real: un director de hotel que constantemente tiene que responder clientes, preparar reuniones, coordinar equipo, revisar proveedores.\"
+
+\"Podemos crear GPTs con el plan Go de ChatGPT que son 8€ mensuales o crear un Gem gratis en Gemini.\"
+
+→→→",
+  "[ADRIANA]
+
+\"Un buen asistente tiene tres capas:
+1. Instrucciones — quién es, cómo habla, qué nunca hace.
+2. Conocimiento — tus documentos: marca, procedimientos, casos ganados.
+3. Capacidades — web, código, imagen, análisis de archivos.\"
+
+\"Vamos a ver cómo montar las tres sin escribir una línea de código.\"
+
+→→→",
+  "[ADRIANA]
+
+[Instrucción: Abrir Creador de Asistentes → botón \"Crear\" → conversación preparada.]
+
+Prompt del caso: \"Eres un asesor estratégico personal de alto nivel especializado en el sector de hospitalidad de lujo y clubes exclusivos.\"
+
+Ir siguiendo la conversación explicando cada paso:
+— Objetivo principal y secundarios
+— Estilo y reglas de escritura
+— Reglas de oro
+— Iniciadores de conversación / comandos
+— Conocimientos (organigrama, SOPs, calendario eventos, tono de marca, propuesta de valor, competidores)
+— Modelo recomendado
+— Funciones (búsqueda web, lienzo, imágenes, código)
+
+\"Si no tenéis estos documentos, no pasa nada. El propio Creador de Asistentes os puede ayudar a crearlos.\"
+
+Al acabar: copiar texto → pegar en ChatGPT → crear GPT en 3 clics.
+
+Entregable: Compartir enlace al Creador de Asistentes GPT.
+
+→→→",
+  "[ADRIANA]
+
+\"Cuando todo está definido, simplemente damos a 'Crear'... Y nos da la opción de que lo veas solo tú, cualquier persona con el enlace, o que lo publiques.\"
+
+\"Esto mismo lo hacemos en Google Gemini.\"
+
+[Instrucción: Demo rápida crear Gem en Gemini.]
+
+\"Nuestra regla: elegid uno. Dominadlo antes de saltar al siguiente.\"
+
+→→→ Va Jorge",
+  "[JORGE — 40 min]
+
+\"Ahora que sabéis pedir bien y tenéis vuestro copiloto configurado, lo vamos a poner a trabajar en situaciones que reconocéis de vuestro día a día.\"
+
+Cuatro casos:
+1. Nunca pierdas una conversación (Fireflies)
+2. Tu bandeja de entrada (Gmail)
+3. Research con contexto (3 herramientas)
+4. Documentar + base de conocimiento (Scribe + NotebookLM)
+
+→→→",
+  "[JORGE — 12 min]
+
+\"¿A cuántos os ha pasado tener una reunión y luego no acordaros de qué había que hacer exactamente? Levantar la mano.\"
+
+\"Con esta herramienta eso no os va a volver a pasar.\"
+
+[Instrucción: Presentar Fireflies — se conecta a Meet/Zoom/Teams, graba, transcribe, resume automáticamente.]
+
+[Instrucción: Demo web — mostrar transcripción real anonimizada con resumen, action items, keywords.]
+
+[Instrucción: Demo app móvil — \"Con darle a este botón podéis grabar cualquier llamada de teléfono. Reunión con proveedor en el café, llamada con cliente desde el taxi...\"]
+
+De 1 reunión → 5+ outputs:
+1. Follow-up para el cliente
+2. Action items para el equipo
+3. Contenido para redes
+4. Documentación interna
+5. Email resumen
+
+\"Y esto no es ciencia ficción, esto lo uso yo todos los días.\"
+
+→→→",
+  "[JORGE]
+
+[Instrucción: Enseñar Fireflies por dentro en directo. Mostrar la transcripción real, el resumen automático, los action items.]
+
+Mencionar alternativas de pasada (sin entrar en detalle):
+— Plaud Note: dispositivo físico, para reuniones presenciales
+— tl;dv: transcripciones ilimitadas en plan gratuito
+
+\"Si no queréis pagar de entrada, existe tl;dv. Y si os gusta el concepto de grabar llamadas de teléfono, buscad Plaud Note.\"
+
+\"Una herramienta, bien dominada, antes que tres a medias.\"
+
+→→→",
+  "[JORGE — 8 min]
+
+\"Gemini, ChatGPT y Claude se integran de forma nativa con Gmail.\"
+
+[Instrucción: Enseñar ejemplos rápidos de pasada, NO pararnos aquí. Tratamiento: de pasada.]
+
+Ejemplos en directo:
+— \"Revisa mi bandeja de entrada de los últimos 7 días.\"
+— \"Sácame info de los correos sobre SIE.\"
+— Redactar un correo rápido con el tono configurado.
+
+\"El objetivo es que veáis que la IA ya habla con vuestro correo.\"
+
+Para Outlook: \"Esto funciona igual copiando/pegando, o con Copilot si tenéis licencia M365.\"
+
+→→→",
+  "[JORGE — 8 min]
+
+Puente narrativo: \"Si es una reunión de seguimiento, la recuperamos de Fireflies. ¿Y si es un lead nuevo o alguien con quien no hemos hablado nunca?\"
+
+[Instrucción: Enseñar la misma pregunta sobre SIE en tres herramientas, una al lado de la otra.]
+
+Comparativa:
+— Perplexity → resultado generalista, fuentes verificadas
+— ChatGPT → bien, algo más de contexto
+— Claude → la más detallada, enlazada con tu empresa
+
+Cierre del bloque: \"La clave es el contexto que le das.\"
+
+→→→",
+  "[JORGE — 10 min]
+
+Dos partes.
+
+A) Scribe en directo:
+[Instrucción: Arrancar la extensión de Chrome. Ejemplo: \"crear un GPT\". Dejar que Scribe documente los pasos con screenshots automáticas. Enseñar el resultado.]
+
+\"Normalmente los SOPs son un coñazo de hacer. Con Scribe literalmente grabáis la pantalla mientras hacéis la tarea y se documenta solo.\"
+
+B) Qué hacer con la documentación:
+— Subirla a ChatGPT / Claude / Gemini (con sync a Drive si procede)
+— Opción favorita: NotebookLM — base de conocimiento consultable por todo el equipo
+
+[Instrucción: Enseñar brevemente NotebookLM como preview de Fase 2.]
+
+\"Ese SOP lo podéis meter en la base de conocimientos de vuestro copiloto. Ahora la IA sabe exactamente cómo hacer las cosas en vuestra empresa.\"
+
+→→→",
+  "[JORGE + ADRIANA — 5 min]
+
+\"Antes de cerrar: una micro-tarea para la próxima sesión.\"
+
+\"Elegid la tarea que más tiempo os consume en vuestra semana. Resolvedla con vuestro Co-Piloto usando el framework CORF. Traed el resultado el martes.\"
+
+[Instrucción: Compartir instrucciones escritas por chat/email.]
+
+\"Esto genera accountability: cuando veáis que vuestro compañero ahorró 2 horas en una propuesta, la adopción se acelera.\"
+
+→→→ FIN SESIÓN 1",
+  "Separador Sesión 2.
+
+\"De la ejecución a la ventaja competitiva.\"
+Cuatro bloques: presentaciones, datos, inteligencia competitiva, kit IA.
+
+→→→",
+  "[ADRIANA]
+
+Recap breve. Lo que hicimos ayer:
+— Prompting ejecutivo (CORF + Better Prompter)
+— Co-Piloto personal (GPT / Gem)
+— Cuatro casos reales (Fireflies, Gmail, research, Scribe)
+
+→→→",
+  "[ADRIANA — 10 min]
+
+\"Antes de seguir, quiero que veamos qué ha pasado entre sesiones.\"
+
+\"¿Quién ha probado algo?\"
+\"¿Qué habéis hecho?\"
+\"¿Habéis intentado crear vuestro GPT personalizado?\"
+\"¿Habéis probado el Better Prompter?\"
+\"¿Qué ha funcionado? ¿Qué no?\"
+
+\"Esto no va de hacerlo perfecto... va de empezar.\"
+
+[Instrucción: Ajustes rápidos a los Co-Pilotos si alguien tiene dudas.]
+
+→→→",
+  "[JORGE]
+
+Presentar los cuatro bloques de hoy: presentaciones, datos, inteligencia competitiva, kit IA.
+
+\"Todo construido sobre lo que ya dominasteis ayer.\"
+
+→→→ Va Adriana",
+  "[ADRIANA — 35 min]
+
+\"Aquí vamos a ver cómo usar IA para preparar presentaciones de forma más rápida y con más impacto.\"
+
+→→→",
+  "[ADRIANA]
+
+\"El proceso tiene cuatro pasos:\"
+
+1. Investigar interlocutor (con el co-piloto de ayer)
+2. Estructurar mensaje (con IA — narrativa, no bullets)
+3. Diseñar (con herramienta IA)
+4. Preparar seguimiento
+
+\"Las dos primeras las hacemos con el copiloto de ayer.\"
+
+→→→",
+  "[ADRIANA]
+
+Google Canvas (gratuita):
+\"Nos venimos a Gemini → herramientas → Canvas → le metemos el prompt. Importante: decirle que no cambie nuestro texto. Para guardarlo: PDF o link compartible.\"
+
+Gamma (8€/mes):
+\"Más profesional. Darse de alta, crear nuevo, importar archivo. Resultado mucho mejor calidad.\"
+
+Claude Design:
+\"Cuando la plantilla no basta: layouts hechos a mano, tono editorial propio. Esta presentación que estáis viendo ahora mismo está hecha con Claude Design.\"
+
+[Instrucción: Ejercicio práctico — generar presentación completa desde brief real en 20 min.]
+
+\"¿Cuánto le tendríais que pagar a un diseñador solo para que os haga presentaciones? Esto os cuesta 8€ al mes.\"
+
+→→→ Va Jorge",
+  "[JORGE — 25 min]
+
+\"La mayoría de ejecutivos no necesitáis un curso avanzado de Excel. Necesitáis resolver 3 cosas: fórmulas que no recordáis, tablas que necesitáis reorganizar y gráficos que presentar a dirección.\"
+
+\"La IA convierte eso en una conversación.\"
+
+→→→",
+  "[JORGE]
+
+\"Tratad Excel como una conversación, no como una hoja.\"
+
+[Instrucción: Enseñar brevemente la guía de análisis de 3 niveles que hemos preparado — descubrir, patrones, decidir.]
+
+Dos caminos:
+
+Camino A — Subir:
+\"Subís vuestro Excel a ChatGPT, Gemini o Claude. Preguntáis en lenguaje natural, sin fórmulas. Tablas dinámicas, gráficas, anomalías — en segundos.\"
+
+Camino B — Integrar:
+\"Claude integrado dentro del propio Excel. Sin subir archivos, sin cambiar de ventana.\"
+
+[Instrucción: Demo en directo con el CSV ficticio del hotel — pedirle que \"lo ponga bonito\", gráficos, análisis.]
+
+\"Tanto ChatGPT como Claude como Gemini tienen integración nativa con archivos.\"
+
+Para Microsoft: \"Si usáis Excel en entorno Microsoft, Copilot ya hace algo parecido dentro de Excel directamente.\"
+
+→→→ Va Adriana",
+  "[ADRIANA — 20 min]
+
+\"La mayoría de decisiones en hotelería... se toman sin saber exactamente qué está haciendo tu competencia directa.\"
+
+\"Y cuando hablamos de hoteles como Anantara Villa Padierna... eso tiene impacto directo en ingresos.\"
+
+\"Porque no estás compitiendo solo en precio... estás compitiendo en posicionamiento, experiencia y percepción de valor.\"
+
+→→→",
+  "[ADRIANA]
+
+Reframe: \"Esto no va de copiar lo que hace Anantara. Va de entender: por qué lo hace, para quién lo hace, y qué puedes aprender tú de eso.\"
+
+Framework: Monitorizar → Analizar → Decidir.
+
+1. MONITORIZAR: \"No necesitamos mil datos. Necesitamos los correctos.\"
+— Precios por temporada
+— Tipo de cliente
+— Experiencias que vende
+— Cómo comunica el lujo
+\"Monitorizar no es mirar por mirar. Es mirar con intención.\"
+
+2. ANALIZAR: \"Ver que Anantara tiene precios altos no sirve de nada. Lo importante es entender por qué puede permitírselo.\"
+— Posicionamiento ultra premium
+— Cliente internacional
+— Experiencia completa, no solo estancia
+Frase clave: \"El precio es una consecuencia... no una estrategia.\"
+
+3. DECIDIR: \"¿Compito en precio o en propuesta? ¿Estoy comunicando bien el valor? ¿Qué parte de la experiencia puedo reforzar?\"
+\"No es copiar. Es decidir mejor.\"
+
+→→→",
+  "[ADRIANA]
+
+\"Montamos un radar semanal que mira competencia, tendencias y prensa, y entrega un briefing de tres páginas cada lunes. Antes era un analista dedicado. Ahora son quince minutos de revisión.\"
+
+Transición a demo:
+\"Ahora, todo esto... lo hacíamos a mano. Abrías 10 webs, comparabas, sacabas conclusiones... Ahora podéis hacerlo mucho más rápido.\"
+
+→→→ Va Jorge",
+  "[JORGE — 5 min]
+
+\"Voy a usar el modo agente de ChatGPT para hacer este análisis.\"
+
+[Instrucción: Mostrar resultado pre-ejecutado del prompt de benchmarking de Anantara. El agente tarda demasiado para hacerlo en vivo. Enseñar el razonamiento por dentro: cómo el agente busca, compara, selecciona competidores, analiza y da recomendaciones.]
+
+\"Fijaos: en 5 minutos ha hecho lo que a un analista le llevaría un día entero. Ha seleccionado competidores, comparado precios, analizado posicionamiento, y os da recomendaciones estratégicas concretas.\"
+
+\"Y esto lo hemos hecho con el prompt que preparamos usando el Better Prompter. ¿Veis cómo todo se conecta?\"
+
+→→→",
+  "[JORGE — 25 min]
+
+\"Cerramos con el toolkit práctico que os lleváis a la oficina.\"
+
+→→→",
+  "[JORGE]
+
+\"A partir del lunes: la IA también vive en el móvil.\"
+
+[Instrucción: Enseñar la guía/documento que hemos preparado con las apps recomendadas y cómo tenerlas en el teléfono.]
+
+Apps: ChatGPT, Gemini, Claude, Fireflies — todas tienen app móvil completa.
+
+\"El 90% funciona desde el móvil. Aeropuerto, tren, café.\"
+
+\"No os volváis locos: empezad con 1-2, no con las 10.\"
+
+\"Os dejamos una guía completa con todas las apps en los materiales de la formación.\"
+
+Funciones del \"+\" en ChatGPT (1 min):
+\"Si le dais al + a la izquierda del chat, veréis Deep Research, Canvas, Estudiar y aprender... Que sepáis que están ahí.\"
+
+Diferencias herramientas (1 min):
+\"ChatGPT es la más versátil, Gemini se integra con Google, Claude es excelente para textos largos, Microsoft Copilot se integra en Outlook/Excel/Word. Os dejamos un cuadro resumen en los materiales.\"
+
+→→→",
+  "[JORGE]
+
+\"Lo que habéis aprendido es la Fase 1: Co-Pilotos. Es el primer paso del camino.\"
+
+\"Fase 2: Bases de conocimiento inteligentes por departamento. Sistemas que responden preguntas como '¿por qué perdemos clientes en Q4?' o '¿qué patrones predicen una reserva de alto valor?'\"
+
+\"Fase 3: Agentes y automatizaciones. Workflows que se ejecutan solos: prospección automática, atención al cliente 24/7, reporting sin intervención humana.\"
+
+\"No saltéis fases.\"
+
+\"Para los que queráis ir más allá, 360º Consulting acompaña en ese camino.\"
+
+→→→",
+  "[JORGE]
+
+\"Antes de irnos: 3 hábitos IA que implementáis esta semana. Con fecha concreta de revisión. Escribidlos ahora.\"
+
+1. Un prompt ejecutivo al día. CORF siempre, antes de escribir nada.
+2. Un asistente propio esta semana. Un rol, tres documentos, una instrucción.
+3. Revisión los viernes. Qué funcionó, qué automatizar la semana siguiente.
+
+[Instrucción: Dejar 2-3 min para que lo escriban.]
+
+→→→",
+  "[JORGE + ADRIANA]
+
+\"Muchas gracias por vuestro tiempo y vuestra participación.\"
+
+\"Los materiales os los mandamos por email con todo lo que hemos visto: Kit de Prompts, Toolkit, Framework CORF, Roadmap y Guía de Datos.\"
+
+\"Nosotros seguimos a un mensaje de distancia.\"
+
+jorge@360consulting.io
+
+Un placer."
 ]
 </script>
 </head>
@@ -950,6 +1458,133 @@
 </script>
 
 <!-- ══════════════════════════════════════════════════
+     SPEAKER VIEW (press S to open in new window)
+     ══════════════════════════════════════════════════ -->
+<script>
+(() => {
+  const notesEl = document.getElementById('speaker-notes');
+  let ALL_NOTES = [];
+  try { ALL_NOTES = JSON.parse(notesEl.textContent || '[]'); } catch(e) {}
+
+  const stage = document.querySelector('deck-stage');
+
+  function getSlideLabel(i) {
+    const slides = stage._slides || [];
+    if (!slides[i]) return '';
+    return slides[i].getAttribute('data-label') || '';
+  }
+
+  let speakerWin = null;
+
+  function openSpeakerView() {
+    const i = stage.index || 0;
+    const total = (stage._slides || []).length;
+
+    speakerWin = window.open('', 'speaker-view', 'width=800,height=700,menubar=no,toolbar=no');
+    if (!speakerWin) { alert('Permite ventanas emergentes para la vista de presentador.'); return; }
+
+    speakerWin.document.write(`<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Speaker Notes — Excelenc-IA</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Unbounded:wght@500;600&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0A0A0A; color: #e8e8e8; font-family: 'Jost', system-ui, sans-serif; font-weight: 300; padding: 32px; }
+  .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.12); }
+  .slide-num { font-family: 'Unbounded', system-ui; font-weight: 600; font-size: 28px; color: #F4E711; }
+  .slide-label { font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+  .clock { font-size: 16px; color: rgba(255,255,255,0.4); font-variant-numeric: tabular-nums; }
+  .notes { font-size: 18px; line-height: 1.75; white-space: pre-wrap; word-wrap: break-word; color: #e8e8e8; max-width: 100%; }
+  .notes-container { flex: 1; overflow-y: auto; padding-right: 8px; }
+  .speaker-tag { display: inline-block; background: rgba(244,231,17,0.12); color: #F4E711; font-weight: 500; font-size: 13px; letter-spacing: 0.1em; padding: 4px 10px; border-radius: 4px; margin-bottom: 12px; }
+  .transition { display: block; margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(244,231,17,0.2); color: #F4E711; font-weight: 500; font-size: 14px; letter-spacing: 0.1em; }
+  .instruction { color: rgba(255,255,255,0.45); font-style: italic; }
+  .next-preview { margin-top: 24px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.08); color: rgba(255,255,255,0.35); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .next-title { color: rgba(255,255,255,0.55); font-size: 16px; margin-top: 6px; text-transform: none; letter-spacing: 0; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div>
+    <span class="slide-num" id="sv-num">${i+1} / ${total}</span>
+    <div class="slide-label" id="sv-label"></div>
+  </div>
+  <span class="clock" id="sv-clock"></span>
+</div>
+<div class="notes-container">
+  <div class="notes" id="sv-notes"></div>
+  <div class="next-preview" id="sv-next"></div>
+</div>
+<script>
+  function updateClock() {
+    const now = new Date();
+    document.getElementById('sv-clock').textContent = now.toLocaleTimeString('es-ES', {hour:'2-digit', minute:'2-digit', second:'2-digit'});
+  }
+  setInterval(updateClock, 1000);
+  updateClock();
+<\/script>
+</body></html>`);
+    speakerWin.document.close();
+
+    updateSpeakerView(i);
+  }
+
+  function formatNote(text) {
+    if (!text) return '<span style="color:rgba(255,255,255,0.3)">(sin notas)</span>';
+    // Highlight [JORGE], [ADRIANA], [JORGE + ADRIANA]
+    let html = text
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/\[(JORGE|ADRIANA|JORGE \+ ADRIANA)[^\]]*\]/g, '<span class="speaker-tag">$&</span>')
+      .replace(/\[Instrucción:[^\]]+\]/g, '<span class="instruction">$&</span>')
+      .replace(/\[NOTA INTERNA:[^\]]+\]/g, '<span class="instruction">$&</span>')
+      .replace(/(→→→[^\n]*)/g, '<span class="transition">$1</span>');
+    return html;
+  }
+
+  function updateSpeakerView(i) {
+    if (!speakerWin || speakerWin.closed) return;
+    const total = (stage._slides || []).length;
+    const doc = speakerWin.document;
+    const numEl = doc.getElementById('sv-num');
+    const labelEl = doc.getElementById('sv-label');
+    const notesEl = doc.getElementById('sv-notes');
+    const nextEl = doc.getElementById('sv-next');
+    if (!numEl) return;
+
+    numEl.textContent = (i + 1) + ' / ' + total;
+    labelEl.textContent = getSlideLabel(i);
+    notesEl.innerHTML = formatNote(ALL_NOTES[i] || '');
+
+    // Next slide preview
+    if (i + 1 < total) {
+      nextEl.innerHTML = 'Siguiente →<div class="next-title">' + getSlideLabel(i + 1) + '</div>';
+    } else {
+      nextEl.innerHTML = 'Última slide';
+    }
+  }
+
+  // Listen for slide changes
+  stage.addEventListener('slidechange', (e) => {
+    updateSpeakerView(e.detail.index);
+  });
+
+  // Keyboard: S opens speaker view
+  document.addEventListener('keydown', (ev) => {
+    const t = ev.target;
+    if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
+    if (ev.metaKey || ev.ctrlKey || ev.altKey) return;
+    if (ev.key.toLowerCase() === 's') {
+      ev.preventDefault();
+      if (!speakerWin || speakerWin.closed) openSpeakerView();
+      else { speakerWin.focus(); updateSpeakerView(stage.index || 0); }
+    }
+  });
+})();
+</script>
+
+<!-- ══════════════════════════════════════════════════
      NOTES EDITOR PANEL (press N to toggle)
      ══════════════════════════════════════════════════ -->
 <style>
@@ -1012,30 +1647,7 @@
   }
   #notes-panel .status.ok { color: #F4E711; }
 
-  #notes-toggle {
-    position: fixed; bottom: 22px; right: 22px;
-    background: #F4E711; color: #000; border: none;
-    padding: 10px 18px; border-radius: 24px;
-    font-family: 'Jost', system-ui, sans-serif;
-    font-weight: 600; font-size: 13px; letter-spacing: 0.1em;
-    cursor: pointer; z-index: 2147483500;
-    box-shadow: 0 4px 20px rgba(244,231,17,0.3);
-    transition: all 0.2s;
-  }
-  #notes-toggle:hover { background: #F7EE5A; transform: translateY(-2px); }
-
-  #notes-hint {
-    position: fixed; bottom: 22px; left: 22px;
-    font-size: 11px; color: rgba(255,255,255,0.3);
-    letter-spacing: 1px; z-index: 2147483500;
-    font-family: 'Jost', system-ui, sans-serif;
-  }
-  #notes-hint kbd {
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.14);
-    padding: 1px 5px; border-radius: 3px;
-    font-family: 'SF Mono', Monaco, monospace; font-size: 10px;
-  }
+  /* toggle y hint eliminados — no visibles para asistentes */
 
   input[type="file"]#import-file { display: none; }
 
@@ -1057,8 +1669,8 @@
   </div>
 </div>
 
-<button id="notes-toggle" aria-label="Editar notas">✎ Notas (N)</button>
-<div id="notes-hint"><kbd>N</kbd> notas · <kbd>←</kbd><kbd>→</kbd> navegar · <kbd>R</kbd> reset</div>
+<!-- toggle y hint eliminados — no visibles para asistentes.
+     El panel sigue accesible con N para el formador. -->
 
 <script>
 (() => {
