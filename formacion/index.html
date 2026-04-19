@@ -1,1713 +1,952 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex, nofollow">
-  <title>Excelenc-IA — Presentación · Spain Is Excellence</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css" id="theme">
-
-  <style>
-    :root {
-      --accent: #F4E711;
-      --accent-light: #F7EE5A;
-      --accent-dim: #C4B90E;
-      --accent-glow: rgba(244, 231, 17, 0.08);
-      --accent-text: #0A0A0A;
-      --bg-dark: #0A0A0A;
-      --bg-section: #111111;
-      --bg-card: #1A1A1A;
-      --text-white: #F5F0EB;
-      --text-cream: #D4CCBD;
-      --text-muted: #8A8476;
-      --border: rgba(244, 231, 17, 0.20);
-      --border-hover: rgba(244, 231, 17, 0.40);
-      --font-display: 'Playfair Display', Georgia, serif;
-      --font-body: 'Jost', 'Futura', -apple-system, sans-serif;
-    }
-
-    .reveal {
-      font-family: var(--font-body);
-      font-weight: 300;
-      color: var(--text-cream);
-    }
-    .reveal .slides {
-      text-align: left;
-    }
-    .reveal .slides > section,
-    .reveal .slides > section > section {
-      padding: 40px 60px;
-    }
-
-    .slide em {
-      color: var(--accent);
-      font-style: italic;
-    }
-    .slide strong {
-      color: var(--text-white);
-      font-weight: 500;
-    }
-
-    .slide-top {
-      position: absolute;
-      top: 28px;
-      left: 60px;
-      right: 60px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .speaker-badge {
-      font-size: 0.7rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      font-weight: 600;
-      padding: 6px 14px;
-      border-radius: 4px;
-      border: 1px solid var(--border);
-      color: var(--accent);
-    }
-    .speaker-jorge .speaker-badge::before { content: "J · "; }
-    .speaker-adriana .speaker-badge::before { content: "A · "; }
-    .speaker-both .speaker-badge::before { content: "J+A · "; }
-
-    .slide-kicker {
-      font-size: 0.85rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      font-weight: 600;
-      color: var(--accent);
-      margin-bottom: 28px;
-    }
-
-    .slide-title {
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 3.2rem;
-      line-height: 1.1;
-      color: var(--text-white);
-      margin: 0 0 24px;
-    }
-
-    .slide-body p {
-      line-height: 1.6;
-      margin-bottom: 18px;
-      font-size: 1.35rem;
-    }
-    .slide-body p.lead {
-      font-size: 1.7rem;
-      color: var(--text-white);
-      line-height: 1.4;
-    }
-    .slide-body p.muted { color: var(--text-muted); }
-    .slide-body .small { font-size: 1.05rem; }
-
-    .slide-body ul, .slide-body ol {
-      margin-left: 1.4em;
-      margin-bottom: 18px;
-      font-size: 1.3rem;
-      line-height: 1.7;
-    }
-    .slide-body li { margin-bottom: 10px; }
-
-    .callout-inline {
-      border-left: 3px solid var(--accent);
-      padding: 12px 20px;
-      background: rgba(244, 231, 17, 0.04);
-      font-style: italic;
-      color: var(--text-white);
-      margin: 24px 0;
-      border-radius: 0 6px 6px 0;
-    }
-
-    /* Hero slide */
-    .hero-slide .slide-title {
-      font-size: 5rem;
-      text-align: center;
-      margin-top: 80px;
-    }
-    .hero-slide .slide-kicker {
-      text-align: center;
-      margin-bottom: 16px;
-    }
-    .hero-slide .slide-body {
-      text-align: center;
-    }
-    .hero-slide .signature {
-      margin-top: 60px;
-      color: var(--text-muted);
-      font-size: 1rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    /* Divider (Sesión 1 / 2) */
-    .divider-slide {
-      text-align: center;
-    }
-    .divider-slide .slide-title {
-      font-size: 5.5rem;
-      margin-top: 120px;
-    }
-    .divider-slide .slide-kicker {
-      font-size: 1rem;
-    }
-    .divider-slide .slide-body {
-      text-align: center;
-    }
-
-    /* CORF grid */
-    .corf-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-      margin-top: 40px;
-    }
-    .corf-letter {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 36px 20px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-    }
-    .corf-letter .letter {
-      font-family: var(--font-display);
-      font-size: 4.5rem;
-      font-weight: 900;
-      color: var(--accent);
-      line-height: 1;
-    }
-    .corf-letter .word {
-      font-size: 1.1rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--text-white);
-      margin-top: 12px;
-    }
-    .corf-title span:first-child {
-      color: var(--accent);
-      font-family: var(--font-display);
-      font-size: 4rem;
-      font-weight: 900;
-      vertical-align: middle;
-      margin-right: 14px;
-    }
-
-    .example-block {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      margin-top: 24px;
-    }
-    .example-block.single {
-      grid-template-columns: 1fr;
-    }
-    .ex-bad, .ex-good, .example-block.single > p {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 20px 22px;
-    }
-    .ex-bad { border-left: 3px solid #EF4444; opacity: 0.85; }
-    .ex-good { border-left: 3px solid var(--accent); }
-    .example-block.single > p { border-left: 3px solid var(--accent); }
-    .ex-bad p, .ex-good p, .example-block.single > p > p {
-      margin: 0;
-      font-size: 1.05rem;
-    }
-    .ex-bad .tag, .ex-good .tag {
-      display: inline-block;
-      font-size: 0.7rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 3px 10px;
-      margin-bottom: 10px;
-      border-radius: 4px;
-    }
-    .ex-bad .tag { background: rgba(239, 68, 68, 0.15); color: #EF4444; }
-    .ex-good .tag { background: rgba(244, 231, 17, 0.15); color: var(--accent); }
-
-    .prompt-box {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 24px 28px;
-      margin-top: 24px;
-    }
-    .prompt-title {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 16px !important;
-    }
-    .prompt-box p {
-      font-size: 1.1rem !important;
-      margin-bottom: 12px !important;
-      line-height: 1.6;
-    }
-    .hl {
-      padding: 3px 8px;
-      border-radius: 4px;
-      display: inline;
-    }
-    .hl.blue { background: rgba(59, 130, 246, 0.15); color: #93C5FD; }
-    .hl.green { background: rgba(16, 185, 129, 0.15); color: #6EE7B7; }
-    .hl.orange { background: rgba(244, 162, 17, 0.15); color: #FCD34D; }
-    .hl.purple { background: rgba(168, 85, 247, 0.15); color: #C4B5FD; }
-
-    /* Tools panorama */
-    .tools-panorama {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      margin: 32px 0;
-    }
-    .tool-chip {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 20px;
-      text-align: center;
-    }
-    .tool-chip strong {
-      display: block;
-      color: var(--text-white);
-      font-size: 1.3rem;
-      font-family: var(--font-display);
-      margin-bottom: 6px;
-    }
-    .tool-chip span {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      letter-spacing: 1px;
-    }
-
-    /* Misc helpers */
-    .key-points li {
-      list-style: none;
-      padding-left: 28px;
-      position: relative;
-    }
-    .key-points li::before {
-      content: "—";
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-    }
-
-    .hire-steps { list-style: none; margin-left: 0 !important; }
-    .hire-steps li {
-      padding: 12px 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 1.4rem;
-    }
-    .hire-steps li:last-child { border-bottom: none; }
-    .hire-steps .muted { color: var(--text-muted); font-size: 1rem; margin-left: 12px; }
-
-    .create-steps { font-size: 1.15rem !important; line-height: 1.6 !important; }
-    .create-steps li { margin-bottom: 8px !important; }
-    .create-steps .muted { color: var(--text-muted); }
-
-    .knowledge-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin: 24px 0;
-    }
-    .chip {
-      padding: 8px 16px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      font-size: 1rem;
-      color: var(--text-white);
-    }
-
-    .outputs-list { counter-reset: outputs; list-style: none !important; margin-left: 0 !important; }
-    .outputs-list li {
-      counter-increment: outputs;
-      padding-left: 48px;
-      position: relative;
-    }
-    .outputs-list li::before {
-      content: counter(outputs);
-      position: absolute;
-      left: 0;
-      top: 0;
-      font-family: var(--font-display);
-      font-weight: 700;
-      color: var(--accent);
-      font-size: 1.4rem;
-    }
-
-    .flow-steps {
-      counter-reset: flow;
-      list-style: none !important;
-      margin-left: 0 !important;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
-    .flow-steps li {
-      counter-increment: flow;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 20px 24px;
-      padding-left: 60px;
-      position: relative;
-      font-size: 1.15rem;
-    }
-    .flow-steps li::before {
-      content: counter(flow, decimal-leading-zero);
-      position: absolute;
-      left: 20px;
-      top: 20px;
-      color: var(--accent);
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 1.4rem;
-    }
-
-    .toolkit-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin: 24px 0;
-    }
-    .tk-chip {
-      padding: 12px 22px;
-      background: var(--bg-card);
-      border: 1px solid var(--accent);
-      border-radius: 26px;
-      color: var(--accent);
-      font-size: 1.1rem;
-      font-weight: 500;
-    }
-
-    .phase-list, .agent-list, .monitor-list, .decide-list, .reframe-list, .check-list, .demo-list {
-      font-size: 1.25rem !important;
-    }
-
-    .contact-inline {
-      font-size: 1rem !important;
-      text-align: center;
-      color: var(--text-muted);
-      letter-spacing: 1px;
-    }
-
-    .cta-inline {
-      background: rgba(244, 231, 17, 0.08);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 14px 20px;
-      color: var(--text-white);
-      font-size: 1.1rem !important;
-      margin-top: 24px;
-    }
-
-    /* Editor overlay */
-    #notes-editor {
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      width: 520px;
-      max-width: 100vw;
-      background: var(--bg-section);
-      border-left: 2px solid var(--accent);
-      box-shadow: -8px 0 40px rgba(0, 0, 0, 0.6);
-      z-index: 9999;
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      font-family: var(--font-body);
-      color: var(--text-cream);
-      transform: translateX(100%);
-      transition: transform 0.3s ease;
-    }
-    #notes-editor.open {
-      transform: translateX(0);
-    }
-    #notes-editor h3 {
-      font-family: var(--font-display);
-      font-size: 1.4rem;
-      color: var(--text-white);
-      margin-bottom: 8px;
-    }
-    #notes-editor .sub {
-      font-size: 0.75rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 16px;
-    }
-    #notes-editor textarea {
-      flex: 1;
-      background: var(--bg-dark);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      color: var(--text-cream);
-      font-family: 'SF Mono', Monaco, 'Cascadia Mono', monospace;
-      font-size: 0.95rem;
-      line-height: 1.6;
-      padding: 16px;
-      resize: none;
-      outline: none;
-    }
-    #notes-editor textarea:focus {
-      border-color: var(--accent);
-    }
-    #notes-editor .editor-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 16px;
-    }
-    #notes-editor button {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      color: var(--text-cream);
-      padding: 10px 16px;
-      border-radius: 6px;
-      font-family: var(--font-body);
-      font-size: 0.85rem;
-      letter-spacing: 1px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-    #notes-editor button:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-    #notes-editor button.primary {
-      background: var(--accent);
-      color: var(--accent-text);
-      border-color: var(--accent);
-      font-weight: 600;
-    }
-    #notes-editor button.primary:hover {
-      background: var(--accent-light);
-      color: var(--accent-text);
-    }
-    #notes-editor button.danger {
-      color: #FCA5A5;
-    }
-    #notes-editor button.danger:hover {
-      border-color: #EF4444;
-      color: #EF4444;
-    }
-    #notes-editor .editor-status {
-      margin-top: 10px;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      min-height: 18px;
-    }
-    #notes-editor .editor-status.saved { color: var(--accent); }
-
-    #editor-toggle {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      background: var(--accent);
-      color: var(--accent-text);
-      border: none;
-      padding: 12px 20px;
-      border-radius: 28px;
-      font-family: var(--font-body);
-      font-weight: 600;
-      font-size: 0.85rem;
-      letter-spacing: 1.5px;
-      cursor: pointer;
-      z-index: 9998;
-      box-shadow: 0 4px 20px rgba(244, 231, 17, 0.3);
-      transition: all 0.2s ease;
-    }
-    #editor-toggle:hover {
-      background: var(--accent-light);
-      transform: translateY(-2px);
-    }
-
-    #help-indicator {
-      position: fixed;
-      bottom: 24px;
-      left: 24px;
-      font-size: 0.7rem;
-      color: var(--text-muted);
-      letter-spacing: 1px;
-      z-index: 9998;
-    }
-    #help-indicator kbd {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      padding: 2px 6px;
-      border-radius: 3px;
-      font-family: 'SF Mono', Monaco, monospace;
-      font-size: 0.7rem;
-    }
-
-    input[type="file"] { display: none; }
-
-    /* Light theme print (optional) */
-    @media print {
-      .slide { color: black !important; }
-    }
-  </style>
+<meta charset="utf-8" />
+<title>Formación Excelenc-IA — 360º Consulting</title>
+<meta name="viewport" content="width=1920, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="styles.css?v=3" />
+<script src="deck-stage.js"></script>
+<script type="application/json" id="speaker-notes">
+[
+  "Bienvenidos a la Formación Excelenc-IA. En las próximas dos sesiones vamos a pasar de escuchar hablar de inteligencia artificial a usarla todos los días, con criterio, para recuperar horas de nuestra semana. Yo estoy aquí como copiloto; vosotros sois quienes pilotáis vuestro negocio. Empecemos.",
+  "Antes de abrir ninguna herramienta, una idea que os va a acompañar todo el día: en 2026 no gana quien sabe más de IA, gana quien la usa mejor. Por eso esta formación es radicalmente práctica. Cero teoría innecesaria. Todo lo que veamos tiene que caber en vuestro lunes por la mañana.",
+  "Siempre que hablamos de eficiencia tendemos a centrarnos en el precio por hora de una persona. La pregunta real es otra: cuánto nos cuesta NO hacer algo, o hacerlo mal. La inteligencia cara es la que cuesta cientos de euros por hora en decisiones. La inteligencia barata es repetir un email veinte veces. La IA ataca la barata y libera a las personas para la cara.",
+  "Cada tarea mecánica que hacéis tiene un coste oculto: el de no estar pensando en lo que de verdad mueve la aguja. Hoy vamos a poner nombre a esas tareas y a devolverlas a la IA, que es donde pertenecen.",
+  "Regla de oro que vamos a repetir hoy varias veces: la IA propone, el humano decide. La IA no sustituye vuestro criterio; lo amplifica. Todo lo que veamos respeta esa regla. Si alguna vez algo os hace sentir que pierdes el control, estás usando mal la herramienta.",
+  "Estas son las tres áreas que vamos a trabajar en la Sesión 1 de hoy. Bloque uno, prompting ejecutivo: aprender a pedir bien. Bloque dos, construir vuestro propio copiloto. Bloque tres, cuatro problemas reales que podéis atacar desde mañana. Mañana, en la Sesión 2, pasamos de recuperar horas a convertir esas horas en ventaja competitiva.",
+  "Abrimos la Sesión 1. Título: De la información al insight. Tres bloques: aprender a pedir bien, construir vuestro propio asistente, y resolver cuatro problemas reales del día a día.",
+  "Primer bloque. Prompting ejecutivo. Es decir: cómo hablar con la IA como hablarías con un buen consultor.",
+  "Si os quedáis con una sola idea de estos dos días, que sea esta: saber pedir es una de las habilidades más importantes. Un prompt mediocre produce resultados mediocres. Un prompt bien construido produce trabajo a nivel de socio senior.",
+  "Os presento el marco CORF. Cuatro piezas. Contexto, Objetivo, Restricciones, Formato. Siempre en este orden. Si lo tenéis, el prompt funciona. Si falta uno, se nota.",
+  "Contexto. Quién sois, para quién, en qué situación. Sin esto la IA está adivinando. Con esto, trabaja con vuestra realidad, no con un promedio de internet.",
+  "Objetivo. Qué necesitáis exactamente. Un verbo claro y un resultado claro. No 'ayúdame con el email', sino 'escríbeme un email para reactivar a un cliente dormido'.",
+  "Restricciones. Lo que marca la diferencia entre un texto genérico y vuestro texto. Tono, longitud, idioma, cosas que evitar. Aquí metéis vuestra marca.",
+  "Formato. Cómo queréis la respuesta. Tabla, bullets, email listo para copiar, tres opciones. Si no lo decís, os devuelve lo que a él le apetezca. Si lo decís, os ahorráis reescribir.",
+  "Aquí tenéis CORF aplicado a un caso real. Fijaos cómo se lee: parece casi un briefing. Esto es un prompt ejecutivo. Cuesta treinta segundos más escribirlo y ahorra veinte minutos de iteración.",
+  "Ahora pasamos a la demo. Vamos a abrir Better Prompter y veréis cómo una misma petición, reescrita con CORF, cambia completamente la calidad de la respuesta. Atentos.",
+  "Bloque 2. Vuestro Co-Piloto personal. Aquí construimos un asistente a medida, no un chatbot genérico.",
+  "Antes de tocar nada, la metáfora: crear un GPT es como contratar a alguien. Le pasas su manual, su forma de hablar, los casos que ha visto antes. Cuanto mejor hagas el onboarding, mejor trabaja. Igual que con una persona.",
+  "Un buen asistente tiene tres capas: instrucciones claras, conocimiento propio, y capacidades. Vamos a ver cómo montar las tres sin escribir una línea de código.",
+  "Caso real que hicimos la semana pasada: Luxury Hospitality Advisor. Instrucciones, documentación de la marca, tono editorial, y arranca como si llevara años en la casa. De cero a operativo en una tarde.",
+  "Rápido sobre las dos grandes opciones. ChatGPT es el estándar, Plus cuesta veinte dólares al mes. Gemini es potente y, si usáis Google Workspace, os integra Drive y Gmail de manera nativa. Ambos valen. Elegid uno y dominadlo antes de saltar al siguiente.",
+  "Bloque 3. Problemas reales, soluciones reales. Aquí es donde la formación se vuelve accionable: cuatro casos concretos que os vais a encontrar esta misma semana.",
+  "Caso uno. Nunca pierdas una conversación. Una reunión de una hora se puede convertir en notas, un resumen para cliente, acciones con responsables, y cinco tweets. Todo en tres minutos.",
+  "[JORGE] Vamos a enseñar Fireflies por dentro en directo. Enseñar cómo se ve una transcripción real, el resumen automático, los action items. Mencionar las alternativas (Plaud y tl;dv) de pasada, sin entrar en detalle. Una herramienta, bien dominada, antes que tres a medias.",
+  "[JORGE] Gemini, ChatGPT y Claude se integran de forma nativa con Gmail. Enseñar ejemplos rápidos de pasada, no pararnos aquí: 'Revisa mi bandeja de entrada de los últimos 7 días', 'Sácame info de los correos sobre SIE', redactar un correo rápido. El objetivo es que vean que la IA ya habla con su correo.",
+  "[JORGE] Puente narrativo: 'Si es una reunión de seguimiento, la recuperamos de Fireflies. ¿Y si es un lead nuevo o alguien con quien no hemos hablado nunca?' Enseñar la misma pregunta sobre SIE en tres herramientas: Perplexity (generalista), ChatGPT (bien, algo de contexto), Claude (la más detallada, enlazada con tu empresa). Cierre del bloque: 'La clave es el contexto.'",
+  "[JORGE] Dos partes. A) Scribe en directo: ejemplo creando un SOP en vivo ('crear un GPT'). Arrancar la extensión y dejar que Scribe documente los pasos. Enseñar el resultado. B) Qué hacer con la documentación: subirla a ChatGPT / Claude / Gemini (con sync a Drive si procede). Opción favorita: construir una base de conocimiento en NotebookLM — enseñar las posibilidades brevemente.",
+  "Cerramos Sesión 1 con una micro-tarea. Entre hoy y mañana: elegid UNA tarea mecánica de vuestra semana y automatizadla con lo que hemos visto. Mañana la compartimos.",
+  "Sesión 2. De la ejecución a la ventaja competitiva. Si ayer recuperamos horas, hoy convertimos esas horas en ventaja: mejor presentación, mejor análisis, mejor inteligencia.",
+  "Apertura. Antes de arrancar, ¿qué habéis probado desde ayer? ¿Qué micro-tarea habéis automatizado? Abrimos cinco minutos para compartir.",
+  "Un vistazo rápido para amarrar ayer y presentar hoy. Ayer: prompting, copiloto, cuatro casos. Hoy: presentaciones, datos, inteligencia competitiva, y el kit que os lleváis a la oficina. Todo construido sobre lo que ya dominasteis ayer.",
+  "Bloque 1. Presentaciones que convencen. Vamos a ver cómo pasar de un documento a una presentación pulida sin perder toda la tarde.",
+  "Flujo en cuatro pasos: briefing, estructura, contenido, diseño. La IA hace los tres primeros; vosotros decidís el cuarto. Igual que en un estudio creativo.",
+  "[ADRIANA] Tres herramientas recomendadas. Google Canvas para la fase de estructura y guion (iterar el esqueleto en lenguaje natural). Gamma para el diseño final rápido (pegar guion, elegir plantilla, exportar a PPT o PDF). Claude Design para cuando la plantilla no basta: layouts hechos a mano, tono editorial propio, composiciones que no parecen de IA. Esta presentación que estáis viendo ahora mismo está hecha con Claude Design.",
+  "Bloque 2. Datos sin dolor. El Excel deja de ser un muro.",
+  "[JORGE] Mantener el concepto de que Excel es una conversación. Mostrar la guía de análisis de 3 niveles que hemos preparado (enseñarla por encima). Dos caminos: A) Subir el Excel a un modelo normal (ChatGPT, Gemini, Claude) — preguntar en lenguaje natural, sin fórmulas. B) Integración de Claude con Excel (Claude dentro del propio Excel) — ejemplo en directo con el CSV ficticio del hotel: pedirle que 'lo ponga bonito', gráficos, análisis, etc.",
+  "Bloque 3. Inteligencia competitiva. Saber lo que pasa fuera antes de que os lo cuenten.",
+  "Tres pasos: monitorizar las señales del mercado, analizar lo que importa, y decidir. La IA os acompaña en los tres, pero la decisión sigue siendo vuestra.",
+  "Caso Anantara. Montamos un radar semanal que mira competencia, tendencias y prensa, y entrega un briefing de tres páginas cada lunes. Antes era un analista dedicado. Ahora son quince minutos de revisión.",
+  "Demo rápida del modo agente. La IA no solo escribe; abre pestañas, compara precios, rellena formularios. Aquí hay que ir con pies de plomo, pero el potencial es enorme.",
+  "[JORGE] A partir del lunes: la IA también vive en el móvil. Enseñar la guía/documento que hemos preparado con las apps recomendadas. ChatGPT, Gemini, Claude y Fireflies tienen app móvil. Mensaje: son herramientas del día a día, no hace falta el ordenador para empezar. Todo funciona desde el teléfono — aeropuerto, tren, café.",
+  "Toolkit mobile-first. La IA también vive en el móvil. Apps de dictado, lectura de documentos con la cámara, resumen de audios. Vuestro iPhone se vuelve un asistente.",
+  "Roadmap en tres fases. Primero, adopción: los próximos treinta días. Segundo, integración: noventa días. Tercero, ventaja: seis meses. No saltéis fases.",
+  "Plan de acción. Tres hábitos para mañana por la mañana: un prompt ejecutivo al día, un asistente propio en la primera semana, una revisión semanal de qué está funcionando.",
+  "Gracias por estos dos días. Todo lo que hemos visto queda en vuestras manos. Nosotros seguimos a un mensaje de distancia. A por ello.",
+  "[JORGE] Plan de acción. Tres hábitos para mañana por la mañana: un prompt ejecutivo al día, un asistente propio en la primera semana, una revisión semanal de qué está funcionando. Escribidlos ahora.",
+  "[JORGE + ADRIANA] Gracias por estos dos días. Todo lo que hemos visto queda en vuestras manos. Los materiales os llegan por email: Kit de Prompts, Toolkit, Framework CORF, Roadmap y Guía de Datos. Nosotros seguimos a un mensaje de distancia. jorge@360consulting.io"
+]
+</script>
 </head>
 <body>
 
-  <div class="reveal">
-    <div class="slides">
-      
-      <section class="slide hero-slide" data-slide-id="00">
-        <div class="slide-top"></div>
-        <h1 class="slide-title">Excelenc-IA</h1>
-        <div class="slide-kicker">Spain Is Excellence · 21-22 Abril 2026</div>
-        <div class="slide-body"><p class="lead">Formación práctica de IA para ejecutivos del sector turismo premium.</p><p class="signature">Jorge Guamis &amp; Adriana Mateos · 360º Consulting</p></div>
-        <aside class="notes" data-slide-id="00">Portada. Bienvenida breve. Presentaciones de Jorge y Adriana.
+<deck-stage width="1920" height="1080">
 
-Jorge:
-&quot;Bienvenidos. Durante las próximas dos sesiones vamos a ver cómo la IA puede cambiar cómo trabajáis, no en teoría, sino en vuestro día a día concreto.&quot;
+<!-- 01 PORTADA -->
+<section class="cover" data-label="Portada">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="360º Consulting" /><span class="caps">Formación corporativa</span></div>
+  <div class="inner">
+    <p class="eyebrow" style="margin-bottom: 56px;">Dos sesiones · Sie · 2026</p>
+    <h1 class="giant">Excelenc<span class="accent">-IA</span></h1>
+    <p class="subtitle body--muted" style="margin-top: 56px; max-width: 1400px;">De escuchar hablar de IA<br/>a usarla todos los días.</p>
+  </div>
+</section>
 
-Adriana:
-&quot;El objetivo es que salgáis con algo útil, que podáis usar el lunes mismo.&quot;
+<!-- 02 BIENVENIDA -->
+<section data-label="Bienvenida">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">01 · Introducción</span></div>
+  <p class="eyebrow">Bienvenida</p>
+  <h2 class="title" style="margin-top: 40px; max-width: 1600px;">En 2026 no gana quien sabe más de IA.<br/>Gana quien la <span class="mark-rule">usa mejor</span>.</h2>
+  <p class="subtitle body--muted" style="margin-top: 64px; max-width: 1400px;">Cero teoría innecesaria.<br/>Todo lo que veamos tiene que caber en vuestro lunes por la mañana.</p>
+  <div class="page-foot"><span>Formación Excelenc-IA</span><span>01</span></div>
+</section>
 
-Tiempo: 1-2 minutos.
-</aside>
-      </section>
-
-      <section class="slide divider-slide" data-slide-id="01">
-        <div class="slide-top"></div>
-        <h1 class="slide-title">Sesión 1</h1>
-        <div class="slide-kicker">De la información al insight</div>
-        <div class="slide-body"><p class="lead">21 de abril · 16:00 – 18:00</p></div>
-        <aside class="notes" data-slide-id="01">Separador de sesión. Slide muy breve, solo para marcar cambio. Sin guion hablado.</aside>
-      </section>
-
-      <section class="slide speaker-jorge" data-slide-id="02">
-        <div class="slide-top"><span class="speaker-badge">Jorge</span></div>
-        <h1 class="slide-title">Inteligencia barata<br>vs inteligencia cara</h1>
-        <div class="slide-kicker">Apertura · 15 min</div>
-        <div class="slide-body"><ul class="key-points">
-        <li>Tu hora vale <strong>X€</strong>. La IA cuesta <strong>céntimos</strong>.</li>
-        <li>Estás gastando <strong>inteligencia cara</strong> en tareas que la <strong>inteligencia barata</strong> resuelve mejor.</li>
-        <li>Principio transversal: <em>La IA propone, el humano decide. Siempre.</em></li>
-    </ul></div>
-        <aside class="notes" data-slide-id="02">Jorge — 15 min.
-
-&quot;Antes de empezar con herramientas, quiero que os llevéis una idea que va a cambiar cómo veis vuestro día a día.&quot;
-
-&quot;Vuestro tiempo como directivos vale X€ la hora. La IA cuesta céntimos. Ahora mismo estáis gastando inteligencia cara — vuestro criterio, vuestra experiencia, vuestras relaciones — en tareas que la inteligencia barata resuelve mejor y más rápido.&quot;
-
-&quot;Preparar una propuesta comercial: 3-4 horas. Resumir una reunión: 30 minutos reconstruyendo de memoria. Buscar datos para una decisión: pelear con Excel. Escribir un email de follow-up que se pospone porque hay 20 urgencias delante.&quot;
-
-&quot;Cada una de estas tareas es necesaria. Pero ninguna requiere inteligencia humana de alto nivel.&quot;
-
-&quot;Lo que vamos a hacer en estas dos sesiones es enseñaros a reasignar: que lo mecánico lo haga la máquina, para que vosotros os dediquéis a lo que realmente marca la diferencia — vender, cuidar clientes, pensar estrategia.&quot;
-
-&quot;Un principio que va a ser transversal en todo: la IA propone, el humano decide. Siempre. Ningún email sale sin revisión vuestra, ninguna propuesta se envía sin vuestro OK.&quot;
-</aside>
-      </section>
-
-      <section class="slide speaker-jorge" data-slide-id="03">
-        <div class="slide-top"><span class="speaker-badge">Jorge</span></div>
-        <h1 class="slide-title">Panorama de herramientas</h1>
-        <div class="slide-kicker">2 min</div>
-        <div class="slide-body"><div class="tools-panorama">
-        <div class="tool-chip"><strong>ChatGPT</strong><span>OpenAI · versátil</span></div>
-        <div class="tool-chip"><strong>Gemini</strong><span>Google · gratuito potente</span></div>
-        <div class="tool-chip"><strong>Claude</strong><span>Anthropic · textos largos</span></div>
-        <div class="tool-chip"><strong>Copilot</strong><span>Microsoft · integrado en Office</span></div>
+<!-- 03 Panorama Sesión 1 (HOY) -->
+<section data-label="Panorama Hoy">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">01 · Introducción</span></div>
+  <p class="eyebrow">Hoy · Sesión 1</p>
+  <h2 class="title" style="margin-top: 32px;">De la información al <span class="accent">insight</span>.</h2>
+  <div class="three-col" style="margin-top: 64px;">
+    <div class="card card--accent-rule">
+      <span class="label accent">Bloque 01</span>
+      <p class="h">Prompting ejecutivo.</p>
+      <p class="p body--muted">Cómo hablar con la IA para que trabaje a tu nivel. El marco CORF.</p>
     </div>
-    <p class="lead">Hoy trabajamos con ChatGPT. Todo lo que aprendáis es transferible a las otras.</p></div>
-        <aside class="notes" data-slide-id="03">Jorge — 2 min.
-
-&quot;Rápidamente, para que sepáis qué existe: ChatGPT (OpenAI), Gemini (Google), Claude (Anthropic), Microsoft Copilot (integrado en Office). Todos hacen cosas parecidas, cada uno tiene sus puntos fuertes.&quot;
-
-&quot;Hoy vamos a trabajar principalmente con ChatGPT porque es el más extendido y tiene funcionalidades que os van a encantar, pero todo lo que aprendáis es transferible a cualquiera de ellos.&quot;
-
-Transición a Adriana:
-&quot;Vale, con esta idea en mente — qué tareas deberíamos estar delegando y por qué — vamos a ir a algo que es la base de todo lo demás: cómo le pedimos las cosas a la IA.&quot;
-</aside>
-      </section>
-
-      <section class="slide speaker-adriana" data-slide-id="04">
-        <div class="slide-top"><span class="speaker-badge">Adriana</span></div>
-        <h1 class="slide-title">El arte de pensar en voz alta</h1>
-        <div class="slide-kicker">Bloque 1 · Prompting ejecutivo · 35 min</div>
-        <div class="slide-body"><p class="lead"><em>Saber pedir bien</em> es la meta-habilidad que lo cambia todo.</p>
-    <p class="callout-inline">La responsabilidad de la calidad del resultado no es de la herramienta. Es nuestra.</p></div>
-        <aside class="notes" data-slide-id="04">Adriana — Intro bloque 1 · 2 min.
-
-&quot;Antes de tocar ninguna herramienta, hay una habilidad que lo cambia todo: saber pedir bien.&quot;
-
-&quot;Muchas veces la IA no falla porque no pueda hacer algo... falla porque no se lo estamos pidiendo bien.&quot;
-
-&quot;Y aquí hay un cambio importante de mentalidad: la responsabilidad de la calidad del resultado no es de la herramienta, es nuestra.&quot;
-
-&quot;Y esto es especialmente crítico en vuestro día a día... porque estáis constantemente tomando decisiones, preparando reuniones, gestionando equipos, proveedores, clientes...&quot;
-
-Idea clave: &quot;No se trata de hablarle bonito a la IA. Se trata de darle instrucciones claras.&quot;
-</aside>
-      </section>
-
-      <section class="slide speaker-adriana" data-slide-id="05">
-        <div class="slide-top"><span class="speaker-badge">Adriana</span></div>
-        <h1 class="slide-title">CORF</h1>
-        <div class="slide-kicker">El framework que lo simplifica todo</div>
-        <div class="slide-body"><div class="corf-grid">
-        <div class="corf-letter"><span class="letter">C</span><span class="word">Contexto</span></div>
-        <div class="corf-letter"><span class="letter">O</span><span class="word">Objetivo</span></div>
-        <div class="corf-letter"><span class="letter">R</span><span class="word">Restricciones</span></div>
-        <div class="corf-letter"><span class="letter">F</span><span class="word">Formato</span></div>
-    </div></div>
-        <aside class="notes" data-slide-id="05">Adriana · 3 min.
-
-&quot;Hace un par de años la estructura del prompt era mucho más compleja y requería de una técnica muy concreta. Hoy con tener claro 4 conceptos es suficiente.&quot;
-
-&quot;CORF son cuatro cosas que tiene que tener cualquier petición bien hecha:
-- Contexto
-- Objetivo
-- Restricciones
-- Formato&quot;
-
-Ahora voy a explicar cada uno en detalle con un ejemplo concreto.
-</aside>
-      </section>
-
-      <section class="slide speaker-adriana" data-slide-id="06">
-        <div class="slide-top"><span class="speaker-badge">Adriana</span></div>
-        <h1 class="slide-title"><span class='corf-title'><span>C</span> Contexto</span></h1>
-        <div class="slide-kicker">Todo lo que la IA necesita saber</div>
-        <div class="slide-body"><p class="lead">Sin contexto, asume. Y normalmente asume mal.</p>
-    <div class="example-block">
-        <div class="ex-bad"><span class="tag">Sin contexto</span><p>"Prepárame una reunión con un proveedor"</p></div>
-        <div class="ex-good"><span class="tag">Con contexto</span><p>"Mañana tengo una reunión con un proveedor de <em>Channel Manager</em> para un hotel de <em>120 habitaciones en Mallorca</em> con <em>alta estacionalidad</em>."</p></div>
-    </div></div>
-        <aside class="notes" data-slide-id="06">Adriana · 2-3 min.
-
-&quot;El contexto es todo lo que la IA necesita saber para entender la situación.&quot;
-
-&quot;Si no le das contexto, va a asumir... y normalmente va a asumir mal.&quot;
-
-Ejemplo:
-- Sin contexto: &quot;Prepárame una reunión con un proveedor&quot;
-- Con contexto: &quot;Mañana tengo una reunión con un proveedor de Channel Manager para un hotel de 120 habitaciones en Mallorca con alta estacionalidad&quot;
-
-&quot;Se supone que tú ya has configurado en tus ajustes de ChatGPT o Gemini quién eres tú y a qué te dedicas. Si no es así o estás usando una IA sin tus ajustes, deberás decirle qué es lo que haces tú.&quot;
-</aside>
-      </section>
-
-      <section class="slide speaker-adriana" data-slide-id="07">
-        <div class="slide-top"><span class="speaker-badge">Adriana</span></div>
-        <h1 class="slide-title"><span class='corf-title'><span>O</span> Objetivo</span></h1>
-        <div class="slide-kicker">El resultado real que buscas</div>
-        <div class="slide-body"><p class="lead">No la tarea. El resultado.</p>
-    <div class="example-block">
-        <div class="ex-bad"><span class="tag">Malo</span><p>"Prepárame la reunión"</p></div>
-        <div class="ex-good"><span class="tag">Bueno</span><p>"Quiero evaluar si este proveedor puede <em>mejorar nuestra ocupación en temporada baja</em> y <em>negociar condiciones económicas</em>."</p></div>
-    </div></div>
-        <aside class="notes" data-slide-id="07">Adriana · 2 min.
-
-&quot;El objetivo no es &#x27;hacer la reunión&#x27;. Es qué quieres conseguir.&quot;
-
-&quot;Aquí es donde la mayoría de la gente se queda corta.&quot;
-
-Ejemplo:
-- Malo: &quot;Prepárame la reunión&quot;
-- Bueno: &quot;Quiero entender si este proveedor puede mejorar nuestra ocupación en temporada baja y negociar condiciones económicas&quot;
-</aside>
-      </section>
-
-      <section class="slide speaker-adriana" data-slide-id="08">
-        <div class="slide-top"><span class="speaker-badge">Adriana</span></div>
-        <h1 class="slide-title"><span class='corf-title'><span>R</span> Restricciones</span></h1>
-        <div class="slide-kicker">Los límites que evitan respuestas genéricas</div>
-        <div class="slide-body"><p class="lead">Tiempo. Tono. Lo que NO quieres. El tipo de cliente.</p>
-    <div class="example-block single">
-        <p>"La reunión dura <em>30 minutos</em>, <em>no quiero entrar en temas técnicos</em>, y necesito <em>salir con una decisión clara</em>."</p>
-    </div></div>
-        <aside class="notes" data-slide-id="08">Adriana · 2 min.
-
-&quot;Las restricciones son los límites: lo que no quieres que haga, o el tiempo que tienes, el tono que necesitas, el tipo de cliente al que te diriges, etc.&quot;
-
-&quot;Esto evita respuestas genéricas.&quot;
-
-Ejemplo: &quot;La reunión dura 30 minutos, no quiero entrar en temas técnicos, y necesito salir con una decisión clara.&quot;
-
-Importante: pensar en lo que NO queremos. Eso suele ser más útil que lo que sí queremos.
-</aside>
-      </section>
-
-      <section class="slide speaker-adriana" data-slide-id="09">
-        <div class="slide-top"><span class="speaker-badge">Adriana</span></div>
-        <h1 class="slide-title"><span class='corf-title'><span>F</span> Formato</span></h1>
-        <div class="slide-kicker">Cómo quieres la respuesta</div>
-        <div class="slide-body"><p class="lead">Si no lo defines, te devuelve lo que quiera.</p>
-    <div class="example-block single">
-        <p>"Dámelo en forma de <em>guión con tiempos por bloque</em>: apertura, preguntas clave, puntos de decisión."</p>
-    </div></div>
-        <aside class="notes" data-slide-id="09">Adriana · 2 min.
-
-&quot;El formato es cómo quieres que te entregue la respuesta.&quot;
-
-&quot;Si no lo defines, te devuelve lo que quiera.&quot;
-
-Ejemplo: &quot;Dámelo en forma de guión con tiempos por bloque con ejemplos: apertura, preguntas clave, puntos de decisión.&quot;
-
-Cierre de la parte teórica:
-&quot;Esto es lo único que tenéis que llevaros de esta parte: si mejoráis cómo pedís, mejora automáticamente lo que obtenéis. CORF: Contexto, Objetivos, Restricciones y Formato.&quot;
-</aside>
-      </section>
-
-      <section class="slide speaker-adriana" data-slide-id="10">
-        <div class="slide-top"><span class="speaker-badge">Adriana</span></div>
-        <h1 class="slide-title">El mismo prompt, con CORF</h1>
-        <div class="slide-kicker">Antes / Después</div>
-        <div class="slide-body"><div class="prompt-box">
-        <p class="prompt-title">Prompt con CORF aplicado:</p>
-        <p><span class="hl blue">Mañana tengo una reunión con un proveedor de Channel Manager para un hotel de 120 habitaciones en Mallorca con alta estacionalidad.</span></p>
-        <p><span class="hl green">Quiero evaluar si puede ayudarnos a mejorar la ocupación en temporada baja y negociar condiciones.</span></p>
-        <p><span class="hl orange">La reunión dura 30 minutos, no quiero entrar en temas técnicos, y necesito salir con una decisión clara.</span></p>
-        <p><span class="hl purple">Dámelo en forma de guión con tiempos por bloque: apertura, preguntas clave, puntos de decisión.</span></p>
-    </div></div>
-        <aside class="notes" data-slide-id="10">Adriana · 1-2 min.
-
-&quot;Si juntamos todo, el mismo prompt cambia completamente.&quot;
-
-Enseñar el bloque en colores. Cada color es un componente de CORF.
-
-&quot;Vamos a copiar y pegar cada prompt en un chat nuevo y vemos qué nos devuelve.&quot;
-
-&quot;Está clara la diferencia, ¿no?&quot;
-
-Transición a Jorge:
-&quot;Y ahora, vamos un paso más allá. Jorge os tiene preparada una sorpresa con la que vais a cambiar radicalmente los resultados que obtenéis al preguntarle a la IA.&quot;
-</aside>
-      </section>
-
-      <section class="slide speaker-jorge" data-slide-id="11">
-        <div class="slide-top"><span class="speaker-badge">Jorge</span></div>
-        <h1 class="slide-title">Better Prompter</h1>
-        <div class="slide-kicker">Vuestro GPT para construir prompts CORF</div>
-        <div class="slide-body"><p class="lead">Un GPT que <em>os construye el prompt perfecto</em> desde una idea en lenguaje natural.</p>
-    <p>Demo en vivo: mismo ejemplo del proveedor de Channel Manager.</p>
-    <p class="cta-inline">Regalo incluido → <strong>enlace en los materiales</strong></p></div>
-        <aside class="notes" data-slide-id="11">Jorge — Demo práctica · 15-20 min.
-
-&quot;Lo que acabáis de ver es que con CORF se consiguen resultados mucho mejores. Pero claro, tener que acordarse siempre de los cuatro componentes, escribir mucho... Para eso os hemos preparado algo.&quot;
-
-Abrir Better Prompter (GPT). Explicar los botones: crear prompt, mejorar prompt, sugerir prompts, etc.
-
-&quot;Hoy nos vamos a centrar en crear un prompt, pero el resto también podéis utilizarlos: este os mejora un prompt que ya tenéis, este os sugiere prompts para vuestro caso de uso...&quot;
-
-Demo en vivo: coger el mismo ejemplo del proveedor de Channel Manager. Meterlo en Better Prompter. Mostrar cómo el resultado es significativamente mejor que hacerlo a mano.
-
-&quot;¿Veis? Es como tener un experto en prompting al lado que os ayuda a formular cada petición.&quot;
-
-Ejercicio rápido: cada asistente piensa en una tarea real de su semana y la transforma en prompt usando CORF o Better Prompter.
-
-Entregable: enlace al Better Prompter GPT.
-</aside>
-      </section>
-
-      <section class="slide speaker-adriana" data-slide-id="12">
-        <div class="slide-top"><span class="speaker-badge">Adriana</span></div>
-        <h1 class="slide-title">Tu Co-Piloto personal</h1>
-        <div class="slide-kicker">Bloque 2 · 25 min</div>
-        <div class="slide-body"><p class="lead">Un asistente que <em>ya sabe quién eres, qué haces y cómo trabajas</em>.</p>
-    <p class="callout-inline">Crear un GPT es como contratar a una persona.</p></div>
-        <aside class="notes" data-slide-id="12">Adriana — Bloque 2 · 25 min.
-
-&quot;Ahora vamos a dar un paso más.&quot;
-
-&quot;Hasta ahora hemos hablado de cómo pedir mejor... pero lo potente es no tener que empezar desde cero cada vez.&quot;
-
-&quot;Para eso creamos un copiloto: un asistente que ya sabe quién eres, qué haces y cómo trabajas.&quot;
-
-NOTA INTERNA: Falta ampliar la parte teórica de qué es y para qué sirve un GPT (marcado en rojo por Adriana en el doc original).
-
-Jorge puede contextualizar si aplica:
-&quot;Cuando vosotros contratáis a un trabajador humano, ¿quién os va a hacer mejor trabajo? Una agencia externa que le decís &#x27;búscame un recepcionista&#x27;, o la persona de RRHH interna que conoce la misión, la visión, el problema concreto que queréis resolver? Con la IA es exactamente igual. Un asistente personalizado siempre va a dar mejores resultados que la IA genérica.&quot;
-</aside>
-      </section>
-
-      <section class="slide speaker-adriana" data-slide-id="13">
-        <div class="slide-top"><span class="speaker-badge">Adriana</span></div>
-        <h1 class="slide-title">Como contratar a una persona</h1>
-        <div class="slide-kicker">Idea clave</div>
-        <div class="slide-body"><ul class="hire-steps">
-        <li><strong>Qué</strong> tiene que hacer <span class="muted">→ Instrucciones</span></li>
-        <li><strong>Cómo</strong> lo tiene que hacer <span class="muted">→ Tono, estilo</span></li>
-        <li><strong>Con qué información</strong> cuenta <span class="muted">→ Conocimientos</span></li>
-    </ul></div>
-        <aside class="notes" data-slide-id="13">Adriana · 2 min.
-
-&quot;Crear un GPT es como contratar a una persona:
-- le dices qué tiene que hacer
-- cómo lo tiene que hacer
-- y con qué información cuenta&quot;
-
-&quot;Voy a enseñaros cómo se construye esto por dentro.&quot;
-
-&quot;Ya habéis usado el GPT de Better Prompter. Ahora vamos a ver cómo se crea uno para lo que vosotros queráis.&quot;
-</aside>
-      </section>
-
-      <section class="slide speaker-adriana" data-slide-id="14">
-        <div class="slide-top"><span class="speaker-badge">Adriana</span></div>
-        <h1 class="slide-title">Caso real</h1>
-        <div class="slide-kicker">Luxury Hospitality Advisor</div>
-        <div class="slide-body"><p class="lead">Un asistente estratégico para un <em>director de hotel 5★</em>.</p>
-    <p>Prepara reuniones, coordina equipo, gestiona clientes y proveedores con rigor.</p>
-    <p class="muted small">Plan ChatGPT Go = 8€/mes · Gemini Gems = gratis</p></div>
-        <aside class="notes" data-slide-id="14">Adriana · 1 min — planteamos el caso.
-
-&quot;Vamos a imaginar un caso real: un director de hotel que constantemente tiene que responder clientes, preparar reuniones, coordinar equipo, revisar proveedores.&quot;
-
-&quot;Podemos crear GPTs con el plan Go de ChatGPT que son 8€ mensuales o crear un GEM gratis en Gemini.&quot;
-
-Mostrar brevemente dónde se crea un GPT en ChatGPT (panel izquierdo → GPTs → Explorar → +Crear+Configurar). Campos en blanco: nombre, descripción, instrucciones, conocimientos...
-
-&quot;Para que os sea aún más fácil, os vamos a regalar otro GPT que os ayude a configurar esto mejor. Se llama Creador de Asistentes y lo ha creado Jorge también.&quot;
-</aside>
-      </section>
-
-      <section class="slide speaker-adriana" data-slide-id="15">
-        <div class="slide-top"><span class="speaker-badge">Adriana</span></div>
-        <h1 class="slide-title">Creador de Asistentes</h1>
-        <div class="slide-kicker">Demo en vivo · paso a paso</div>
-        <div class="slide-body"><ol class="create-steps">
-        <li><strong>Nombre &amp; Descripción</strong> — Luxury Hospitality Advisor</li>
-        <li><strong>Objetivos</strong> — principal + secundarios</li>
-        <li><strong>Estilo</strong> — tono formal, cercano, sofisticado</li>
-        <li><strong>Reglas de oro</strong> — lo que tiene que hacer sí o sí</li>
-        <li><strong>Comandos</strong> — cómo interactúa</li>
-        <li><strong>Conocimientos</strong> — contexto empresa <span class="muted">(clave)</span></li>
-        <li><strong>Modelo + Funciones</strong></li>
-        <li><strong>Crear</strong> — 3 clics</li>
-    </ol></div>
-        <aside class="notes" data-slide-id="15">Adriana · 10-12 min.
-
-Abrir Creador de Asistentes → botón &quot;Crear&quot; → conversación preparada.
-
-Prompt usado en la demo: &quot;Eres un asesor estratégico personal de alto nivel especializado en el sector de hospitalidad de lujo y clubes exclusivos. Tu función es preparar al ejecutivo que te consulta para cualquier reunión o negociación importante, a preparar reuniones, coordinar equipo y gestionar clientes y proveedores con rigor. Quiero respuestas detalladas.&quot;
-
-Ir siguiendo la conversación explicando cada paso:
-
-1. NOMBRE Y DESCRIPCIÓN: &quot;LUXURY HOSPITALITY ADVISOR&quot; — &quot;Strategic Advisor for a Hotel Director&quot;
-
-2. INSTRUCCIONES (lo que nos da el Creador de Asistentes):
-   - 2.1 Objetivo principal
-   - 2.2 Objetivos secundarios
-   - 2.3 Estilo y reglas de escritura
-   - 2.4 Reglas de oro
-
-3. INICIADORES DE CONVERSACIÓN / COMANDOS: &quot;Esto define cómo interactúas con él. Es decir, qué puede hacer cuando le pides algo.&quot;
-</aside>
-      </section>
-
-      <section class="slide speaker-adriana" data-slide-id="16">
-        <div class="slide-top"><span class="speaker-badge">Adriana</span></div>
-        <h1 class="slide-title">Conocimientos</h1>
-        <div class="slide-kicker">Aquí está el diferencial</div>
-        <div class="slide-body"><div class="knowledge-grid">
-        <span class="chip">Organigrama &amp; roles</span>
-        <span class="chip">Perfiles de interlocutores</span>
-        <span class="chip">Histórico de acuerdos</span>
-        <span class="chip">SOPs</span>
-        <span class="chip">Calendario eventos</span>
-        <span class="chip">Proveedores activos</span>
-        <span class="chip">Criterio de selección</span>
-        <span class="chip">Tono de marca</span>
-        <span class="chip">Propuesta de valor</span>
-        <span class="chip">Competidores</span>
+    <div class="card">
+      <span class="label">Bloque 02</span>
+      <p class="h">Tu Co-Piloto personal.</p>
+      <p class="p body--muted">Construir un asistente propio con tus documentos y tu tono.</p>
     </div>
-    <p class="muted small">¿No tenéis estos documentos? El propio Creador de Asistentes os ayuda a crearlos.</p></div>
-        <aside class="notes" data-slide-id="16">Adriana · 3-4 min.
+    <div class="card">
+      <span class="label">Bloque 03</span>
+      <p class="h">Problemas reales.</p>
+      <p class="p body--muted">Cuatro casos accionables: reuniones, emails, prep de llamada, conocimiento.</p>
+    </div>
+  </div>
+  <div class="page-foot"><span>Bienvenida</span><span>02</span></div>
+</section>
 
-&quot;Esto es clave. Igual que a una persona le das contexto cuando entra en una empresa... aquí le das información base.&quot;
+<!-- 04 Panorama Sesión 2 (MAÑANA) -->
+<section data-label="Panorama Manana">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">01 · Introducción</span></div>
+  <p class="eyebrow">Mañana · Sesión 2</p>
+  <h2 class="title" style="margin-top: 32px;">De la ejecución a la <span class="accent">ventaja competitiva</span>.</h2>
+  <div class="four-col" style="margin-top: 64px;">
+    <div class="card">
+      <span class="label">Bloque 01</span>
+      <p class="h">Presentaciones que convencen.</p>
+    </div>
+    <div class="card">
+      <span class="label">Bloque 02</span>
+      <p class="h">Datos sin dolor.</p>
+    </div>
+    <div class="card">
+      <span class="label">Bloque 03</span>
+      <p class="h">Inteligencia competitiva.</p>
+    </div>
+    <div class="card card--accent-rule">
+      <span class="label accent">Bloque 04</span>
+      <p class="h">Kit IA y plan de acción.</p>
+    </div>
+  </div>
+  <p class="body body--muted" style="margin-top: 48px; font-size: 26px;">Ayer recuperamos horas. Mañana las convertimos en ventaja.</p>
+  <div class="page-foot"><span>Bienvenida</span><span>03</span></div>
+</section>
 
-Listar los conocimientos típicos:
-- Organigrama y roles del equipo
-- Perfiles de interlocutores habituales
-- Histórico de acuerdos con socios e inversores
-- SOPs
-- Calendario de eventos y temporadas claves
-- Listado de proveedores activos
-- Criterio de selección de proveedores
-- Guía de comunicación y tono de marca
-- Propuesta de valor y posicionamiento
-- Listado de competidores
+<!-- 05 Inteligencia barata vs cara -->
+<section data-label="Inteligencia barata vs cara">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">01 · Introducción</span></div>
+  <p class="eyebrow">Marco mental</p>
+  <h2 class="title" style="margin-top: 40px;">Dos tipos de inteligencia en tu empresa.</h2>
+  <div class="two-col" style="margin-top: 72px;">
+    <div class="card">
+      <span class="label">Inteligencia barata</span>
+      <p class="h">Repetir, transcribir, copiar, formatear.</p>
+      <p class="p body--muted">Todo lo que una máquina haría mejor que tú si se lo pidieras bien.</p>
+    </div>
+    <div class="card card--accent-rule">
+      <span class="label accent">Inteligencia cara</span>
+      <p class="h">Decidir, relacionar, crear, cerrar.</p>
+      <p class="p body--muted">Donde realmente ganas o pierdes el negocio. Aquí debería estar tu tiempo.</p>
+    </div>
+  </div>
+  <div class="page-foot"><span>Bienvenida</span><span>04</span></div>
+</section>
 
-&quot;Si no tenéis estos documentos, no pasa nada. El propio Creador de Asistentes os puede ayudar a crearlos. Preguntadle qué información necesita y os guiará.&quot;
+<!-- 06 Coste oculto -->
+<section data-label="Coste oculto">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">01 · Introducción</span></div>
+  <div class="grow" style="display: flex; align-items: center;">
+    <div>
+      <p class="eyebrow">El cálculo que nadie hace</p>
+      <h2 class="title" style="margin-top: 40px; max-width: 1600px;">Cada tarea mecánica tiene un coste oculto:<br/><span class="mark-rule">no estar pensando</span> en lo que mueve la aguja.</h2>
+    </div>
+  </div>
+  <div class="page-foot"><span>Bienvenida</span><span>05</span></div>
+</section>
 
-5. MODELO RECOMENDADO: &quot;Suele recomendar uno por defecto.&quot;
+<!-- 07 Regla de oro (IA propone, humano decide) -->
+<section data-label="Regla de oro">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">01 · Introducción</span></div>
+  <div class="grow" style="display: flex; align-items: center;">
+    <div>
+      <p class="eyebrow">Regla de oro</p>
+      <p class="quote" style="margin-top: 40px;">La IA propone.<br/>El humano <span class="mark-rule">decide</span>.</p>
+      <p class="body body--muted" style="margin-top: 48px; max-width: 1300px;">Si una herramienta te hace sentir que pierdes el control, la estás usando mal.</p>
+    </div>
+  </div>
+  <div class="page-foot"><span>Bienvenida</span><span>06</span></div>
+</section>
 
-6. FUNCIONES:
-- Búsqueda en internet: para que además busque información actual
-- Lienzo/Canvas: como un folio en blanco para añadir comentarios
-- Generación de imágenes
-- Intérprete de código y análisis de datos
-</aside>
-      </section>
+<!-- 07 SECTION DIVIDER — Sesión 1 -->
+<section class="section-divider" data-label="Sesion 1 divider">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">Sesión 1 / 2</span></div>
+  <div class="inner">
+    <p class="index">Sesión 01 <span class="sep">/</span> <span style="color: var(--muted);">De la información al insight</span></p>
+    <h2>De la información<br/>al <span class="accent">insight</span>.</h2>
+    <p class="meta">Tres bloques · Prompting · Co-Piloto · Casos reales</p>
+  </div>
+</section>
 
-      <section class="slide speaker-adriana" data-slide-id="17">
-        <div class="slide-top"><span class="speaker-badge">Adriana</span></div>
-        <h1 class="slide-title">Y si no queremos pagar</h1>
-        <div class="slide-kicker">Alternativa: Gemini Gems</div>
-        <div class="slide-body"><p class="lead"><em>Exactamente lo mismo</em>, gratuito, en Gemini.</p>
-    <p class="muted">Demo rápida crear Gem.</p>
-    <p class="cta-inline">Entregable → <strong>enlace al Creador de Asistentes</strong></p></div>
-        <aside class="notes" data-slide-id="17">Adriana · 2 min — cierre bloque 2.
+<!-- 08 BLOQUE 1 Prompting -->
+<section data-label="Bloque 1 Prompting">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">Sesión 1 · Bloque 1</span></div>
+  <div class="grow" style="display: flex; align-items: flex-end;">
+    <div>
+      <p class="eyebrow">Bloque 1</p>
+      <h2 class="title title--xl" style="margin-top: 32px;">El Arte de Pensar<br/>en Voz Alta.</h2>
+      <p class="subtitle body--muted" style="margin-top: 40px; max-width: 1400px;">Prompting Ejecutivo.</p>
+    </div>
+  </div>
+  <div class="page-foot"><span>Sesión 1 · Bloque 1</span><span>06</span></div>
+</section>
 
-&quot;Cuando todo esto está definido, simplemente damos a &#x27;Crear&#x27;... Y nos da la opción de que lo veas solo tú, cualquier persona con el enlace, o que lo publiques en la tienda de GPTs y ya lo tenemos funcionando.&quot;
+<!-- 09 Una de las habilidades -->
+<section data-label="Saber pedir es una de las habilidades">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">Sesión 1 · Bloque 1</span></div>
+  <div class="grow" style="display: flex; align-items: center;">
+    <div>
+      <p class="eyebrow">La idea del día</p>
+      <p class="quote" style="margin-top: 48px;">Saber pedir bien es <span class="accent">una de las habilidades más importantes</span><br/>de esta década.</p>
+    </div>
+  </div>
+  <div class="page-foot"><span>Prompting ejecutivo</span><span>07</span></div>
+</section>
 
-&quot;Esto mismo lo hacemos en Google Gemini.&quot; (Demo rápida crear Gem)
+<!-- 10 CORF cuatro piezas -->
+<section data-label="CORF cuatro piezas">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">Sesión 1 · Bloque 1</span></div>
+  <p class="eyebrow">Framework</p>
+  <h2 class="title" style="margin-top: 40px;">CORF. Cuatro piezas, siempre en este orden.</h2>
+  <div class="corf-grid" style="margin-top: 72px;">
+    <div><span class="letter">C —</span><span class="word">Contexto</span><span class="hint">Quién eres, para quién, en qué situación.</span></div>
+    <div><span class="letter">O —</span><span class="word">Objetivo</span><span class="hint">Qué necesitas exactamente.<br/>Verbo + resultado.</span></div>
+    <div><span class="letter">R —</span><span class="word">Restricciones</span><span class="hint">Tono, longitud, idioma, qué evitar.</span></div>
+    <div><span class="letter">F —</span><span class="word">Formato</span><span class="hint">Tabla, bullets, email listo, tres opciones.</span></div>
+  </div>
+  <div class="page-foot"><span>Prompting ejecutivo</span><span>08</span></div>
+</section>
 
-Entregable: Compartir enlace al Creador de Asistentes GPT.
-</aside>
-      </section>
+<!-- 11 Contexto -->
+<section data-label="Contexto">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">Sesión 1 · Bloque 1</span></div>
+  <p class="eyebrow accent">C · Contexto</p>
+  <h2 class="title" style="margin-top: 40px;">Sin contexto, la IA está adivinando.</h2>
+  <div class="ba-row" style="margin-top: 72px;">
+    <div class="ba-col">
+      <span class="ba-label ba-bad">Vago</span>
+      <p class="ba-text body--muted">«Escríbeme un email de venta.»</p>
+    </div>
+    <div class="ba-col">
+      <span class="ba-label ba-good">Con contexto</span>
+      <p class="ba-text ba-text--good">«Soy director comercial de un hotel boutique en Mallorca; hablo con un cliente corporativo que ya nos conoce pero lleva seis meses sin reservar.»</p>
+    </div>
+  </div>
+  <div class="page-foot"><span>Prompting ejecutivo</span><span>09</span></div>
+</section>
 
-      <section class="slide speaker-jorge" data-slide-id="18">
-        <div class="slide-top"><span class="speaker-badge">Jorge</span></div>
-        <h1 class="slide-title">Problemas reales,<br>soluciones reales</h1>
-        <div class="slide-kicker">Bloque 3 · Tu Co-Piloto en acción · 40 min</div>
-        <div class="slide-body"><p class="lead">Ahora que sabéis pedir bien y tenéis vuestro copiloto configurado, lo ponemos a <em>trabajar</em>.</p></div>
-        <aside class="notes" data-slide-id="18">Jorge — Bloque 3 · 40 min. Yo hago todo este bloque.
+<!-- 12 Objetivo -->
+<section data-label="Objetivo">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">Sesión 1 · Bloque 1</span></div>
+  <p class="eyebrow accent">O · Objetivo</p>
+  <h2 class="title" style="margin-top: 40px;">Un verbo claro.<br/>Un resultado claro.</h2>
+  <div class="two-col" style="margin-top: 64px;">
+    <div>
+      <p class="eyebrow body--muted">Débil</p>
+      <p class="body body--muted" style="margin-top: 20px;">«Ayúdame con el email de reactivación.»</p>
+    </div>
+    <div>
+      <p class="eyebrow accent">Ejecutivo</p>
+      <p class="body" style="margin-top: 20px;">«Escríbeme un email para reactivar a un cliente corporativo dormido, con una propuesta concreta de valor para Q4.»</p>
+    </div>
+  </div>
+  <div class="page-foot"><span>Prompting ejecutivo</span><span>10</span></div>
+</section>
 
-&quot;Ahora que sabéis pedir bien y tenéis vuestro copiloto configurado, lo vamos a poner a trabajar en situaciones que reconocéis de vuestro día a día.&quot;
+<!-- 13 Restricciones -->
+<section data-label="Restricciones">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">Sesión 1 · Bloque 1</span></div>
+  <p class="eyebrow accent">R · Restricciones</p>
+  <h2 class="title" style="margin-top: 40px;">La diferencia entre genérico y tuyo.</h2>
+  <div class="three-col" style="margin-top: 72px;">
+    <div class="card"><span class="label">Tono</span><p class="h">Cercano pero formal.</p><p class="p body--muted">Tutear. Cero marketing.</p></div>
+    <div class="card"><span class="label">Longitud</span><p class="h">Máx. 120 palabras.</p><p class="p body--muted">Un solo CTA al final.</p></div>
+    <div class="card"><span class="label">Evitar</span><p class="h">Superlativos. Emoji.</p><p class="p body--muted">«Espero que te encuentres bien.»</p></div>
+  </div>
+  <div class="page-foot"><span>Prompting ejecutivo</span><span>11</span></div>
+</section>
 
-Vamos a cubrir 4 casos de uso reales:
-1. Nunca pierdas una conversación (Fireflies) · 12 min
-2. Emails que no te dan pereza · 10 min
-3. Preparado en 5 minutos (research) · 8 min
-4. SOPs · 10 min
-</aside>
-      </section>
+<!-- 14 Formato -->
+<section data-label="Formato">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">Sesión 1 · Bloque 1</span></div>
+  <p class="eyebrow accent">F · Formato</p>
+  <h2 class="title" style="margin-top: 40px;">Si no lo dices, te devuelve lo que le apetece.</h2>
+  <ul class="bullets" style="margin-top: 64px; max-width: 1500px;">
+    <li><span>Tabla comparativa — para decidir rápido.</span></li>
+    <li><span>Email listo para copiar — asunto, cuerpo, firma.</span></li>
+    <li><span>Tres opciones etiquetadas A / B / C — para elegir.</span></li>
+    <li><span>Resumen ejecutivo de 5 bullets + riesgos — para reunión.</span></li>
+  </ul>
+  <div class="page-foot"><span>Prompting ejecutivo</span><span>12</span></div>
+</section>
 
-      <section class="slide speaker-jorge" data-slide-id="19">
-        <div class="slide-top"><span class="speaker-badge">Jorge</span></div>
-        <h1 class="slide-title">Nunca pierdas<br>una conversación</h1>
-        <div class="slide-kicker">Caso 1 · Fireflies · 12 min</div>
-        <div class="slide-body"><p class="lead">1 reunión → <em>5 outputs</em></p>
-    <ol class="outputs-list">
-        <li>Follow-up para el cliente</li>
-        <li>Action items para el equipo</li>
-        <li>Contenido para redes</li>
-        <li>Documentación interna</li>
-        <li>Email resumen</li>
+<!-- 15 CORF completo -->
+<section data-label="CORF completo">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">Sesión 1 · Bloque 1</span></div>
+  <p class="eyebrow">Prompt ejecutivo · aplicado</p>
+  <h2 class="title title--sm" style="margin-top: 24px;">Así se lee un prompt con las cuatro piezas.</h2>
+  <div class="prompt-block" style="margin-top: 40px;">
+    <span class="tag">Prompt</span>
+    <p style="margin: 0;"><b>Contexto —</b> Soy director comercial de un hotel boutique de 32 habitaciones en Mallorca. Nuestro cliente "Acme Corp" reservó 5 noches en marzo y lleva 6 meses sin volver.</p>
+    <p style="margin: 16px 0 0;"><b>Objetivo —</b> Escríbeme un email para reactivar esa cuenta, proponiendo un paquete corporativo para Q4.</p>
+    <p style="margin: 16px 0 0;"><b>Restricciones —</b> Tono cercano formal, tuteo, máximo 120 palabras, en español, sin superlativos ni emojis.</p>
+    <p style="margin: 16px 0 0;"><b>Formato —</b> Dame 3 versiones etiquetadas A / B / C, con asunto y cuerpo listos para copiar.</p>
+  </div>
+  <div class="page-foot"><span>Prompting ejecutivo</span><span>13</span></div>
+</section>
+
+<!-- 16 Better Prompter demo -->
+<section data-label="Better Prompter demo">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">Sesión 1 · Bloque 1</span></div>
+  <div class="grow" style="display: flex; align-items: center;">
+    <div>
+      <p class="eyebrow">Demo en vivo</p>
+      <h2 class="title title--xl" style="margin-top: 32px;">Better<br/>Prompter.</h2>
+      <p class="subtitle body--muted" style="margin-top: 40px; max-width: 1400px;">Misma petición, dos versiones. La diferencia que hace CORF en vivo.</p>
+    </div>
+  </div>
+  <div class="page-foot"><span>Prompting ejecutivo</span><span>14</span></div>
+</section>
+
+<!-- 17 BLOQUE 2 Co-Piloto -->
+<section data-label="Bloque 2 Co-Piloto">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">Sesión 1 · Bloque 2</span></div>
+  <div class="grow" style="display: flex; align-items: flex-end;">
+    <div>
+      <p class="eyebrow">Bloque 2</p>
+      <h2 class="title title--xl" style="margin-top: 32px;">Tu Co-Piloto<br/>personal.</h2>
+      <p class="subtitle body--muted" style="margin-top: 40px; max-width: 1400px;">Un asistente que conoce tu empresa, no un chatbot genérico.</p>
+    </div>
+  </div>
+  <div class="page-foot"><span>Sesión 1 · Bloque 2</span><span>15</span></div>
+</section>
+
+<!-- 18 Como contratar -->
+<section data-label="Crear un GPT es contratar">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">Sesión 1 · Bloque 2</span></div>
+  <div class="grow" style="display: flex; align-items: center;">
+    <div>
+      <p class="eyebrow">La metáfora</p>
+      <p class="quote" style="margin-top: 48px;">Crear un GPT es como<br/>contratar a alguien. Cuanto<br/>mejor hagas el onboarding,<br/><span class="accent">mejor trabaja</span>.</p>
+    </div>
+  </div>
+  <div class="page-foot"><span>Tu Co-Piloto personal</span><span>16</span></div>
+</section>
+
+<!-- 19 Anatomía asistente -->
+<section data-label="Anatomia asistente">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">Sesión 1 · Bloque 2</span></div>
+  <p class="eyebrow">Anatomía</p>
+  <h2 class="title" style="margin-top: 40px;">Tres capas. Así de sencillo.</h2>
+  <ol class="bullets bullets--num" style="margin-top: 72px; max-width: 1500px;">
+    <li><span><b style="font-weight: 500;">Instrucciones.</b> Quién es, cómo habla, qué nunca hace.</span></li>
+    <li><span><b style="font-weight: 500;">Conocimiento.</b> Tus documentos: marca, procedimientos, casos ganados.</span></li>
+    <li><span><b style="font-weight: 500;">Capacidades.</b> Web, código, imagen, análisis de archivos.</span></li>
+  </ol>
+  <div class="page-foot"><span>Tu Co-Piloto personal</span><span>17</span></div>
+</section>
+
+<!-- 20 Caso Luxury Hospitality -->
+<section data-label="Caso Luxury Hospitality">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">Sesión 1 · Bloque 2</span></div>
+  <p class="eyebrow">Caso ejemplo</p>
+  <h2 class="title" style="margin-top: 32px;">Luxury Hospitality Advisor.</h2>
+  <div class="two-col" style="margin-top: 64px;">
+    <div>
+      <p class="eyebrow body--muted">Input</p>
+      <ul class="bullets" style="margin-top: 24px;">
+        <li><span>Brand book editorial del grupo.</span></li>
+        <li><span>40 fichas de propiedad.</span></li>
+        <li><span>Guía de tono y respuestas tipo.</span></li>
+      </ul>
+    </div>
+    <div>
+      <p class="eyebrow accent">Output · una tarde</p>
+      <ul class="bullets" style="margin-top: 24px;">
+        <li><span>Propuestas con la voz del grupo.</span></li>
+        <li><span>Respuestas operativas para reservas.</span></li>
+        <li><span>Plantilla replicable por propiedad.</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="page-foot"><span>Tu Co-Piloto personal</span><span>18</span></div>
+</section>
+
+<!-- 21 ChatGPT vs Gemini -->
+<section data-label="ChatGPT vs Gemini">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">Sesión 1 · Bloque 2</span></div>
+  <p class="eyebrow">¿Y si no queremos pagar por nuestros Co-Pilotos?</p>
+  <h2 class="title" style="margin-top: 32px;">ChatGPT vs Gemini.</h2>
+  <table class="compare" style="margin-top: 48px;">
+    <thead><tr><th></th><th>ChatGPT</th><th>Gemini</th></tr></thead>
+    <tbody>
+      <tr><td class="tool">Precio</td><td>Desde 8 € / mes</td><td>Gratis. Versión Pro incluida en Google Workspace.</td></tr>
+      <tr><td class="tool">Fuerte en</td><td>Razonamiento, GPTs a medida, ecosistema.</td><td>Drive y Gmail, contexto largo, análisis.</td></tr>
+      <tr><td class="tool">Ideal si…</td><td>Quieres el estándar y construir asistentes propios.</td><td>Trabajas en Google Workspace y vives en Docs.</td></tr>
+      <tr class="rule"><td class="tool">Nuestra regla</td><td colspan="2">Elegid uno. Dominadlo antes de saltar al siguiente.</td></tr>
+    </tbody>
+  </table>
+  <div class="page-foot"><span>Tu Co-Piloto personal</span><span>19</span></div>
+</section>
+
+<!-- 22 BLOQUE 3 Casos -->
+<section data-label="Bloque 3 Casos">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">Sesión 1 · Bloque 3</span></div>
+  <div class="grow" style="display: flex; align-items: flex-end;">
+    <div>
+      <p class="eyebrow">Bloque 3</p>
+      <h2 class="title title--xl" style="margin-top: 32px;">Problemas reales,<br/>soluciones reales.</h2>
+      <p class="subtitle body--muted" style="margin-top: 40px; max-width: 1400px;">Cuatro casos que vas a usar esta misma semana.</p>
+    </div>
+  </div>
+  <div class="page-foot"><span>Sesión 1 · Bloque 3</span><span>20</span></div>
+</section>
+
+<!-- 23 Caso 1 · Reuniones (narrativa fusionada) -->
+<section data-label="Caso 1 Reuniones">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">Sesión 1 · Bloque 3</span></div>
+  <p class="eyebrow">Caso 01 · Reuniones</p>
+  <h2 class="title" style="margin-top: 32px;">Nunca pierdas<br/>una conversación.</h2>
+  <p class="subtitle body--muted" style="margin-top: 40px; max-width: 1600px;">La IA escucha y ordena. Tú te concentras en la reunión. Y de una sola call salen <span class="accent">más de cinco outputs</span>.</p>
+
+  <div style="margin-top: 72px; display: grid; grid-template-columns: 340px 1fr; gap: 88px; align-items: center;">
+    <p class="hero-num" style="font-size: 220px; line-height: 0.9; margin: 0;">+5</p>
+    <ol class="bullets bullets--num" style="max-width: 1100px;">
+      <li><span>Transcripción completa con speaker.</span></li>
+      <li><span>Resumen ejecutivo de una página.</span></li>
+      <li><span>Lista de acciones con responsable y fecha.</span></li>
+      <li><span>Email de follow-up listo para enviar.</span></li>
+      <li><span>Y todo lo que te puedas imaginar…</span></li>
     </ol>
-    <p class="muted small">Alternativas: tl;dv (gratis) · Plaud Note (dispositivo físico)</p></div>
-        <aside class="notes" data-slide-id="19">Jorge · 12 min.
-
-&quot;¿A cuántos os ha pasado tener una reunión y luego no acordaros de qué había que hacer exactamente? Levantar la mano.&quot;
-
-&quot;Con esta herramienta eso no os va a volver a pasar.&quot;
-
-Presentar Fireflies: qué es, cómo funciona (se conecta a Meet/Zoom/Teams, graba, transcribe, resume automáticamente). Demo web: mostrar transcripción real anonimizada con resumen, action items, keywords.
-
-Demo app móvil: &quot;Esto es brutal. Con darle a este botón podéis grabar cualquier llamada de teléfono. Reunión con proveedor en el café, llamada con cliente desde el taxi...&quot;
-
-De 1 reunión → 5 outputs:
-1. Follow-up para el cliente
-2. Action items para el equipo
-3. Contenido para redes
-4. Documentación interna
-5. Email resumen
-
-&quot;Y esto no es ciencia ficción, esto lo uso yo todos los días.&quot;
-
-Alternativa gratuita: &quot;Si no queréis pagar de entrada, existe tl;dv que tiene transcripciones ilimitadas en su plan gratuito. Y si os gusta el concepto de grabar llamadas de teléfono, buscad Plaud Note — es un dispositivo físico que se pega al teléfono.&quot;
-</aside>
-      </section>
-
-      <section class="slide speaker-jorge" data-slide-id="20">
-        <div class="slide-top"><span class="speaker-badge">Jorge</span></div>
-        <h1 class="slide-title">Emails que no<br>te dan pereza</h1>
-        <div class="slide-kicker">Caso 2 · Co-Piloto + email · 10 min</div>
-        <div class="slide-body"><p class="lead">Con el Co-Piloto configurado, el email sale en <em>vuestro tono</em>.</p>
-    <ul class="demo-list">
-        <li>Follow-up post-reunión con proveedor</li>
-        <li>Respuesta a cliente VIP solicitando cambio</li>
-    </ul>
-    <p class="muted small">También funciona en Outlook (copiar/pegar o usar Copilot en navegador).</p></div>
-        <aside class="notes" data-slide-id="20">Jorge · 10 min.
-
-&quot;Ahora cogemos esa transcripción de la reunión y le decimos al copiloto que nos prepare el email de seguimiento.&quot;
-
-Demo en vivo con el Co-Piloto configurado:
-1. Email follow-up post-reunión con proveedor Channel Manager
-2. Respuesta a cliente VIP que solicita cambio
-
-&quot;El copiloto ya conoce vuestro tono, vuestro estilo. Los emails salen como si los hubierais escrito vosotros, pero en una fracción del tiempo.&quot;
-
-&quot;Y para los que usáis Outlook: esto funciona igual. Copiáis y pegáis, o directamente usáis el copiloto en el navegador mientras tenéis Outlook abierto.&quot;
-</aside>
-      </section>
-
-      <section class="slide speaker-jorge" data-slide-id="21">
-        <div class="slide-top"><span class="speaker-badge">Jorge</span></div>
-        <h1 class="slide-title">Preparado en 5 minutos</h1>
-        <div class="slide-kicker">Caso 3 · Research rápido · 8 min</div>
-        <div class="slide-body"><p class="lead">Lo que antes eran <em>2 horas</em> de búsqueda manual, ahora son <em>5 minutos</em>.</p>
-    <ul class="demo-list">
-        <li>Resumen de la empresa</li>
-        <li>Últimas noticias</li>
-        <li>Datos clave del sector</li>
-        <li>Posibles temas de conversación</li>
-    </ul></div>
-        <aside class="notes" data-slide-id="21">Jorge · 8 min.
-
-&quot;¿Tenéis una reunión mañana con alguien y queréis llegar preparados? Lo que antes eran 2 horas de búsqueda manual, el copiloto lo resuelve en minutos.&quot;
-
-Demo: research rápido de un hotel real (Rosewood Villa Magna o Marbella Club).
-
-&quot;Mirad: en 2 minutos tenéis un resumen de la empresa, últimas noticias, datos clave del sector, posibles temas de conversación. Esto antes os llevaría una hora como mínimo.&quot;
-</aside>
-      </section>
-
-      <section class="slide speaker-jorge" data-slide-id="22">
-        <div class="slide-top"><span class="speaker-badge">Jorge</span></div>
-        <h1 class="slide-title">Que no se pierda<br>lo que sabemos</h1>
-        <div class="slide-kicker">Caso 4 · SOPs · 10 min</div>
-        <div class="slide-body"><p class="lead">Un proceso que solo sabe hacer una persona del equipo es un <em>agujero</em>.</p>
-    <p>Grabar pantalla mientras hacéis la tarea → herramienta genera el SOP automáticamente.</p>
-    <p class="callout-inline">Ese SOP se mete en el Co-Piloto. Ahora la IA sabe exactamente cómo hacer las cosas en vuestra empresa.</p></div>
-        <aside class="notes" data-slide-id="22">Jorge · 10 min.
-
-&quot;¿Cuántos de vosotros tenéis procesos que solo sabe hacer una persona del equipo? Si esa persona se va de vacaciones o se marcha, el conocimiento se pierde.&quot;
-
-Explicar qué es un SOP (Standard Operating Process): paso a paso para hacer una tarea.
-
-&quot;Normalmente son un coñazo de hacer. Pero existe una herramienta con la que literalmente grabáis la pantalla mientras hacéis la tarea y automáticamente os genera el documento de proceso.&quot;
-
-Demo herramienta SOP.
-
-&quot;Y aquí viene lo mejor: ese SOP lo podéis meter en la base de conocimientos de vuestro copiloto. Ahora la IA sabe exactamente cómo hacer las cosas en vuestra empresa.&quot;
-</aside>
-      </section>
-
-      <section class="slide speaker-jorge" data-slide-id="23">
-        <div class="slide-top"><span class="speaker-badge">Jorge</span></div>
-        <h1 class="slide-title">Micro-tarea</h1>
-        <div class="slide-kicker">Cierre Sesión 1 · 5 min</div>
-        <div class="slide-body"><p class="lead">Elegid la tarea que <em>más tiempo os consume</em> en vuestra semana. Resolvedla con vuestro Co-Piloto usando CORF.</p>
-    <p class="callout-inline">Traed el resultado el martes.</p></div>
-        <aside class="notes" data-slide-id="23">Jorge + Adriana · 5 min.
-
-&quot;Antes de cerrar: una micro-tarea para la próxima sesión.&quot;
-
-&quot;Elegid la tarea que más tiempo os consume en vuestra semana. Resolvedla con vuestro Co-Piloto usando el framework CORF. Traed el resultado el martes.&quot;
-
-&quot;Esto genera accountability: cuando veáis que vuestro compañero ahorró 2 horas en una propuesta, la adopción se acelera.&quot;
-
-Compartir instrucciones escritas por chat/email.
-</aside>
-      </section>
-
-      <section class="slide divider-slide" data-slide-id="24">
-        <div class="slide-top"></div>
-        <h1 class="slide-title">Sesión 2</h1>
-        <div class="slide-kicker">De la ejecución a la ventaja competitiva</div>
-        <div class="slide-body"><p class="lead">22 de abril · 16:00 – 18:00</p></div>
-        <aside class="notes" data-slide-id="24">Separador de sesión 2. Sin guion hablado.</aside>
-      </section>
-
-      <section class="slide speaker-adriana" data-slide-id="25">
-        <div class="slide-top"><span class="speaker-badge">Adriana</span></div>
-        <h1 class="slide-title">¿Qué ha pasado<br>entre sesiones?</h1>
-        <div class="slide-kicker">Apertura · Celebración de wins · 10 min</div>
-        <div class="slide-body"><ul class="check-list">
-        <li>¿Quién ha probado algo?</li>
-        <li>¿Habéis creado vuestro GPT personalizado?</li>
-        <li>¿Habéis probado el Better Prompter?</li>
-        <li>¿Qué ha funcionado? ¿Qué no?</li>
-    </ul>
-    <p class="callout-inline">Esto no va de hacerlo perfecto. Va de empezar.</p></div>
-        <aside class="notes" data-slide-id="25">Adriana · 10 min. Bienvenida compartida Jorge + Adriana.
-
-&quot;Antes de seguir, quiero que veamos qué ha pasado entre sesiones.&quot;
-
-&quot;¿Quién ha probado algo?&quot;
-&quot;¿Qué habéis hecho?&quot;
-&quot;¿Habéis intentado crear vuestro GPT personalizado?&quot;
-&quot;¿Habéis probado el Better Prompter?&quot;
-&quot;¿Qué ha funcionado? ¿Qué no?&quot;
-
-&quot;Esto no va de hacerlo perfecto... va de empezar.&quot;
-
-Ajustes rápidos a los Co-Pilotos si alguien tiene dudas.
-</aside>
-      </section>
-
-      <section class="slide speaker-adriana" data-slide-id="26">
-        <div class="slide-top"><span class="speaker-badge">Adriana</span></div>
-        <h1 class="slide-title">Presentaciones<br>que convencen</h1>
-        <div class="slide-kicker">Bloque 1 · De la idea al impacto visual · 35 min</div>
-        <div class="slide-body"><ol class="flow-steps">
-        <li><strong>Investigar</strong> interlocutor</li>
-        <li><strong>Estructurar</strong> mensaje</li>
-        <li><strong>Diseñar</strong> con IA</li>
-        <li><strong>Preparar</strong> seguimiento</li>
-    </ol>
-    <p class="muted small">Los dos primeros los hacemos con el copiloto de ayer.</p></div>
-        <aside class="notes" data-slide-id="26">Adriana · 3 min intro.
-
-&quot;Aquí vamos a ver cómo usar IA para preparar presentaciones de forma más rápida y con más impacto.&quot;
-
-Flujo de 4 pasos:
-1. Investigar interlocutor (con el co-piloto de ayer)
-2. Estructurar mensaje (con IA — narrativa, no bullets)
-3. Diseñar (con herramienta IA)
-4. Preparar seguimiento
-
-&quot;Las dos primeras las hacemos con el copiloto de ayer.&quot;
-</aside>
-      </section>
-
-      <section class="slide speaker-adriana" data-slide-id="27">
-        <div class="slide-top"><span class="speaker-badge">Adriana</span></div>
-        <h1 class="slide-title">Google Canvas</h1>
-        <div class="slide-kicker">Herramienta 1 · Gratuita</div>
-        <div class="slide-body"><p>Gemini → herramientas → Canvas → prompt + documento.</p>
-    <p class="lead"><em>Importante:</em> decirle que <strong>no cambie el texto</strong>, que lo mantenga intacto.</p>
-    <p class="muted small">Exportar: PDF o link compartible.</p></div>
-        <aside class="notes" data-slide-id="27">Adriana · 12 min — Herramienta 1 · Google Canvas.
-
-&quot;Nos venimos a Gemini → le damos a herramientas → Canvas → le metemos el prompt (que lo podemos siempre refinar en Better Prompter antes).&quot;
-
-&quot;Con ese prompt + documento que queramos maquetar, nos crea en unos minutos una propuesta estupenda.&quot;
-
-&quot;Es importante decirle en el prompt que no nos cambie nada de nuestro texto, que lo mantenga intacto.&quot;
-
-&quot;Para guardarlo podemos o bien pedirle que nos genere un PDF, o bien en compartir nos genera un link que podemos enviar por email.&quot;
-</aside>
-      </section>
-
-      <section class="slide speaker-adriana" data-slide-id="28">
-        <div class="slide-top"><span class="speaker-badge">Adriana</span></div>
-        <h1 class="slide-title">Gamma</h1>
-        <div class="slide-kicker">Herramienta 2 · 8€/mes · Profesional</div>
-        <div class="slide-body"><p>Gamma → crear nuevo → importar archivo → presentación.</p>
-    <p class="lead">Resultado significativamente <em>mejor calidad</em> que Canvas.</p>
-    <p class="callout-inline">"Cuánto te costaría un diseñador solo para presentaciones? Esto os cuesta 8€ al mes."</p></div>
-        <aside class="notes" data-slide-id="28">Adriana · 15-20 min — Herramienta 2 · Gamma.
-
-&quot;La otra herramienta que podemos usar, mucho más profesional, es Gamma. Solo hay que darse de alta con usuario y contraseña y puedes probar de forma gratuita una presentación breve.&quot;
-
-&quot;Vamos a Gamma → crear nuevo → importar archivo → cargar archivo → presentación o documento.&quot;
-
-NOTA INTERNA: Adriana pendiente de investigar meterle un prompt a ChatGPT para que de eso me cree un HTML.
-
-Ejercicio práctico: generar una presentación completa desde brief real en 20 min. Puede ser: propuesta comercial para cliente, reporte trimestral para dirección, propuesta interna.
-
-&quot;¿Cuánto le tendríais que pagar a un diseñador solo para que os haga presentaciones? ¿Cuántas horas? ¿Y luego que no es a vuestro gusto y tenéis que decirle que cambie esto? Esto os cuesta 8€ al mes.&quot;
-</aside>
-      </section>
-
-      <section class="slide speaker-jorge" data-slide-id="29">
-        <div class="slide-top"><span class="speaker-badge">Jorge</span></div>
-        <h1 class="slide-title">Datos sin dolor</h1>
-        <div class="slide-kicker">Bloque 2 · Excel como conversación · 25 min</div>
-        <div class="slide-body"><p class="lead">Subid el Excel. Preguntad en <em>lenguaje natural</em>. Obtenéis el resultado.</p>
-    <ul class="demo-list">
-        <li>Análisis estacional</li>
-        <li>Comparativa de pricing</li>
-        <li>Proyecciones de ocupación</li>
-        <li>Gráficos para reporting</li>
-    </ul>
-    <p class="muted small">ChatGPT · Claude · Gemini · Copilot integrado en Excel (M365).</p></div>
-        <aside class="notes" data-slide-id="29">Jorge · 25 min.
-
-&quot;La mayoría de ejecutivos no necesitáis un curso avanzado de Excel. Necesitáis resolver 3 cosas: fórmulas que no recordáis, tablas que necesitáis reorganizar y gráficos que presentar a dirección.&quot;
-
-&quot;La IA convierte eso en una conversación: subís vuestro Excel, le explicáis qué necesitáis en lenguaje normal, y obtenéis el resultado.&quot;
-
-Demo con Excel datos hotel ficticio (el CSV de los materiales):
-- Análisis estacional (ocupación por meses)
-- Comparativa de pricing vs competencia
-- Proyecciones de ocupación
-- Gráficos para reporting a dirección
-
-&quot;Tanto ChatGPT como Claude como Gemini tienen integración nativa con archivos: subir un Excel y hacer preguntas en lenguaje natural funciona hoy, sin configuración, sin código, sin complicaciones.&quot;
-
-&quot;Y para los que usáis Excel en el entorno de Microsoft: Copilot ya hace algo parecido dentro de Excel directamente. Si vuestra empresa tiene licencia de Microsoft 365, probad Copilot en Excel.&quot;
-</aside>
-      </section>
-
-      <section class="slide speaker-adriana" data-slide-id="30">
-        <div class="slide-top"><span class="speaker-badge">Adriana</span></div>
-        <h1 class="slide-title">Inteligencia<br>competitiva</h1>
-        <div class="slide-kicker">Bloque 3 · Benchmarking con IA · 25 min</div>
-        <div class="slide-body"><p class="lead">Las decisiones en hotelería se toman <em>sin saber</em> qué hace tu competencia directa.</p>
-    <p>Y eso tiene <em>impacto directo en ingresos</em>.</p></div>
-        <aside class="notes" data-slide-id="30">Adriana · Intro Bloque 3 · 2 min.
-
-&quot;La mayoría de decisiones en hotelería... se toman sin saber exactamente qué está haciendo tu competencia directa.&quot;
-
-&quot;Y cuando hablamos de hoteles como Anantara Villa Padierna en Benahavís, Marbella Resort... eso tiene impacto directo en ingresos.&quot;
-
-&quot;Porque no estás compitiendo solo en precio... estás compitiendo en posicionamiento, experiencia y percepción de valor.&quot;
-</aside>
-      </section>
-
-      <section class="slide speaker-adriana" data-slide-id="31">
-        <div class="slide-top"><span class="speaker-badge">Adriana</span></div>
-        <h1 class="slide-title">No va de copiar</h1>
-        <div class="slide-kicker">Reframe</div>
-        <div class="slide-body"><ul class="reframe-list">
-        <li><strong>Por qué</strong> lo hace</li>
-        <li><strong>Para quién</strong> lo hace</li>
-        <li><strong>Qué puedes aprender</strong> tú de eso</li>
-    </ul></div>
-        <aside class="notes" data-slide-id="31">Adriana · 2 min.
-
-&quot;Esto no va de copiar lo que hace Anantara.&quot;
-
-&quot;Va de entender:
-- por qué lo hace
-- para quién lo hace
-- y qué puedes aprender tú de eso&quot;
-</aside>
-      </section>
-
-      <section class="slide speaker-adriana" data-slide-id="32">
-        <div class="slide-top"><span class="speaker-badge">Adriana</span></div>
-        <h1 class="slide-title">Monitorizar</h1>
-        <div class="slide-kicker">Paso 1 · Qué observamos</div>
-        <div class="slide-body"><ul class="monitor-list">
-        <li>Precios por temporada</li>
-        <li>Tipo de cliente al que se dirige</li>
-        <li>Experiencias que vende</li>
-        <li>Cómo comunica el lujo</li>
-    </ul>
-    <p class="callout-inline"><em>Monitorizar no es mirar por mirar. Es mirar con intención.</em></p></div>
-        <aside class="notes" data-slide-id="32">Adriana · 5 min.
-
-&quot;Vamos a aterrizarlo con un caso real.&quot;
-
-&quot;Imagina que tienes un hotel premium en la Costa del Sol... y quieres entender cómo se posiciona Anantara.&quot;
-
-&quot;¿Qué observamos? No necesitamos mil datos. Necesitamos los correctos.&quot;
-- Precios por temporada
-- Tipo de cliente al que se dirige
-- Experiencias que vende
-- Cómo comunica el lujo
-
-&quot;Anantara no compite solo en habitaciones... compite en experiencia. Spa, golf, gastronomía, entorno...&quot;
-
-Mensaje clave: &quot;Monitorizar no es mirar por mirar. Es mirar con intención.&quot;
-</aside>
-      </section>
-
-      <section class="slide speaker-adriana" data-slide-id="33">
-        <div class="slide-top"><span class="speaker-badge">Adriana</span></div>
-        <h1 class="slide-title">Analizar</h1>
-        <div class="slide-kicker">Paso 2 · Aquí está el valor real</div>
-        <div class="slide-body"><p class="lead">Ver que Anantara tiene precios altos no sirve de nada. Lo importante es entender <em>por qué puede permitírselo</em>.</p>
-    <p class="callout-inline">El precio es una <em>consecuencia</em>. No una estrategia.</p></div>
-        <aside class="notes" data-slide-id="33">Adriana · 5 min.
-
-&quot;Aquí es donde la mayoría se queda corta.&quot;
-
-&quot;Ver que Anantara tiene precios altos no sirve de nada. Lo importante es entender por qué puede permitírselo.&quot;
-
-¿Qué vemos?
-- Posicionamiento ultra premium
-- Cliente internacional
-- Experiencia completa, no solo estancia
-
-&quot;Entonces la pregunta no es: &#x27;¿debería subir precios?&#x27;&quot;
-&quot;La pregunta es: &#x27;¿qué está justificando ese precio?&#x27;&quot;
-
-Frase clave: &quot;El precio es una consecuencia... no una estrategia.&quot;
-</aside>
-      </section>
-
-      <section class="slide speaker-adriana" data-slide-id="34">
-        <div class="slide-top"><span class="speaker-badge">Adriana</span></div>
-        <h1 class="slide-title">Decidir</h1>
-        <div class="slide-kicker">Paso 3 · Donde ganas dinero</div>
-        <div class="slide-body"><ul class="decide-list">
-        <li>¿Compito en <strong>precio</strong> o en <strong>propuesta</strong>?</li>
-        <li>¿Estoy <strong>comunicando bien</strong> el valor?</li>
-        <li>¿Qué parte de la experiencia puedo <strong>reforzar</strong>?</li>
-    </ul>
-    <p class="callout-inline">No es copiar. Es decidir mejor.</p></div>
-        <aside class="notes" data-slide-id="34">Adriana · 5 min.
-
-&quot;Y aquí es donde esto deja de ser interesante... y pasa a ser útil.&quot;
-
-&quot;Si entiendes bien lo que hace Anantara... puedes decidir cosas como:
-- ¿Tengo que competir en precio o en propuesta?
-- ¿Estoy comunicando bien el valor?
-- ¿Qué parte de la experiencia puedo reforzar?&quot;
-
-&quot;No es copiar. Es decidir mejor.&quot;
-
-Transición a demo de Jorge:
-&quot;Ahora, todo esto... lo hacíamos a mano. Abrías 10 webs, comparabas, sacabas conclusiones... Ahora podéis hacerlo mucho más rápido.&quot;
-</aside>
-      </section>
-
-      <section class="slide speaker-jorge" data-slide-id="35">
-        <div class="slide-top"><span class="speaker-badge">Jorge</span></div>
-        <h1 class="slide-title">Modo agente<br>de ChatGPT</h1>
-        <div class="slide-kicker">Demo · 5 min</div>
-        <div class="slide-body"><p class="lead">En 5 minutos hace lo que a un analista le llevaría <em>un día entero</em>.</p>
-    <ul class="agent-list">
-        <li>Selecciona competidores</li>
-        <li>Compara precios</li>
-        <li>Analiza posicionamiento</li>
-        <li>Da recomendaciones estratégicas</li>
-    </ul>
-    <p class="muted small">Resultado pre-ejecutado (el agente tarda demasiado para hacerlo en vivo).</p></div>
-        <aside class="notes" data-slide-id="35">Jorge · 5 min.
-
-&quot;Voy a usar el modo agente de ChatGPT para hacer este análisis.&quot;
-
-Mostrar resultado pre-ejecutado del prompt de benchmarking de Anantara (el agente tarda demasiado para hacerlo en vivo). Enseñar el razonamiento por dentro: cómo el agente busca, compara, selecciona competidores, analiza y da recomendaciones.
-
-&quot;Fijaos: en 5 minutos ha hecho lo que a un analista le llevaría un día entero. Ha seleccionado competidores, comparado precios, analizado posicionamiento, y os da recomendaciones estratégicas concretas.&quot;
-
-&quot;Y esto lo hemos hecho con el prompt que preparamos usando el Better Prompter. ¿Veis cómo todo se conecta?&quot;
-</aside>
-      </section>
-
-      <section class="slide speaker-jorge" data-slide-id="36">
-        <div class="slide-top"><span class="speaker-badge">Jorge</span></div>
-        <h1 class="slide-title">Las 3 cosas que<br>ya sabes hacer</h1>
-        <div class="slide-kicker">Bloque 4 · Kit de supervivencia · 8 min</div>
-        <div class="slide-body"><p class="lead">De todo lo que habéis visto: elegid <em>3 acciones concretas</em> que vais a usar el <em>lunes</em>.</p>
-    <p class="callout-inline">Cada persona sale con una respuesta diferente. Eso es exactamente lo que queremos.</p></div>
-        <aside class="notes" data-slide-id="36">Jorge · 8 min.
-
-&quot;Prompting, Co-Pilotos, reuniones, emails, presentaciones, datos, benchmarking... En dos sesiones habéis visto mucho.&quot;
-
-&quot;Pero lo que importa de verdad es aplicar lo aprendido.&quot;
-
-&quot;Ahora quiero que cada uno elija las 3 cosas que más le han servido de todo el programa y las escriba como su kit de supervivencia IA personal: tres acciones concretas que ya sabéis hacer.&quot;
-
-&quot;El ejercicio es de priorización personal: de todo esto, ¿qué es lo que realmente voy a usar el lunes? Cada persona sale con una respuesta diferente, y eso es exactamente lo que queremos.&quot;
-</aside>
-      </section>
-
-      <section class="slide speaker-jorge" data-slide-id="37">
-        <div class="slide-top"><span class="speaker-badge">Jorge</span></div>
-        <h1 class="slide-title">Toolkit mobile-first</h1>
-        <div class="slide-kicker">7 min</div>
-        <div class="slide-body"><div class="toolkit-grid">
-        <span class="tk-chip">ChatGPT · Gemini</span>
-        <span class="tk-chip">Fireflies · tl;dv</span>
-        <span class="tk-chip">Gamma · Canvas</span>
+  </div>
+  <div class="page-foot"><span>Casos</span><span>21</span></div>
+</section>
+
+<!-- 24 Caso 1 · Comparativa de herramientas -->
+<section data-label="Reuniones Comparativa">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">Sesión 1 · Bloque 3</span></div>
+  <p class="eyebrow">Herramientas</p>
+  <h2 class="title" style="margin-top: 32px;">¿Con cuál nos quedamos?</h2>
+
+  <table class="compare tools-compare" style="margin-top: 56px;">
+    <thead>
+      <tr>
+        <th></th>
+        <th>
+          <span class="brand brand--fireflies"><span class="brand__dot"></span>Fireflies</span>
+        </th>
+        <th>
+          <span class="brand brand--plaud"><span class="brand__sq"></span>PLAUD</span>
+        </th>
+        <th>
+          <span class="brand brand--tldv"><span class="brand__tl">tl;</span>dv</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="tool">Formato</td><td>Bot que se une a la call.</td><td>Grabadora física de bolsillo.</td><td>Bot que se une a la call.</td></tr>
+      <tr><td class="tool">Ideal para</td><td>Videollamadas recurrentes.</td><td>Reuniones presenciales 1-a-1.</td><td>Clips y momentos por tema.</td></tr>
+      <tr><td class="tool">Integraciones</td><td>CRM, Slack, Notion.</td><td>ChatGPT, Notion, Obsidian.</td><td>CRM, Slack, Notion.</td></tr>
+      <tr><td class="tool">Precio</td><td>Plan gratis · desde 18 $/mes.</td><td>Hardware 159 $ + plan.</td><td>Plan gratis · Pro desde 18 $/mes.</td></tr>
+      <tr class="rule"><td class="tool">Nuestra regla</td><td colspan="3">Una herramienta, bien dominada, antes que tres a medias.</td></tr>
+    </tbody>
+  </table>
+  <div class="page-foot"><span>Casos</span><span>22</span></div>
+</section>
+
+<!-- 25 Caso 2 · Bandeja de entrada -->
+<section data-label="Caso 2 Bandeja de entrada">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">Sesión 1 · Bloque 3</span></div>
+  <p class="eyebrow">Caso 02 · Tu bandeja de entrada</p>
+  <h2 class="title" style="margin-top: 32px;">Gemini, ChatGPT y Claude<br/>se integran con <span class="accent">Gmail</span>.</h2>
+  <div class="three-col" style="margin-top: 64px;">
+    <div class="card card--accent-rule">
+      <span class="label accent">Revisar</span>
+      <p class="h">«Revisa mi bandeja de los últimos 7 días.»</p>
     </div>
-    <p class="lead">El <em>90%</em> funciona desde el móvil. Aeropuerto, tren, café.</p>
-    <p class="callout-inline">No os volváis locos. Empezad con 1-2, no con las 10.</p></div>
-        <aside class="notes" data-slide-id="37">Jorge · 7 min.
-
-&quot;Ahora, rápidamente, qué instalar y para qué.&quot;
-
-Compartir documento Toolkit con:
-- Apps móvil: ChatGPT, Gemini, Fireflies (o tl;dv), Gamma
-- Qué funciona desde el teléfono vs qué necesita ordenador
-- &quot;No os volváis locos: empezad con 1-2, no con las 10&quot;
-
-&quot;El 90% funciona desde el móvil. Aeropuerto, tren, café.&quot;
-
-Funciones del &quot;+&quot; en ChatGPT (1 min):
-&quot;Una cosa rápida: en ChatGPT, si le dais al + a la izquierda del chat, veréis opciones como Deep Research (investigación profunda), Canvas (lienzo para editar), Estudiar y aprender... No vamos a entrar en detalle, pero que sepáis que están ahí.&quot;
-
-Cuadro comparativo herramientas (1 min):
-&quot;Y para que tengáis claro qué es cada cosa: ChatGPT es la más versátil, Gemini se integra con Google, Claude es excelente para textos largos, y Microsoft Copilot se integra en Outlook, Excel y Word si tenéis licencia. Os dejamos un cuadro resumen en los materiales.&quot;
-</aside>
-      </section>
-
-      <section class="slide speaker-jorge" data-slide-id="38">
-        <div class="slide-top"><span class="speaker-badge">Jorge</span></div>
-        <h1 class="slide-title">Fase 2</h1>
-        <div class="slide-kicker">Bases de conocimiento inteligentes</div>
-        <div class="slide-body"><p class="lead">Toda la información de vuestro hotel <em>centralizada y consultable</em>.</p>
-    <ul class="phase-list">
-        <li>"¿Por qué perdemos clientes en Q4?"</li>
-        <li>"¿Qué patrones predicen una reserva de alto valor?"</li>
-        <li>"¿Qué hemos acordado con el proveedor X?"</li>
-    </ul></div>
-        <aside class="notes" data-slide-id="38">Jorge · 3 min — Fase 2.
-
-&quot;Lo que habéis aprendido es la Fase 1: Co-Pilotos. Es el primer paso del camino.&quot;
-
-&quot;Una vez sabéis dar los primeros pasos, os enseño hasta dónde puede llegar:&quot;
-
-&quot;Fase 2: Bases de conocimiento inteligentes por departamento. Sistemas que responden preguntas como &#x27;¿por qué perdemos clientes en Q4?&#x27; o &#x27;¿qué patrones predicen una reserva de alto valor?&#x27; Imaginad tener toda la información de vuestro hotel centralizada y poder preguntarle cosas.&quot;
-</aside>
-      </section>
-
-      <section class="slide speaker-jorge" data-slide-id="39">
-        <div class="slide-top"><span class="speaker-badge">Jorge</span></div>
-        <h1 class="slide-title">Fase 3</h1>
-        <div class="slide-kicker">Agentes y automatizaciones</div>
-        <div class="slide-body"><p class="lead">Workflows que se ejecutan <em>solos</em>.</p>
-    <ul class="phase-list">
-        <li>Prospección automática</li>
-        <li>Atención al cliente 24/7</li>
-        <li>Reporting sin intervención humana</li>
-        <li>Alertas inteligentes de mercado</li>
-    </ul>
-    <p class="muted small">The Real Thing ya ha solicitado el diagnóstico personalizado.</p></div>
-        <aside class="notes" data-slide-id="39">Jorge · 3 min — Fase 3.
-
-&quot;Fase 3: Agentes y automatizaciones. Workflows que se ejecutan solos: prospección automática, atención al cliente 24/7, reporting sin intervención humana.&quot;
-
-&quot;Para los que queráis ir más allá, 360º Consulting acompaña en ese camino.&quot;
-
-Mencionar que The Real Thing ya ha solicitado el diagnóstico personalizado como ejemplo concreto de siguiente paso.
-</aside>
-      </section>
-
-      <section class="slide speaker-jorge" data-slide-id="40">
-        <div class="slide-top"><span class="speaker-badge">Jorge</span></div>
-        <h1 class="slide-title">Plan de acción personal</h1>
-        <div class="slide-kicker">Antes de irnos</div>
-        <div class="slide-body"><p class="lead">3 hábitos IA que implementáis <em>esta semana</em>.</p>
-    <p>Con fecha concreta de revisión.</p>
-    <p class="callout-inline"><em>Escribidlos ahora.</em></p></div>
-        <aside class="notes" data-slide-id="40">Jorge · 4 min.
-
-&quot;Antes de irnos: 3 hábitos IA que implementáis esta semana. Con fecha concreta de revisión. Escribidlos ahora.&quot;
-
-Dejar 2-3 min para que lo escriban en silencio.
-
-Opcional: pedir a uno o dos que los compartan voluntariamente.
-</aside>
-      </section>
-
-      <section class="slide speaker-both" data-slide-id="41">
-        <div class="slide-top"><span class="speaker-badge">Jorge &amp; Adriana</span></div>
-        <h1 class="slide-title">Gracias</h1>
-        <div class="slide-kicker">Excelenc-IA · SIE 2026</div>
-        <div class="slide-body"><p class="lead">Los materiales os llegan por email. Todo lo que hemos visto, más el <em>Kit de Prompts</em>, <em>Toolkit</em>, <em>Framework CORF</em> y <em>Roadmap</em>.</p>
-    <p class="contact-inline">📧 jorge@360consulting.io · 🔗 www.linkedin.com/in/jorgeguamis</p>
-    <p class="contact-inline">📅 cal.com/jorge-guamis-360</p></div>
-        <aside class="notes" data-slide-id="41">Jorge + Adriana — Cierre · 1-2 min.
-
-&quot;Muchas gracias por vuestro tiempo y vuestra participación. Los materiales os los mandamos por email con todo lo que hemos visto. Un placer.&quot;
-
-Ambos despedidos.
-
-Dejar la slide de gracias en pantalla mientras la gente hace preguntas sueltas o se va.
-</aside>
-      </section>
-
+    <div class="card">
+      <span class="label">Filtrar</span>
+      <p class="h">«Sácame la info de los correos sobre SIE.»</p>
+    </div>
+    <div class="card">
+      <span class="label">Redactar</span>
+      <p class="h">Borrador listo en tu tono. Tú revisas y envías.</p>
     </div>
   </div>
+  <div class="page-foot"><span>Casos</span><span>23</span></div>
+</section>
 
-  <!-- Notes editor overlay -->
-  <div id="notes-editor">
-    <h3>Notas del slide</h3>
-    <div class="sub" id="editor-slide-label">Slide —</div>
-    <textarea id="editor-textarea" placeholder="Escribe tus notas aquí..."></textarea>
-    <div class="editor-status" id="editor-status"></div>
-    <div class="editor-actions">
-      <button class="primary" id="btn-save">Guardar</button>
-      <button id="btn-close">Cerrar</button>
-      <button class="danger" id="btn-restore">Restaurar original</button>
-      <button id="btn-export">Exportar todas</button>
-      <button id="btn-import-trigger">Importar</button>
-      <input type="file" id="btn-import-file" accept="application/json">
+<!-- 26 Caso 3 · Research con contexto -->
+<section data-label="Caso 3 Research con contexto">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">Sesión 1 · Bloque 3</span></div>
+  <p class="eyebrow">Caso 03 · Research</p>
+  <h2 class="title" style="margin-top: 32px;">¿Y si es alguien con quien<br/><span class="accent">no has hablado nunca</span>?</h2>
+  <p class="subtitle body--muted" style="margin-top: 40px; max-width: 1600px;">Si es un seguimiento, lo recuperamos de Fireflies. Si es un lead nuevo, necesitas contexto rápido. La misma pregunta, tres herramientas.</p>
+  <div class="three-col" style="margin-top: 56px;">
+    <div class="card">
+      <span class="label">Perplexity</span>
+      <p class="h">Generalista.</p>
+      <p class="p body--muted">Datos públicos, fuentes verificadas. Bien para un vistazo rápido.</p>
+    </div>
+    <div class="card">
+      <span class="label">ChatGPT</span>
+      <p class="h">Con más contexto.</p>
+      <p class="p body--muted">Cruza datos y aporta ángulos. Buen punto medio.</p>
+    </div>
+    <div class="card card--accent-rule">
+      <span class="label accent">Claude</span>
+      <p class="h">La más detallada.</p>
+      <p class="p body--muted">Análisis profundo, enlazado con tu empresa. La clave: el contexto que le das.</p>
     </div>
   </div>
+  <div class="page-foot"><span>Casos</span><span>24</span></div>
+</section>
 
-  <button id="editor-toggle" aria-label="Editar notas">✎ Editar notas (E)</button>
-  <div id="help-indicator">
-    <kbd>S</kbd> Vista presentador · <kbd>F</kbd> Pantalla completa · <kbd>E</kbd> Editar notas
+<!-- 27 Caso 4 · Documentar + Base de conocimiento -->
+<section data-label="Caso 4 Documentar y base conocimiento">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">Sesión 1 · Bloque 3</span></div>
+  <p class="eyebrow">Caso 04 · Conocimiento</p>
+  <h2 class="title" style="margin-top: 32px;">Que no se pierda<br/>lo que sabemos.</h2>
+  <div class="two-col" style="margin-top: 56px;">
+    <div>
+      <p class="eyebrow accent">A · Documentar</p>
+      <p class="body" style="margin-top: 20px; font-weight: 400;">Scribe en directo.</p>
+      <p class="body body--muted" style="margin-top: 12px;">Grabas la pantalla mientras haces la tarea. Scribe documenta cada paso en un SOP automático.</p>
+      <p class="body body--muted" style="margin-top: 12px;">Ejemplo: «crear un GPT» — arrancamos la extensión y dejamos que trabaje.</p>
+    </div>
+    <div>
+      <p class="eyebrow accent">B · Conectar</p>
+      <p class="body" style="margin-top: 20px; font-weight: 400;">Qué hacer con la documentación.</p>
+      <ul class="bullets" style="margin-top: 12px;">
+        <li><span>Subirla a ChatGPT / Claude / Gemini.</span></li>
+        <li><span>Sincronizar con Drive para tenerla siempre actualizada.</span></li>
+        <li><span>Favorita: <b style="font-weight: 500;">NotebookLM</b> — base de conocimiento consultable por todo el equipo.</span></li>
+      </ul>
+    </div>
   </div>
+  <div class="page-foot"><span>Casos</span><span>25</span></div>
+</section>
 
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/markdown/markdown.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+<!-- 28 Cierre S1 — yellow full-bleed (1 of ~2 yellow slides) -->
+<section class="cover cover--yellow" data-label="Cierre Sesion 1">
+  <div class="top-chrome"><img src="assets/logo-full-black.png" alt="" /><span class="caps">Cierre Sesión 1</span></div>
+  <div class="inner">
+    <p class="eyebrow" style="color: rgba(0,0,0,0.6);">Micro-tarea para mañana</p>
+    <h2 class="title title--xl" style="margin-top: 32px; color: var(--brand-black);">Elige UNA tarea<br/>mecánica de tu<br/>semana. Automatízala.</h2>
+    <p class="subtitle" style="margin-top: 40px; max-width: 1400px; color: rgba(0,0,0,0.75);">Mañana la compartimos al arrancar la Sesión 2.</p>
+  </div>
+</section>
 
-  <script>
-    // ─── Original notes (for restore) ───
-    const ORIGINAL_NOTES = {"00": "Portada. Bienvenida breve. Presentaciones de Jorge y Adriana.\n\nJorge:\n\"Bienvenidos. Durante las próximas dos sesiones vamos a ver cómo la IA puede cambiar cómo trabajáis, no en teoría, sino en vuestro día a día concreto.\"\n\nAdriana:\n\"El objetivo es que salgáis con algo útil, que podáis usar el lunes mismo.\"\n\nTiempo: 1-2 minutos.\n", "01": "Separador de sesión. Slide muy breve, solo para marcar cambio. Sin guion hablado.", "02": "Jorge — 15 min.\n\n\"Antes de empezar con herramientas, quiero que os llevéis una idea que va a cambiar cómo veis vuestro día a día.\"\n\n\"Vuestro tiempo como directivos vale X€ la hora. La IA cuesta céntimos. Ahora mismo estáis gastando inteligencia cara — vuestro criterio, vuestra experiencia, vuestras relaciones — en tareas que la inteligencia barata resuelve mejor y más rápido.\"\n\n\"Preparar una propuesta comercial: 3-4 horas. Resumir una reunión: 30 minutos reconstruyendo de memoria. Buscar datos para una decisión: pelear con Excel. Escribir un email de follow-up que se pospone porque hay 20 urgencias delante.\"\n\n\"Cada una de estas tareas es necesaria. Pero ninguna requiere inteligencia humana de alto nivel.\"\n\n\"Lo que vamos a hacer en estas dos sesiones es enseñaros a reasignar: que lo mecánico lo haga la máquina, para que vosotros os dediquéis a lo que realmente marca la diferencia — vender, cuidar clientes, pensar estrategia.\"\n\n\"Un principio que va a ser transversal en todo: la IA propone, el humano decide. Siempre. Ningún email sale sin revisión vuestra, ninguna propuesta se envía sin vuestro OK.\"\n", "03": "Jorge — 2 min.\n\n\"Rápidamente, para que sepáis qué existe: ChatGPT (OpenAI), Gemini (Google), Claude (Anthropic), Microsoft Copilot (integrado en Office). Todos hacen cosas parecidas, cada uno tiene sus puntos fuertes.\"\n\n\"Hoy vamos a trabajar principalmente con ChatGPT porque es el más extendido y tiene funcionalidades que os van a encantar, pero todo lo que aprendáis es transferible a cualquiera de ellos.\"\n\nTransición a Adriana:\n\"Vale, con esta idea en mente — qué tareas deberíamos estar delegando y por qué — vamos a ir a algo que es la base de todo lo demás: cómo le pedimos las cosas a la IA.\"\n", "04": "Adriana — Intro bloque 1 · 2 min.\n\n\"Antes de tocar ninguna herramienta, hay una habilidad que lo cambia todo: saber pedir bien.\"\n\n\"Muchas veces la IA no falla porque no pueda hacer algo... falla porque no se lo estamos pidiendo bien.\"\n\n\"Y aquí hay un cambio importante de mentalidad: la responsabilidad de la calidad del resultado no es de la herramienta, es nuestra.\"\n\n\"Y esto es especialmente crítico en vuestro día a día... porque estáis constantemente tomando decisiones, preparando reuniones, gestionando equipos, proveedores, clientes...\"\n\nIdea clave: \"No se trata de hablarle bonito a la IA. Se trata de darle instrucciones claras.\"\n", "05": "Adriana · 3 min.\n\n\"Hace un par de años la estructura del prompt era mucho más compleja y requería de una técnica muy concreta. Hoy con tener claro 4 conceptos es suficiente.\"\n\n\"CORF son cuatro cosas que tiene que tener cualquier petición bien hecha:\n- Contexto\n- Objetivo\n- Restricciones\n- Formato\"\n\nAhora voy a explicar cada uno en detalle con un ejemplo concreto.\n", "06": "Adriana · 2-3 min.\n\n\"El contexto es todo lo que la IA necesita saber para entender la situación.\"\n\n\"Si no le das contexto, va a asumir... y normalmente va a asumir mal.\"\n\nEjemplo:\n- Sin contexto: \"Prepárame una reunión con un proveedor\"\n- Con contexto: \"Mañana tengo una reunión con un proveedor de Channel Manager para un hotel de 120 habitaciones en Mallorca con alta estacionalidad\"\n\n\"Se supone que tú ya has configurado en tus ajustes de ChatGPT o Gemini quién eres tú y a qué te dedicas. Si no es así o estás usando una IA sin tus ajustes, deberás decirle qué es lo que haces tú.\"\n", "07": "Adriana · 2 min.\n\n\"El objetivo no es 'hacer la reunión'. Es qué quieres conseguir.\"\n\n\"Aquí es donde la mayoría de la gente se queda corta.\"\n\nEjemplo:\n- Malo: \"Prepárame la reunión\"\n- Bueno: \"Quiero entender si este proveedor puede mejorar nuestra ocupación en temporada baja y negociar condiciones económicas\"\n", "08": "Adriana · 2 min.\n\n\"Las restricciones son los límites: lo que no quieres que haga, o el tiempo que tienes, el tono que necesitas, el tipo de cliente al que te diriges, etc.\"\n\n\"Esto evita respuestas genéricas.\"\n\nEjemplo: \"La reunión dura 30 minutos, no quiero entrar en temas técnicos, y necesito salir con una decisión clara.\"\n\nImportante: pensar en lo que NO queremos. Eso suele ser más útil que lo que sí queremos.\n", "09": "Adriana · 2 min.\n\n\"El formato es cómo quieres que te entregue la respuesta.\"\n\n\"Si no lo defines, te devuelve lo que quiera.\"\n\nEjemplo: \"Dámelo en forma de guión con tiempos por bloque con ejemplos: apertura, preguntas clave, puntos de decisión.\"\n\nCierre de la parte teórica:\n\"Esto es lo único que tenéis que llevaros de esta parte: si mejoráis cómo pedís, mejora automáticamente lo que obtenéis. CORF: Contexto, Objetivos, Restricciones y Formato.\"\n", "10": "Adriana · 1-2 min.\n\n\"Si juntamos todo, el mismo prompt cambia completamente.\"\n\nEnseñar el bloque en colores. Cada color es un componente de CORF.\n\n\"Vamos a copiar y pegar cada prompt en un chat nuevo y vemos qué nos devuelve.\"\n\n\"Está clara la diferencia, ¿no?\"\n\nTransición a Jorge:\n\"Y ahora, vamos un paso más allá. Jorge os tiene preparada una sorpresa con la que vais a cambiar radicalmente los resultados que obtenéis al preguntarle a la IA.\"\n", "11": "Jorge — Demo práctica · 15-20 min.\n\n\"Lo que acabáis de ver es que con CORF se consiguen resultados mucho mejores. Pero claro, tener que acordarse siempre de los cuatro componentes, escribir mucho... Para eso os hemos preparado algo.\"\n\nAbrir Better Prompter (GPT). Explicar los botones: crear prompt, mejorar prompt, sugerir prompts, etc.\n\n\"Hoy nos vamos a centrar en crear un prompt, pero el resto también podéis utilizarlos: este os mejora un prompt que ya tenéis, este os sugiere prompts para vuestro caso de uso...\"\n\nDemo en vivo: coger el mismo ejemplo del proveedor de Channel Manager. Meterlo en Better Prompter. Mostrar cómo el resultado es significativamente mejor que hacerlo a mano.\n\n\"¿Veis? Es como tener un experto en prompting al lado que os ayuda a formular cada petición.\"\n\nEjercicio rápido: cada asistente piensa en una tarea real de su semana y la transforma en prompt usando CORF o Better Prompter.\n\nEntregable: enlace al Better Prompter GPT.\n", "12": "Adriana — Bloque 2 · 25 min.\n\n\"Ahora vamos a dar un paso más.\"\n\n\"Hasta ahora hemos hablado de cómo pedir mejor... pero lo potente es no tener que empezar desde cero cada vez.\"\n\n\"Para eso creamos un copiloto: un asistente que ya sabe quién eres, qué haces y cómo trabajas.\"\n\nNOTA INTERNA: Falta ampliar la parte teórica de qué es y para qué sirve un GPT (marcado en rojo por Adriana en el doc original).\n\nJorge puede contextualizar si aplica:\n\"Cuando vosotros contratáis a un trabajador humano, ¿quién os va a hacer mejor trabajo? Una agencia externa que le decís 'búscame un recepcionista', o la persona de RRHH interna que conoce la misión, la visión, el problema concreto que queréis resolver? Con la IA es exactamente igual. Un asistente personalizado siempre va a dar mejores resultados que la IA genérica.\"\n", "13": "Adriana · 2 min.\n\n\"Crear un GPT es como contratar a una persona:\n- le dices qué tiene que hacer\n- cómo lo tiene que hacer\n- y con qué información cuenta\"\n\n\"Voy a enseñaros cómo se construye esto por dentro.\"\n\n\"Ya habéis usado el GPT de Better Prompter. Ahora vamos a ver cómo se crea uno para lo que vosotros queráis.\"\n", "14": "Adriana · 1 min — planteamos el caso.\n\n\"Vamos a imaginar un caso real: un director de hotel que constantemente tiene que responder clientes, preparar reuniones, coordinar equipo, revisar proveedores.\"\n\n\"Podemos crear GPTs con el plan Go de ChatGPT que son 8€ mensuales o crear un GEM gratis en Gemini.\"\n\nMostrar brevemente dónde se crea un GPT en ChatGPT (panel izquierdo → GPTs → Explorar → +Crear+Configurar). Campos en blanco: nombre, descripción, instrucciones, conocimientos...\n\n\"Para que os sea aún más fácil, os vamos a regalar otro GPT que os ayude a configurar esto mejor. Se llama Creador de Asistentes y lo ha creado Jorge también.\"\n", "15": "Adriana · 10-12 min.\n\nAbrir Creador de Asistentes → botón \"Crear\" → conversación preparada.\n\nPrompt usado en la demo: \"Eres un asesor estratégico personal de alto nivel especializado en el sector de hospitalidad de lujo y clubes exclusivos. Tu función es preparar al ejecutivo que te consulta para cualquier reunión o negociación importante, a preparar reuniones, coordinar equipo y gestionar clientes y proveedores con rigor. Quiero respuestas detalladas.\"\n\nIr siguiendo la conversación explicando cada paso:\n\n1. NOMBRE Y DESCRIPCIÓN: \"LUXURY HOSPITALITY ADVISOR\" — \"Strategic Advisor for a Hotel Director\"\n\n2. INSTRUCCIONES (lo que nos da el Creador de Asistentes):\n   - 2.1 Objetivo principal\n   - 2.2 Objetivos secundarios\n   - 2.3 Estilo y reglas de escritura\n   - 2.4 Reglas de oro\n\n3. INICIADORES DE CONVERSACIÓN / COMANDOS: \"Esto define cómo interactúas con él. Es decir, qué puede hacer cuando le pides algo.\"\n", "16": "Adriana · 3-4 min.\n\n\"Esto es clave. Igual que a una persona le das contexto cuando entra en una empresa... aquí le das información base.\"\n\nListar los conocimientos típicos:\n- Organigrama y roles del equipo\n- Perfiles de interlocutores habituales\n- Histórico de acuerdos con socios e inversores\n- SOPs\n- Calendario de eventos y temporadas claves\n- Listado de proveedores activos\n- Criterio de selección de proveedores\n- Guía de comunicación y tono de marca\n- Propuesta de valor y posicionamiento\n- Listado de competidores\n\n\"Si no tenéis estos documentos, no pasa nada. El propio Creador de Asistentes os puede ayudar a crearlos. Preguntadle qué información necesita y os guiará.\"\n\n5. MODELO RECOMENDADO: \"Suele recomendar uno por defecto.\"\n\n6. FUNCIONES:\n- Búsqueda en internet: para que además busque información actual\n- Lienzo/Canvas: como un folio en blanco para añadir comentarios\n- Generación de imágenes\n- Intérprete de código y análisis de datos\n", "17": "Adriana · 2 min — cierre bloque 2.\n\n\"Cuando todo esto está definido, simplemente damos a 'Crear'... Y nos da la opción de que lo veas solo tú, cualquier persona con el enlace, o que lo publiques en la tienda de GPTs y ya lo tenemos funcionando.\"\n\n\"Esto mismo lo hacemos en Google Gemini.\" (Demo rápida crear Gem)\n\nEntregable: Compartir enlace al Creador de Asistentes GPT.\n", "18": "Jorge — Bloque 3 · 40 min. Yo hago todo este bloque.\n\n\"Ahora que sabéis pedir bien y tenéis vuestro copiloto configurado, lo vamos a poner a trabajar en situaciones que reconocéis de vuestro día a día.\"\n\nVamos a cubrir 4 casos de uso reales:\n1. Nunca pierdas una conversación (Fireflies) · 12 min\n2. Emails que no te dan pereza · 10 min\n3. Preparado en 5 minutos (research) · 8 min\n4. SOPs · 10 min\n", "19": "Jorge · 12 min.\n\n\"¿A cuántos os ha pasado tener una reunión y luego no acordaros de qué había que hacer exactamente? Levantar la mano.\"\n\n\"Con esta herramienta eso no os va a volver a pasar.\"\n\nPresentar Fireflies: qué es, cómo funciona (se conecta a Meet/Zoom/Teams, graba, transcribe, resume automáticamente). Demo web: mostrar transcripción real anonimizada con resumen, action items, keywords.\n\nDemo app móvil: \"Esto es brutal. Con darle a este botón podéis grabar cualquier llamada de teléfono. Reunión con proveedor en el café, llamada con cliente desde el taxi...\"\n\nDe 1 reunión → 5 outputs:\n1. Follow-up para el cliente\n2. Action items para el equipo\n3. Contenido para redes\n4. Documentación interna\n5. Email resumen\n\n\"Y esto no es ciencia ficción, esto lo uso yo todos los días.\"\n\nAlternativa gratuita: \"Si no queréis pagar de entrada, existe tl;dv que tiene transcripciones ilimitadas en su plan gratuito. Y si os gusta el concepto de grabar llamadas de teléfono, buscad Plaud Note — es un dispositivo físico que se pega al teléfono.\"\n", "20": "Jorge · 10 min.\n\n\"Ahora cogemos esa transcripción de la reunión y le decimos al copiloto que nos prepare el email de seguimiento.\"\n\nDemo en vivo con el Co-Piloto configurado:\n1. Email follow-up post-reunión con proveedor Channel Manager\n2. Respuesta a cliente VIP que solicita cambio\n\n\"El copiloto ya conoce vuestro tono, vuestro estilo. Los emails salen como si los hubierais escrito vosotros, pero en una fracción del tiempo.\"\n\n\"Y para los que usáis Outlook: esto funciona igual. Copiáis y pegáis, o directamente usáis el copiloto en el navegador mientras tenéis Outlook abierto.\"\n", "21": "Jorge · 8 min.\n\n\"¿Tenéis una reunión mañana con alguien y queréis llegar preparados? Lo que antes eran 2 horas de búsqueda manual, el copiloto lo resuelve en minutos.\"\n\nDemo: research rápido de un hotel real (Rosewood Villa Magna o Marbella Club).\n\n\"Mirad: en 2 minutos tenéis un resumen de la empresa, últimas noticias, datos clave del sector, posibles temas de conversación. Esto antes os llevaría una hora como mínimo.\"\n", "22": "Jorge · 10 min.\n\n\"¿Cuántos de vosotros tenéis procesos que solo sabe hacer una persona del equipo? Si esa persona se va de vacaciones o se marcha, el conocimiento se pierde.\"\n\nExplicar qué es un SOP (Standard Operating Process): paso a paso para hacer una tarea.\n\n\"Normalmente son un coñazo de hacer. Pero existe una herramienta con la que literalmente grabáis la pantalla mientras hacéis la tarea y automáticamente os genera el documento de proceso.\"\n\nDemo herramienta SOP.\n\n\"Y aquí viene lo mejor: ese SOP lo podéis meter en la base de conocimientos de vuestro copiloto. Ahora la IA sabe exactamente cómo hacer las cosas en vuestra empresa.\"\n", "23": "Jorge + Adriana · 5 min.\n\n\"Antes de cerrar: una micro-tarea para la próxima sesión.\"\n\n\"Elegid la tarea que más tiempo os consume en vuestra semana. Resolvedla con vuestro Co-Piloto usando el framework CORF. Traed el resultado el martes.\"\n\n\"Esto genera accountability: cuando veáis que vuestro compañero ahorró 2 horas en una propuesta, la adopción se acelera.\"\n\nCompartir instrucciones escritas por chat/email.\n", "24": "Separador de sesión 2. Sin guion hablado.", "25": "Adriana · 10 min. Bienvenida compartida Jorge + Adriana.\n\n\"Antes de seguir, quiero que veamos qué ha pasado entre sesiones.\"\n\n\"¿Quién ha probado algo?\"\n\"¿Qué habéis hecho?\"\n\"¿Habéis intentado crear vuestro GPT personalizado?\"\n\"¿Habéis probado el Better Prompter?\"\n\"¿Qué ha funcionado? ¿Qué no?\"\n\n\"Esto no va de hacerlo perfecto... va de empezar.\"\n\nAjustes rápidos a los Co-Pilotos si alguien tiene dudas.\n", "26": "Adriana · 3 min intro.\n\n\"Aquí vamos a ver cómo usar IA para preparar presentaciones de forma más rápida y con más impacto.\"\n\nFlujo de 4 pasos:\n1. Investigar interlocutor (con el co-piloto de ayer)\n2. Estructurar mensaje (con IA — narrativa, no bullets)\n3. Diseñar (con herramienta IA)\n4. Preparar seguimiento\n\n\"Las dos primeras las hacemos con el copiloto de ayer.\"\n", "27": "Adriana · 12 min — Herramienta 1 · Google Canvas.\n\n\"Nos venimos a Gemini → le damos a herramientas → Canvas → le metemos el prompt (que lo podemos siempre refinar en Better Prompter antes).\"\n\n\"Con ese prompt + documento que queramos maquetar, nos crea en unos minutos una propuesta estupenda.\"\n\n\"Es importante decirle en el prompt que no nos cambie nada de nuestro texto, que lo mantenga intacto.\"\n\n\"Para guardarlo podemos o bien pedirle que nos genere un PDF, o bien en compartir nos genera un link que podemos enviar por email.\"\n", "28": "Adriana · 15-20 min — Herramienta 2 · Gamma.\n\n\"La otra herramienta que podemos usar, mucho más profesional, es Gamma. Solo hay que darse de alta con usuario y contraseña y puedes probar de forma gratuita una presentación breve.\"\n\n\"Vamos a Gamma → crear nuevo → importar archivo → cargar archivo → presentación o documento.\"\n\nNOTA INTERNA: Adriana pendiente de investigar meterle un prompt a ChatGPT para que de eso me cree un HTML.\n\nEjercicio práctico: generar una presentación completa desde brief real en 20 min. Puede ser: propuesta comercial para cliente, reporte trimestral para dirección, propuesta interna.\n\n\"¿Cuánto le tendríais que pagar a un diseñador solo para que os haga presentaciones? ¿Cuántas horas? ¿Y luego que no es a vuestro gusto y tenéis que decirle que cambie esto? Esto os cuesta 8€ al mes.\"\n", "29": "Jorge · 25 min.\n\n\"La mayoría de ejecutivos no necesitáis un curso avanzado de Excel. Necesitáis resolver 3 cosas: fórmulas que no recordáis, tablas que necesitáis reorganizar y gráficos que presentar a dirección.\"\n\n\"La IA convierte eso en una conversación: subís vuestro Excel, le explicáis qué necesitáis en lenguaje normal, y obtenéis el resultado.\"\n\nDemo con Excel datos hotel ficticio (el CSV de los materiales):\n- Análisis estacional (ocupación por meses)\n- Comparativa de pricing vs competencia\n- Proyecciones de ocupación\n- Gráficos para reporting a dirección\n\n\"Tanto ChatGPT como Claude como Gemini tienen integración nativa con archivos: subir un Excel y hacer preguntas en lenguaje natural funciona hoy, sin configuración, sin código, sin complicaciones.\"\n\n\"Y para los que usáis Excel en el entorno de Microsoft: Copilot ya hace algo parecido dentro de Excel directamente. Si vuestra empresa tiene licencia de Microsoft 365, probad Copilot en Excel.\"\n", "30": "Adriana · Intro Bloque 3 · 2 min.\n\n\"La mayoría de decisiones en hotelería... se toman sin saber exactamente qué está haciendo tu competencia directa.\"\n\n\"Y cuando hablamos de hoteles como Anantara Villa Padierna en Benahavís, Marbella Resort... eso tiene impacto directo en ingresos.\"\n\n\"Porque no estás compitiendo solo en precio... estás compitiendo en posicionamiento, experiencia y percepción de valor.\"\n", "31": "Adriana · 2 min.\n\n\"Esto no va de copiar lo que hace Anantara.\"\n\n\"Va de entender:\n- por qué lo hace\n- para quién lo hace\n- y qué puedes aprender tú de eso\"\n", "32": "Adriana · 5 min.\n\n\"Vamos a aterrizarlo con un caso real.\"\n\n\"Imagina que tienes un hotel premium en la Costa del Sol... y quieres entender cómo se posiciona Anantara.\"\n\n\"¿Qué observamos? No necesitamos mil datos. Necesitamos los correctos.\"\n- Precios por temporada\n- Tipo de cliente al que se dirige\n- Experiencias que vende\n- Cómo comunica el lujo\n\n\"Anantara no compite solo en habitaciones... compite en experiencia. Spa, golf, gastronomía, entorno...\"\n\nMensaje clave: \"Monitorizar no es mirar por mirar. Es mirar con intención.\"\n", "33": "Adriana · 5 min.\n\n\"Aquí es donde la mayoría se queda corta.\"\n\n\"Ver que Anantara tiene precios altos no sirve de nada. Lo importante es entender por qué puede permitírselo.\"\n\n¿Qué vemos?\n- Posicionamiento ultra premium\n- Cliente internacional\n- Experiencia completa, no solo estancia\n\n\"Entonces la pregunta no es: '¿debería subir precios?'\"\n\"La pregunta es: '¿qué está justificando ese precio?'\"\n\nFrase clave: \"El precio es una consecuencia... no una estrategia.\"\n", "34": "Adriana · 5 min.\n\n\"Y aquí es donde esto deja de ser interesante... y pasa a ser útil.\"\n\n\"Si entiendes bien lo que hace Anantara... puedes decidir cosas como:\n- ¿Tengo que competir en precio o en propuesta?\n- ¿Estoy comunicando bien el valor?\n- ¿Qué parte de la experiencia puedo reforzar?\"\n\n\"No es copiar. Es decidir mejor.\"\n\nTransición a demo de Jorge:\n\"Ahora, todo esto... lo hacíamos a mano. Abrías 10 webs, comparabas, sacabas conclusiones... Ahora podéis hacerlo mucho más rápido.\"\n", "35": "Jorge · 5 min.\n\n\"Voy a usar el modo agente de ChatGPT para hacer este análisis.\"\n\nMostrar resultado pre-ejecutado del prompt de benchmarking de Anantara (el agente tarda demasiado para hacerlo en vivo). Enseñar el razonamiento por dentro: cómo el agente busca, compara, selecciona competidores, analiza y da recomendaciones.\n\n\"Fijaos: en 5 minutos ha hecho lo que a un analista le llevaría un día entero. Ha seleccionado competidores, comparado precios, analizado posicionamiento, y os da recomendaciones estratégicas concretas.\"\n\n\"Y esto lo hemos hecho con el prompt que preparamos usando el Better Prompter. ¿Veis cómo todo se conecta?\"\n", "36": "Jorge · 8 min.\n\n\"Prompting, Co-Pilotos, reuniones, emails, presentaciones, datos, benchmarking... En dos sesiones habéis visto mucho.\"\n\n\"Pero lo que importa de verdad es aplicar lo aprendido.\"\n\n\"Ahora quiero que cada uno elija las 3 cosas que más le han servido de todo el programa y las escriba como su kit de supervivencia IA personal: tres acciones concretas que ya sabéis hacer.\"\n\n\"El ejercicio es de priorización personal: de todo esto, ¿qué es lo que realmente voy a usar el lunes? Cada persona sale con una respuesta diferente, y eso es exactamente lo que queremos.\"\n", "37": "Jorge · 7 min.\n\n\"Ahora, rápidamente, qué instalar y para qué.\"\n\nCompartir documento Toolkit con:\n- Apps móvil: ChatGPT, Gemini, Fireflies (o tl;dv), Gamma\n- Qué funciona desde el teléfono vs qué necesita ordenador\n- \"No os volváis locos: empezad con 1-2, no con las 10\"\n\n\"El 90% funciona desde el móvil. Aeropuerto, tren, café.\"\n\nFunciones del \"+\" en ChatGPT (1 min):\n\"Una cosa rápida: en ChatGPT, si le dais al + a la izquierda del chat, veréis opciones como Deep Research (investigación profunda), Canvas (lienzo para editar), Estudiar y aprender... No vamos a entrar en detalle, pero que sepáis que están ahí.\"\n\nCuadro comparativo herramientas (1 min):\n\"Y para que tengáis claro qué es cada cosa: ChatGPT es la más versátil, Gemini se integra con Google, Claude es excelente para textos largos, y Microsoft Copilot se integra en Outlook, Excel y Word si tenéis licencia. Os dejamos un cuadro resumen en los materiales.\"\n", "38": "Jorge · 3 min — Fase 2.\n\n\"Lo que habéis aprendido es la Fase 1: Co-Pilotos. Es el primer paso del camino.\"\n\n\"Una vez sabéis dar los primeros pasos, os enseño hasta dónde puede llegar:\"\n\n\"Fase 2: Bases de conocimiento inteligentes por departamento. Sistemas que responden preguntas como '¿por qué perdemos clientes en Q4?' o '¿qué patrones predicen una reserva de alto valor?' Imaginad tener toda la información de vuestro hotel centralizada y poder preguntarle cosas.\"\n", "39": "Jorge · 3 min — Fase 3.\n\n\"Fase 3: Agentes y automatizaciones. Workflows que se ejecutan solos: prospección automática, atención al cliente 24/7, reporting sin intervención humana.\"\n\n\"Para los que queráis ir más allá, 360º Consulting acompaña en ese camino.\"\n\nMencionar que The Real Thing ya ha solicitado el diagnóstico personalizado como ejemplo concreto de siguiente paso.\n", "40": "Jorge · 4 min.\n\n\"Antes de irnos: 3 hábitos IA que implementáis esta semana. Con fecha concreta de revisión. Escribidlos ahora.\"\n\nDejar 2-3 min para que lo escriban en silencio.\n\nOpcional: pedir a uno o dos que los compartan voluntariamente.\n", "41": "Jorge + Adriana — Cierre · 1-2 min.\n\n\"Muchas gracias por vuestro tiempo y vuestra participación. Los materiales os los mandamos por email con todo lo que hemos visto. Un placer.\"\n\nAmbos despedidos.\n\nDejar la slide de gracias en pantalla mientras la gente hace preguntas sueltas o se va.\n"};
-    const LS_KEY = 'excelenc-ia-notes-v1';
+<!-- 29 SECTION DIVIDER — Sesión 2 -->
+<section class="section-divider" data-label="Sesion 2 divider">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">Sesión 2 / 2</span></div>
+  <div class="inner">
+    <p class="index">Sesión 02 <span class="sep">/</span> <span style="color: var(--muted);">De la ejecución a la ventaja</span></p>
+    <h2>De la ejecución<br/>a la <span class="accent">ventaja competitiva</span>.</h2>
+    <p class="meta">Cuatro bloques · Presentaciones · Datos · Inteligencia · Kit</p>
+  </div>
+</section>
 
-    // ─── Load + apply custom notes from localStorage ───
-    function loadCustom() {
-      try {
-        return JSON.parse(localStorage.getItem(LS_KEY) || '{}');
-      } catch {
-        return {};
-      }
+<!-- 30 Panorama · Ayer (Sesión 2 — recap) -->
+<section data-label="Panorama Ayer">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">Sesión 2 · Recap</span></div>
+  <p class="eyebrow">Ayer · Sesión 1</p>
+  <h2 class="title" style="margin-top: 32px;">De dónde venimos.</h2>
+  <div class="three-col" style="margin-top: 64px;">
+    <div class="card">
+      <span class="label">Bloque 01</span>
+      <p class="h">Prompting ejecutivo.</p>
+      <p class="p body--muted">CORF: contexto, objetivo, restricciones, formato.</p>
+    </div>
+    <div class="card">
+      <span class="label">Bloque 02</span>
+      <p class="h">Tu Co-Piloto personal.</p>
+      <p class="p body--muted">Un asistente con tus documentos y tu tono.</p>
+    </div>
+    <div class="card">
+      <span class="label">Bloque 03</span>
+      <p class="h">Problemas reales.</p>
+      <p class="p body--muted">Reuniones, emails, prep de llamada, conocimiento.</p>
+    </div>
+  </div>
+  <div class="page-foot"><span>Sesión 2 · Recap</span><span>26</span></div>
+</section>
+
+<!-- 31 Apertura S2 — ¿qué ha pasado entre sesiones? -->
+<section data-label="Apertura Sesion 2">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">Sesión 2 · Apertura</span></div>
+  <p class="eyebrow">Apertura</p>
+  <h2 class="title" style="margin-top: 40px;">¿Qué ha pasado<br/>entre sesiones?</h2>
+  <p class="subtitle body--muted" style="margin-top: 56px; max-width: 1500px;">Cinco minutos para compartir la micro-tarea de ayer. Lo que funcionó, lo que atascó, lo que sorprendió.</p>
+  <div class="page-foot"><span>Apertura</span><span>27</span></div>
+</section>
+
+<!-- 32 Panorama · Hoy (Sesión 2 — agenda) -->
+<section data-label="Panorama Hoy Sesion 2">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">Sesión 2 · Agenda</span></div>
+  <p class="eyebrow">Hoy · Sesión 2</p>
+  <h2 class="title" style="margin-top: 32px;">A dónde vamos.</h2>
+  <div class="four-col" style="margin-top: 64px;">
+    <div class="card card--accent-rule">
+      <span class="label accent">Bloque 01</span>
+      <p class="h">Presentaciones que convencen.</p>
+    </div>
+    <div class="card">
+      <span class="label">Bloque 02</span>
+      <p class="h">Datos sin dolor.</p>
+    </div>
+    <div class="card">
+      <span class="label">Bloque 03</span>
+      <p class="h">Inteligencia competitiva.</p>
+    </div>
+    <div class="card">
+      <span class="label">Bloque 04</span>
+      <p class="h">Kit IA y plan de acción.</p>
+    </div>
+  </div>
+  <div class="page-foot"><span>Agenda</span><span>28</span></div>
+</section>
+
+<!-- 31 BLOQUE 1 Presentaciones -->
+<section data-label="Bloque 1 S2 Presentaciones">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">Sesión 2 · Bloque 1</span></div>
+  <div class="grow" style="display: flex; align-items: flex-end;">
+    <div>
+      <p class="eyebrow">Bloque 1</p>
+      <h2 class="title title--xl" style="margin-top: 32px;">Presentaciones<br/>que convencen.</h2>
+      <p class="subtitle body--muted" style="margin-top: 40px; max-width: 1400px;">De un documento a un deck pulido sin perder la tarde.</p>
+    </div>
+  </div>
+  <div class="page-foot"><span>Sesión 2 · Bloque 1</span><span>27</span></div>
+</section>
+
+<!-- 32 Flujo 4 pasos -->
+<section data-label="Flujo cuatro pasos">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">Sesión 2 · Bloque 1</span></div>
+  <p class="eyebrow">El flujo</p>
+  <h2 class="title" style="margin-top: 40px;">Cuatro pasos. Tres los hace la IA.</h2>
+  <div class="four-col" style="margin-top: 64px;">
+    <div class="card"><span class="label">01 · Briefing</span><p class="h">Objetivo, audiencia, punchline.</p></div>
+    <div class="card"><span class="label">02 · Estructura</span><p class="h">Titulares de cada slide.</p></div>
+    <div class="card"><span class="label">03 · Contenido</span><p class="h">Texto y ejemplos por slide.</p></div>
+    <div class="card card--accent-rule"><span class="label accent">04 · Diseño</span><p class="h">Decides tú.</p></div>
+  </div>
+  <div class="page-foot"><span>Presentaciones</span><span>28</span></div>
+</section>
+
+<!-- 33 Canvas + Gamma -->
+<section data-label="Canvas + Gamma + Claude">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">Sesión 2 · Bloque 1</span></div>
+  <p class="eyebrow">Stack recomendado</p>
+  <h2 class="title" style="margin-top: 32px;">Canvas para pensar.<br/>Gamma y Claude para diseñar.</h2>
+  <div class="three-col" style="margin-top: 56px;">
+    <div class="card">
+      <span class="label">Google Canvas</span>
+      <p class="h">Guion y estructura.</p>
+      <p class="p body--muted">Iteras el esqueleto en lenguaje natural. La IA discute contigo el orden de las slides antes de pintar nada.</p>
+    </div>
+    <div class="card">
+      <span class="label">Gamma</span>
+      <p class="h">Deck final.</p>
+      <p class="p body--muted">Pegas el guion, eliges plantilla, y obtienes un deck exportable a PPT o PDF.</p>
+    </div>
+    <div class="card card--accent-rule">
+      <span class="label accent">Claude Design</span>
+      <p class="h">Diseño a medida.</p>
+      <p class="p body--muted">Cuando la plantilla no basta: layouts hechos a mano, tono editorial propio, y composiciones que no parecen de IA.</p>
+    </div>
+  </div>
+  <div class="page-foot"><span>Presentaciones</span><span>29</span></div>
+</section>
+
+<!-- 34 BLOQUE 2 Datos -->
+<section data-label="Bloque 2 S2 Datos">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">Sesión 2 · Bloque 2</span></div>
+  <div class="grow" style="display: flex; align-items: flex-end;">
+    <div>
+      <p class="eyebrow">Bloque 2</p>
+      <h2 class="title title--xl" style="margin-top: 32px;">Datos<br/>sin dolor.</h2>
+      <p class="subtitle body--muted" style="margin-top: 40px; max-width: 1400px;">Excel deja de ser un muro.</p>
+    </div>
+  </div>
+  <div class="page-foot"><span>Sesión 2 · Bloque 2</span><span>30</span></div>
+</section>
+
+<!-- 35 Excel como conversación + dos caminos -->
+<section data-label="Excel como conversacion">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">Sesión 2 · Bloque 2</span></div>
+  <p class="eyebrow">Mindset</p>
+  <h2 class="title" style="margin-top: 40px;">Trata Excel como<br/>una <span class="accent">conversación</span>.</h2>
+  <div class="two-col" style="margin-top: 56px;">
+    <div>
+      <p class="eyebrow body--muted">Camino A · Subir</p>
+      <p class="body" style="margin-top: 20px;">Sube tu Excel a ChatGPT, Gemini o Claude. Pregunta en lenguaje natural. Sin fórmulas, sin jerga.</p>
+      <ul class="bullets" style="margin-top: 24px;">
+        <li><span>Tablas dinámicas, gráficas, anomalías — en segundos.</span></li>
+        <li><span>Tres niveles de preguntas: descubrir, buscar patrones, decidir.</span></li>
+      </ul>
+    </div>
+    <div>
+      <p class="eyebrow accent">Camino B · Integrar</p>
+      <p class="body" style="margin-top: 20px;">Claude dentro del propio Excel. Sin subir archivos. Sin cambiar de ventana.</p>
+      <ul class="bullets" style="margin-top: 24px;">
+        <li><span>«Ponme esto bonito» — gráficos, formato, análisis.</span></li>
+        <li><span>Demo en directo con el CSV de un hotel ficticio.</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="page-foot"><span>Datos sin dolor</span><span>31</span></div>
+</section>
+
+<!-- 36 BLOQUE 3 Inteligencia -->
+<section data-label="Bloque 3 S2 Inteligencia">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">Sesión 2 · Bloque 3</span></div>
+  <div class="grow" style="display: flex; align-items: flex-end;">
+    <div>
+      <p class="eyebrow">Bloque 3</p>
+      <h2 class="title title--xl" style="margin-top: 32px;">Inteligencia<br/>competitiva.</h2>
+      <p class="subtitle body--muted" style="margin-top: 40px; max-width: 1400px;">Saber qué pasa fuera antes de que te lo cuenten.</p>
+    </div>
+  </div>
+  <div class="page-foot"><span>Sesión 2 · Bloque 3</span><span>32</span></div>
+</section>
+
+<!-- 37 Monitorizar analizar decidir -->
+<section data-label="Monitorizar analizar decidir">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">Sesión 2 · Bloque 3</span></div>
+  <p class="eyebrow">Ciclo</p>
+  <h2 class="title" style="margin-top: 40px;">Monitorizar · Analizar · Decidir.</h2>
+  <div class="three-col" style="margin-top: 64px;">
+    <div class="card"><span class="label">01 · Monitorizar</span><p class="h">Señales.</p><p class="p body--muted">Competencia, tendencias, regulación, prensa.</p></div>
+    <div class="card"><span class="label">02 · Analizar</span><p class="h">Patrones.</p><p class="p body--muted">La IA cruza y descarta ruido. Subraya lo que importa.</p></div>
+    <div class="card card--accent-rule"><span class="label accent">03 · Decidir</span><p class="h">Tú.</p><p class="p body--muted">La máquina nunca decide. Solo te da el briefing.</p></div>
+  </div>
+  <div class="page-foot"><span>Inteligencia competitiva</span><span>33</span></div>
+</section>
+
+<!-- 38 Caso Anantara -->
+<section data-label="Caso Anantara">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">Sesión 2 · Bloque 3</span></div>
+  <p class="eyebrow">Caso cliente</p>
+  <h2 class="title" style="margin-top: 32px;">Anantara. Radar semanal.</h2>
+  <div class="two-col" style="margin-top: 64px;">
+    <div>
+      <p class="eyebrow body--muted">Antes</p>
+      <p class="hero-num" style="font-size: 140px; color: var(--muted); margin-top: 10px;">1 FTE</p>
+      <p class="body body--muted" style="margin-top: 10px;">Analista dedicado a compilar informes.</p>
+    </div>
+    <div>
+      <p class="eyebrow accent">Ahora</p>
+      <p class="hero-num" style="font-size: 140px; margin-top: 10px;">15′</p>
+      <p class="body body--muted" style="margin-top: 10px;">Cada lunes. Briefing de tres páginas revisado por dirección.</p>
+    </div>
+  </div>
+  <div class="page-foot"><span>Inteligencia competitiva</span><span>34</span></div>
+</section>
+
+<!-- 39 Demo agente -->
+<section data-label="Demo modo agente">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">Sesión 2 · Bloque 3</span></div>
+  <p class="eyebrow">Demo</p>
+  <h2 class="title" style="margin-top: 32px;">Modo agente. La IA <span class="accent">actúa</span>.</h2>
+  <div class="three-col" style="margin-top: 56px;">
+    <div class="card"><span class="label">Abre</span><p class="h">Pestañas y apps.</p><p class="p body--muted">Navega sola para completar la tarea.</p></div>
+    <div class="card"><span class="label">Compara</span><p class="h">Precios y proveedores.</p><p class="p body--muted">Monta tablas de decisión por ti.</p></div>
+    <div class="card"><span class="label">Rellena</span><p class="h">Formularios y hojas.</p><p class="p body--muted">Con supervisión siempre.</p></div>
+  </div>
+  <p class="body body--muted" style="margin-top: 48px; font-size: 26px;">Usar con pies de plomo. El potencial es grande; el control, también.</p>
+  <div class="page-foot"><span>Inteligencia competitiva</span><span>35</span></div>
+</section>
+
+<!-- 40 BLOQUE 4 Kit IA -->
+<section data-label="Bloque 4 Kit IA">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">Sesión 2 · Bloque 4</span></div>
+  <div class="grow" style="display: flex; align-items: flex-end;">
+    <div>
+      <p class="eyebrow">Bloque 4</p>
+      <h2 class="title title--xl" style="margin-top: 32px;">Kit IA.</h2>
+      <p class="subtitle body--muted" style="margin-top: 40px; max-width: 1400px;">El toolkit que te llevas a la oficina.</p>
+    </div>
+  </div>
+  <div class="page-foot"><span>Sesión 2 · Bloque 4</span><span>36</span></div>
+</section>
+
+<!-- 41 A partir del lunes · La IA vive en el móvil -->
+<section data-label="A partir del lunes">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">Sesión 2 · Bloque 4</span></div>
+  <p class="eyebrow">A partir del lunes</p>
+  <h2 class="title" style="margin-top: 32px;">La IA también vive<br/>en el <span class="accent">móvil</span>.</h2>
+  <p class="subtitle body--muted" style="margin-top: 40px; max-width: 1500px;">Todo lo que hemos visto funciona desde el teléfono. Aeropuerto, tren, café. No necesitáis el ordenador para empezar.</p>
+  <div class="four-col" style="margin-top: 56px;">
+    <div class="tool-cell"><span class="name">ChatGPT</span><span class="for">Prompts, GPTs, análisis, voz.</span><span class="price">iOS · Android</span></div>
+    <div class="tool-cell"><span class="name">Gemini</span><span class="for">Integración Google, Gems gratis.</span><span class="price">iOS · Android</span></div>
+    <div class="tool-cell"><span class="name">Claude</span><span class="for">Textos largos, análisis profundo.</span><span class="price">iOS · Android</span></div>
+    <div class="tool-cell"><span class="name">Fireflies</span><span class="for">Grabar llamadas con un botón.</span><span class="price">iOS · Android</span></div>
+  </div>
+  <p class="body body--muted" style="margin-top: 40px; font-size: 26px;">Os dejamos una guía completa con todas las apps recomendadas en los materiales de la formación.</p>
+  <div class="page-foot"><span>Kit IA</span><span>37</span></div>
+</section>
+
+<!-- 44 Roadmap -->
+<section data-label="Roadmap tres fases">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">Sesión 2 · Bloque 4</span></div>
+  <p class="eyebrow">Roadmap</p>
+  <h2 class="title" style="margin-top: 32px;">Tres fases. No te saltes ninguna.</h2>
+  <div class="roadmap" style="margin-top: 56px;">
+    <div class="phase phase--first">
+      <span class="fase-label accent">Fase 01 · 30 días</span>
+      <h3 class="phase-title">Adopción.</h3>
+      <p class="phase-body">Un prompt ejecutivo al día. Un asistente personal. Medir horas recuperadas.</p>
+    </div>
+    <div class="phase">
+      <span class="fase-label">Fase 02 · 90 días</span>
+      <h3 class="phase-title">Integración.</h3>
+      <p class="phase-body">Flujos compartidos entre personas. Plantillas de equipo. Radar semanal.</p>
+    </div>
+    <div class="phase">
+      <span class="fase-label">Fase 03 · 180 días</span>
+      <h3 class="phase-title">Ventaja.</h3>
+      <p class="phase-body">Procesos rediseñados. Producto tocado por IA. Decisiones con datos frescos.</p>
+    </div>
+  </div>
+  <div class="page-foot"><span>Kit IA</span><span>40</span></div>
+</section>
+
+<!-- 45 Plan de acción -->
+<section data-label="Plan de accion">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">Sesión 2 · Cierre</span></div>
+  <p class="eyebrow">Plan de acción</p>
+  <h2 class="title" style="margin-top: 32px;">Tres hábitos. Empiezan mañana.</h2>
+  <ol class="bullets bullets--num" style="margin-top: 72px; max-width: 1500px;">
+    <li><span><b style="font-weight: 500;">Un prompt ejecutivo al día.</b> CORF, siempre, antes de escribir nada.</span></li>
+    <li><span><b style="font-weight: 500;">Un asistente propio esta semana.</b> Un rol, tres documentos, una instrucción.</span></li>
+    <li><span><b style="font-weight: 500;">Revisión los viernes.</b> Qué funcionó, qué automatizar la semana siguiente.</span></li>
+  </ol>
+  <div class="page-foot"><span>Cierre</span><span>41</span></div>
+</section>
+
+<!-- 46 Gracias -->
+<section class="cover" data-label="Gracias">
+  <div class="top-chrome"><img src="assets/logo-full-yellow.png" alt="" /><span class="caps">Formación Excelenc-IA</span></div>
+  <div class="inner">
+    <p class="eyebrow" style="margin-bottom: 56px;">Hasta aquí</p>
+    <h1 class="giant">Gracias<span class="accent">.</span></h1>
+    <p class="subtitle body--muted" style="margin-top: 56px; max-width: 1400px;">La herramienta queda en tus manos.<br/>Nosotros seguimos a un mensaje de distancia.</p>
+    <p class="body body--muted" style="margin-top: 80px; font-size: 26px; letter-spacing: 0.14em; text-transform: uppercase;">360º Consulting · jorge@360consulting.io</p>
+  </div>
+</section>
+
+</deck-stage>
+
+<!-- Tweaks -->
+<div id="tweaks-panel">
+  <h3>Tweaks</h3>
+  <div class="row">
+    <label>Tema de fondo</label>
+    <div class="seg" data-group="theme">
+      <button data-val="dark" data-active>Negro</button>
+      <button data-val="light">Blanco</button>
+    </div>
+  </div>
+  <div class="row">
+    <label>Color de acento</label>
+    <div class="seg" data-group="accent">
+      <button data-val="#F4E711" data-active>Amarillo</button>
+      <button data-val="#FF5A1F">Naranja</button>
+      <button data-val="#00E58C">Verde</button>
+    </div>
+  </div>
+  <div class="row">
+    <label>Escala tipográfica</label>
+    <input id="tw-type" type="range" min="0.85" max="1.2" step="0.01" value="0.85" />
+  </div>
+</div>
+
+<script>
+(() => {
+  const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+    "theme": "dark",
+    "accent": "#F4E711",
+    "typeScale": 0.85
+  }/*EDITMODE-END*/;
+
+  const state = { ...TWEAK_DEFAULTS };
+
+  function applyAll() {
+    const root = document.documentElement;
+    if (state.theme === 'light') {
+      root.setAttribute('data-theme', 'light');
+      document.body.style.background = '#fff';
+    } else {
+      root.removeAttribute('data-theme');
+      document.body.style.background = '#000';
     }
+    root.style.setProperty('--accent', state.accent);
+    root.style.setProperty('--brand-yellow', state.accent);
+    const s = state.typeScale;
+    root.style.setProperty('--fs-hero', (140 * s) + 'px');
+    root.style.setProperty('--fs-title', (78 * s) + 'px');
+    root.style.setProperty('--fs-subtitle', (44 * s) + 'px');
+    root.style.setProperty('--fs-body', (32 * s) + 'px');
+    root.style.setProperty('--fs-small', (26 * s) + 'px');
+  }
+  applyAll();
 
-    function saveCustom(map) {
-      localStorage.setItem(LS_KEY, JSON.stringify(map));
-    }
+  // Set range to match default
+  const tr = document.getElementById('tw-type');
+  if (tr) tr.value = state.typeScale;
 
-    function applyCustomToDOM() {
-      const custom = loadCustom();
-      document.querySelectorAll('aside.notes[data-slide-id]').forEach(el => {
-        const id = el.dataset.slideId;
-        if (custom[id] !== undefined) {
-          el.textContent = custom[id];
-        }
-      });
-    }
-
-    applyCustomToDOM();
-
-    // ─── Init Reveal ───
-    Reveal.initialize({
-      hash: true,
-      controls: true,
-      progress: true,
-      slideNumber: 'c/t',
-      transition: 'slide',
-      transitionSpeed: 'default',
-      width: 1280,
-      height: 800,
-      margin: 0.06,
-      minScale: 0.2,
-      maxScale: 2.0,
-      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+  const panel = document.getElementById('tweaks-panel');
+  function pushToHost() {
+    try { window.parent.postMessage({ type: '__edit_mode_set_keys', edits: state }, '*'); } catch(e){}
+  }
+  panel.querySelectorAll('.seg').forEach(seg => {
+    // sync active from state
+    const group = seg.dataset.group;
+    let cur = state[group];
+    seg.querySelectorAll('button').forEach(b => {
+      if (b.dataset.val === String(cur)) b.setAttribute('data-active', '');
+      else b.removeAttribute('data-active');
     });
-
-    // ─── Notes editor logic ───
-    const editor = document.getElementById('notes-editor');
-    const toggle = document.getElementById('editor-toggle');
-    const textarea = document.getElementById('editor-textarea');
-    const status = document.getElementById('editor-status');
-    const slideLabel = document.getElementById('editor-slide-label');
-
-    function currentSlideId() {
-      const slide = Reveal.getCurrentSlide();
-      return slide ? slide.dataset.slideId : null;
-    }
-
-    function loadIntoEditor() {
-      const id = currentSlideId();
-      if (!id) return;
-      const custom = loadCustom();
-      const current = custom[id] !== undefined ? custom[id] : (ORIGINAL_NOTES[id] || '');
-      textarea.value = current;
-      const isCustom = custom[id] !== undefined;
-      slideLabel.textContent = 'Slide ' + id + (isCustom ? ' · personalizado' : ' · original');
-      status.textContent = '';
-      status.className = 'editor-status';
-    }
-
-    function openEditor() {
-      loadIntoEditor();
-      editor.classList.add('open');
-      setTimeout(() => textarea.focus(), 280);
-    }
-
-    function closeEditor() {
-      editor.classList.remove('open');
-    }
-
-    toggle.addEventListener('click', () => {
-      if (editor.classList.contains('open')) closeEditor();
-      else openEditor();
+    seg.addEventListener('click', (e) => {
+      const btn = e.target.closest('button');
+      if (!btn) return;
+      seg.querySelectorAll('button').forEach(b => b.removeAttribute('data-active'));
+      btn.setAttribute('data-active', '');
+      const val = btn.dataset.val;
+      state[group] = val;
+      applyAll(); pushToHost();
     });
+  });
+  tr.addEventListener('input', (e) => {
+    state.typeScale = parseFloat(e.target.value);
+    applyAll(); pushToHost();
+  });
 
-    document.getElementById('btn-close').addEventListener('click', closeEditor);
+  window.addEventListener('message', (e) => {
+    const d = e.data || {};
+    if (d.type === '__activate_edit_mode') panel.setAttribute('data-open', '');
+    if (d.type === '__deactivate_edit_mode') panel.removeAttribute('data-open');
+  });
+  try { window.parent.postMessage({ type: '__edit_mode_available' }, '*'); } catch(e){}
 
-    document.getElementById('btn-save').addEventListener('click', () => {
-      const id = currentSlideId();
-      if (!id) return;
-      const custom = loadCustom();
-      custom[id] = textarea.value;
-      saveCustom(custom);
-      // Update DOM so Reveal notes view picks up
-      const el = document.querySelector('aside.notes[data-slide-id="' + id + '"]');
-      if (el) el.textContent = textarea.value;
-      slideLabel.textContent = 'Slide ' + id + ' · personalizado';
-      status.textContent = '✓ Guardado en este navegador.';
-      status.className = 'editor-status saved';
-    });
-
-    document.getElementById('btn-restore').addEventListener('click', () => {
-      const id = currentSlideId();
-      if (!id) return;
-      if (!confirm('¿Restaurar las notas originales de esta slide? Se perderá lo editado.')) return;
-      const custom = loadCustom();
-      delete custom[id];
-      saveCustom(custom);
-      const original = ORIGINAL_NOTES[id] || '';
-      textarea.value = original;
-      const el = document.querySelector('aside.notes[data-slide-id="' + id + '"]');
-      if (el) el.textContent = original;
-      slideLabel.textContent = 'Slide ' + id + ' · original';
-      status.textContent = '↻ Original restaurado.';
-      status.className = 'editor-status saved';
-    });
-
-    document.getElementById('btn-export').addEventListener('click', () => {
-      const custom = loadCustom();
-      const blob = new Blob([JSON.stringify(custom, null, 2)], { type: 'application/json' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      const date = new Date().toISOString().slice(0, 10);
-      a.href = url;
-      a.download = 'excelenc-ia-notas-' + date + '.json';
-      a.click();
-      URL.revokeObjectURL(url);
-      status.textContent = '↓ Exportado. Envíalo por email para compartirlo.';
-      status.className = 'editor-status saved';
-    });
-
-    const fileInput = document.getElementById('btn-import-file');
-    document.getElementById('btn-import-trigger').addEventListener('click', () => fileInput.click());
-    fileInput.addEventListener('change', async (ev) => {
-      const file = ev.target.files[0];
-      if (!file) return;
-      try {
-        const text = await file.text();
-        const data = JSON.parse(text);
-        if (!confirm('Importar ' + Object.keys(data).length + ' slides con notas personalizadas? Reemplazará las tuyas actuales.')) return;
-        saveCustom(data);
-        applyCustomToDOM();
-        loadIntoEditor();
-        status.textContent = '✓ Importado. Notas aplicadas.';
-        status.className = 'editor-status saved';
-      } catch (e) {
-        alert('Error al importar: ' + e.message);
-      } finally {
-        fileInput.value = '';
-      }
-    });
-
-    // Reload editor contents when slide changes
-    Reveal.on('slidechanged', () => {
-      if (editor.classList.contains('open')) loadIntoEditor();
-    });
-
-    // Keyboard shortcut 'E'
-    document.addEventListener('keydown', (ev) => {
-      if (editor.classList.contains('open') && document.activeElement === textarea) return;
-      if (ev.key.toLowerCase() === 'e' && !ev.metaKey && !ev.ctrlKey && !ev.altKey) {
-        ev.preventDefault();
-        if (editor.classList.contains('open')) closeEditor();
-        else openEditor();
-      }
-      if (ev.key === 'Escape' && editor.classList.contains('open')) {
-        closeEditor();
-      }
-    });
-  </script>
+  const stage = document.querySelector('deck-stage');
+  const emit = (i) => { try { window.postMessage({ slideIndexChanged: i }, '*'); } catch(e){} };
+  stage.addEventListener('slidechange', (e) => emit(e.detail.index));
+  window.addEventListener('load', () => emit(stage.index || 0));
+})();
+</script>
 </body>
 </html>
