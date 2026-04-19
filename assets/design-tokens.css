@@ -1,0 +1,325 @@
+/* =========================================================
+   360 Degrees Consulting — Design Tokens
+   Brand book source: Libro de Marca - 360º Consulting.pdf
+   Primary palette: yellow #F4E711 + black #000000 only.
+   ========================================================= */
+
+/* Google Fonts — Jost (Futura LT Light substitute), Unbounded (Olegos substitute) */
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Unbounded:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* ---------- Brand colors (from brand book) ---------- */
+  --brand-yellow: #F4E711;   /* CMYK 9 0 91 0 · RGB 244 231 17 */
+  --brand-black:  #000000;   /* CMYK 91 78 62 97 */
+  --brand-white:  #FFFFFF;
+
+  /* ---------- Derived neutrals (UI only, not brand) ---------- */
+  --ink-900:  #0A0A0A;
+  --ink-800:  #141414;
+  --ink-700:  #1A1A1A;
+  --ink-500:  #3D3D3D;
+  --ink-400:  #5C5C5C;
+  --ink-300:  #8C8C8C;
+  --ink-200:  #BFBFBF;
+  --ink-100:  #E6E6E6;
+  --ink-50:   #F2F2F2;
+  --paper:    #FAFAFA;
+
+  /* Tinted yellows for backgrounds / washes (use sparingly) */
+  --yellow-soft: #FDF9C7;    /* 15% yellow over white */
+  --yellow-deep: #C4B90E;    /* pressed/underlay state */
+
+  /* Semantic accents — monochrome-only palette.
+     The brand uses no green/red/blue for status; we lean on
+     black, grafito and yellow for every semantic state. */
+  --sem-success: var(--brand-black);     /* solid check on black */
+  --sem-danger:  var(--brand-black);     /* black surface + yellow dot */
+  --sem-danger-accent: var(--brand-yellow);
+  --sem-info:    var(--ink-400);         /* grafito for info/neutral */
+  --sem-warning: var(--brand-yellow);
+
+  /* ---------- Semantic color tokens ---------- */
+  --bg:            var(--brand-white);
+  --bg-elevated:   #FFFFFF;
+  --bg-inverse:    var(--brand-black);
+  --bg-brand:      var(--brand-yellow);
+
+  --fg-1:          var(--brand-black);    /* primary text on light */
+  --fg-2:          var(--ink-500);        /* secondary */
+  --fg-3:          var(--ink-300);        /* muted */
+  --fg-on-brand:   var(--brand-black);    /* text on yellow */
+  --fg-on-dark:    var(--brand-white);    /* text on black */
+  --fg-accent:     var(--brand-black);    /* never blue links; black underlines */
+
+  --border-strong: var(--brand-black);
+  --border:        var(--ink-100);
+  --border-subtle: var(--ink-50);
+
+  /* ---------- Type ---------- */
+  --font-display: 'Unbounded', 'Olegos', 'Big Shoulders Display', 'Impact', system-ui, sans-serif;
+  --font-body:    'Jost', 'Futura LT', 'Futura', 'Century Gothic', system-ui, -apple-system, Segoe UI, Helvetica, Arial, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  /* Type scale (clamped for fluid) */
+  --fs-display-xl: clamp(56px, 8vw, 112px);
+  --fs-display-lg: clamp(44px, 6vw, 80px);
+  --fs-display:    clamp(36px, 4.5vw, 56px);
+  --fs-h1:         clamp(32px, 3.4vw, 44px);
+  --fs-h2:         clamp(26px, 2.6vw, 32px);
+  --fs-h3:         22px;
+  --fs-h4:         18px;
+  --fs-body-lg:    18px;
+  --fs-body:       16px;
+  --fs-body-sm:    14px;
+  --fs-caption:    13px;
+  --fs-eyebrow:    12px;
+
+  --lh-tight:      1.02;
+  --lh-snug:       1.15;
+  --lh-body:       1.55;
+  --lh-relaxed:    1.7;
+
+  --tracking-tight:  -0.02em;
+  --tracking-normal: 0;
+  --tracking-loose:  0.04em;
+  --tracking-eyebrow: 0.14em;
+
+  /* ---------- Spacing (4px base) ---------- */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+  --space-8:  64px;
+  --space-9:  96px;
+  --space-10: 128px;
+
+  /* ---------- Radius ---------- */
+  --radius-none: 0;
+  --radius-sm:   2px;
+  --radius-md:   8px;
+  --radius-lg:   16px;
+  --radius-full: 9999px;   /* reserved for tags / status dots only */
+
+  /* ---------- Borders ---------- */
+  --border-width:        1px;
+  --border-width-strong: 2px;
+
+  /* ---------- Shadows (brutalist stamp, not elevation) ---------- */
+  --shadow-none:  none;
+  --shadow-stamp: 2px 2px 0 0 var(--brand-black);
+  --shadow-stamp-lg: 4px 4px 0 0 var(--brand-black);
+  --shadow-stamp-yellow: 2px 2px 0 0 var(--brand-yellow);
+
+  /* ---------- Motion ---------- */
+  --ease-out:  cubic-bezier(0.2, 0, 0, 1);
+  --ease-in:   cubic-bezier(0.8, 0, 1, 1);
+  --ease-std:  cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast:  120ms;
+  --dur:       180ms;
+  --dur-slow:  280ms;
+
+  /* ---------- Layout ---------- */
+  --max-w: 1200px;
+  --max-w-prose: 720px;
+  --nav-h: 72px;
+}
+
+/* =========================================================
+   Semantic element styles — drop these in via class or
+   use the selectors directly for quick branded output.
+   ========================================================= */
+
+.ds-root,
+body.ds-root {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--fg-1);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.ds-display-xl, .ds-h0 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-display-xl);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-tight);
+}
+
+.ds-display { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-display); line-height: var(--lh-tight); letter-spacing: var(--tracking-tight); }
+
+.ds-h1 { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-h1); line-height: var(--lh-snug); letter-spacing: var(--tracking-tight); }
+.ds-h2 { font-family: var(--font-display); font-weight: 500; font-size: var(--fs-h2); line-height: var(--lh-snug); letter-spacing: var(--tracking-tight); }
+.ds-h3 { font-family: var(--font-body);    font-weight: 600; font-size: var(--fs-h3); line-height: 1.25; }
+.ds-h4 { font-family: var(--font-body);    font-weight: 600; font-size: var(--fs-h4); line-height: 1.3;  }
+
+.ds-body-lg { font-size: var(--fs-body-lg); line-height: var(--lh-body); }
+.ds-body    { font-size: var(--fs-body);    line-height: var(--lh-body); }
+.ds-body-sm { font-size: var(--fs-body-sm); line-height: var(--lh-body); }
+.ds-caption { font-size: var(--fs-caption); line-height: 1.4; color: var(--fg-2); }
+
+.ds-eyebrow {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--fs-eyebrow);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--fg-2);
+}
+
+.ds-num, .ds-tabular {
+  font-feature-settings: "tnum" 1, "lnum" 1;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+code, pre, .ds-mono {
+  font-family: var(--font-mono);
+  font-size: 0.95em;
+}
+
+/* =========================================================
+   Buttons
+   ========================================================= */
+
+.ds-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 14px 22px;
+  border: var(--border-width-strong) solid var(--brand-black);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  cursor: pointer;
+  background: var(--brand-yellow);
+  color: var(--brand-black);
+  text-decoration: none;
+  transition: background var(--dur) var(--ease-out),
+              color var(--dur) var(--ease-out),
+              transform var(--dur-fast) var(--ease-out);
+}
+.ds-btn:hover  { background: var(--brand-black); color: var(--brand-yellow); }
+.ds-btn:active { transform: scale(0.98); }
+
+.ds-btn--secondary { background: transparent; color: var(--brand-black); }
+.ds-btn--secondary:hover { background: var(--brand-black); color: var(--brand-white); }
+
+.ds-btn--ghost {
+  background: transparent;
+  border-color: transparent;
+  color: var(--brand-black);
+  padding-left: 8px; padding-right: 8px;
+}
+.ds-btn--ghost:hover { background: var(--brand-yellow); }
+
+.ds-btn--inverse {
+  background: var(--brand-black);
+  border-color: var(--brand-yellow);
+  color: var(--brand-yellow);
+}
+.ds-btn--inverse:hover { background: var(--brand-yellow); color: var(--brand-black); }
+
+/* =========================================================
+   Link
+   ========================================================= */
+
+.ds-link {
+  color: var(--fg-1);
+  text-decoration: none;
+  background-image: linear-gradient(var(--brand-yellow), var(--brand-yellow));
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  background-position: 0 0;
+  padding: 0 2px;
+  transition: background-size var(--dur) var(--ease-out);
+}
+.ds-link:hover { background-size: 100% 100%; }
+.ds-link--underline { text-decoration: underline; text-underline-offset: 3px; }
+
+/* =========================================================
+   Card
+   ========================================================= */
+
+.ds-card {
+  background: var(--brand-white);
+  border: var(--border-width-strong) solid var(--brand-black);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  transition: transform var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out);
+}
+.ds-card--hoverable:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-stamp);
+}
+
+/* =========================================================
+   Inputs
+   ========================================================= */
+
+.ds-input, .ds-textarea, .ds-select {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.4;
+  padding: 12px 14px;
+  background: var(--brand-white);
+  color: var(--brand-black);
+  border: var(--border-width-strong) solid var(--brand-black);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: box-shadow var(--dur) var(--ease-out);
+}
+.ds-input::placeholder { color: var(--ink-300); }
+.ds-input:focus, .ds-textarea:focus, .ds-select:focus {
+  box-shadow: var(--shadow-stamp-yellow);
+}
+
+/* =========================================================
+   Badge / eyebrow tag
+   ========================================================= */
+
+.ds-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  background: var(--brand-yellow);
+  color: var(--brand-black);
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+.ds-badge--outline { background: transparent; border: 1px solid var(--brand-black); }
+.ds-badge--dark    { background: var(--brand-black); color: var(--brand-yellow); }
+
+/* =========================================================
+   Divider / wedge
+   ========================================================= */
+
+.ds-divider { height: var(--border-width-strong); background: var(--brand-black); border: 0; }
+.ds-wedge {
+  position: relative;
+  overflow: hidden;
+}
+.ds-wedge::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: var(--brand-yellow);
+  clip-path: polygon(0 0, 100% 0, 100% 60%, 0 100%);
+  z-index: 0;
+}
+.ds-wedge > * { position: relative; z-index: 1; }
+
+/* =========================================================
+   Selection
+   ========================================================= */
+::selection { background: var(--brand-yellow); color: var(--brand-black); }
